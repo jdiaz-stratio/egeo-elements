@@ -1,0 +1,90 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+
+<st-input *ngIf="hasType('input') && (!maxWidth || (!maxLength || maxLength < maxWidth) && (!minLength || minLength < maxWidth))"
+          #templateModel="ngModel"
+          [forceValidations]="forceValidations"
+          [fieldType]="type"
+          [label]="label"
+          [name]="schema.key"
+          [placeholder]="placeholder"
+          [ngModel]="innerValue"
+          (ngModelChange)="setValue($event)"
+          [contextualHelp]="description"
+          [errors]="errors"
+          [default]="default"
+          [max]="max"
+          [min]="min"
+          [minlength]="minLength"
+          [maxlength]="maxLength"
+          [required]="required"
+          [pattern]="pattern"
+          [step]="getInputStep()"
+          [qaTag]="qaTag"
+          (blur)="onBlur()">
+</st-input>
+
+<st-textarea *ngIf="hasType('input') && maxWidth && (maxLength >= maxWidth || minLength >= maxWidth)"
+          #templateModel="ngModel"
+          [label]="label"
+          [name]="schema.key"
+          [default]="default"
+          [placeholder]="placeholder"
+          [ngModel]="innerValue"
+          (ngModelChange)="setValue($event)"
+          [contextualHelp]="description"
+          [errors]="errors"
+          [minlength]="minLength"
+          [maxlength]="maxLength"
+          [required]="required"
+          [pattern]="pattern"
+          [qaTag]="qaTag"
+          (blur)="onBlur()">
+</st-textarea>
+
+<st-checkbox *ngIf="hasType('checkbox')"
+             #templateModel="ngModel"
+             [ngModel]="innerValue"
+             (ngModelChange)="setValue($event)"
+             [checked]="innerValue"
+             [value]="innerValue"
+             [name]="schema.key"
+             [contextualHelp]="description"
+             [qaTag]="qaTag"><span>{{schema.value.title}}</span>
+</st-checkbox>
+
+<st-select *ngIf="hasType('select')"
+           #templateModel="ngModel"
+           [label]="label"
+           [tooltip]="description"
+           [name]="schema.key"
+           [placeholder]="placeholder"
+           [default]="default"
+           [options]="selectOptions"
+           [ngModel]="innerValue"
+           (ngModelChange)="setValue($event)"
+           [required]="required"
+           [id]="qaTag">
+</st-select>
+
+<st-switch *ngIf="hasType('switch')"
+           #templateModel="ngModel"
+           [label]="schema.value.title"
+           [name]="schema.key"
+           [contextualHelp]="description"
+           [ngModel]="innerValue"
+           (ngModelChange)="setValue($event)"
+           [value]="innerValue"
+           [qaTag]="schema.key"
+           [id]="qaTag">
+</st-switch>

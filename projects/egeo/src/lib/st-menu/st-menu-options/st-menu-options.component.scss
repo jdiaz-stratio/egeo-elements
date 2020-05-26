@@ -1,0 +1,187 @@
+@import '../../../theme/constants/index';
+
+.st-menu-options {
+   background-color: $neutral-00;
+   font-size: 0.938rem;
+   left: 100%;
+   position: absolute;
+   margin-bottom: 2.5rem;
+   visibility: hidden;
+   top: 100%;
+   -webkit-transform:translate3d(0,0,0);
+
+   &--left {
+      right: 100%;
+      left: auto;
+   }
+
+   &--initilized {
+      visibility: visible;
+   }
+
+   &__container {
+      overflow: hidden;
+      width: 100%;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+
+      &--animation {
+         animation: fadeInFromNone 0.25s ease-out;
+         will-change: max-height, opacity;
+      }
+   }
+
+   &__search {
+      border-bottom: 1px solid $neutral-06;
+      margin: 0;
+      padding: 0;
+      position: relative;
+   }
+
+   &__input {
+      outline: 0;
+      width: 100%;
+      min-width: 12.5rem;
+   }
+
+   &__delete {
+      position: absolute;
+      right: 0.625rem;
+      cursor: pointer;
+      top: 0.6875rem;
+   }
+
+   &__submenu {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      margin-left: 0px;
+      &.active {
+         visibility: visible;
+      }
+   }
+
+   &__list {
+      list-style: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: $neutral-00;
+      min-width: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+   }
+
+   &__item {
+      color: $neutral-11;
+      cursor: pointer;
+      font-size: 0.875rem;
+      justify-content: space-between;
+      padding: 0.75rem 0.5rem 0.6875rem 1.25rem;
+      -webkit-tap-highlight-color: transparent;
+
+      & > div {
+         display: flex;
+         flex-direction: row;
+
+         .label {
+            padding-right: 0.75rem;
+            white-space: nowrap;
+            font-size: 0.9375rem;
+            line-height: 1.25rem;
+         }
+      }
+
+      .has-submenu {
+         font-size: 0.6875rem;
+         margin-top: 5px;
+         margin-left: auto;
+      }
+
+      .item-icon {
+         font-size: 0.8125rem;
+         margin-right: 0.375rem;
+         margin-top: 0.1875rem;
+         color: $neutral-08;
+      }
+
+      & > span {
+         white-space: nowrap;
+      }
+
+      &--active {
+         background-color: $action-primary-light;
+         visibility: visible;
+
+         & > .item-content .item-icon {
+             color: $brand;
+         }
+
+         & > .item-content .icon.has-submenu {
+            color: $brand;
+         }
+      }
+
+      &--success {
+         color: $action-primary-default;
+         & > .item-content .item-icon {
+            color: $action-primary-default;
+         }
+      }
+
+      &--warning {
+         color: $status-warning-default;
+         & > .item-content .item-icon {
+            color: $status-warning-default;
+         }
+      }
+
+      &--critical {
+         color: $status-critical-default;
+         & > .item-content .item-icon {
+            color: $status-critical-default;
+         }
+      }
+
+      &.disabled {
+         color: $neutral-07 !important;
+      }
+
+      &.separator {
+         border-top: 1px solid $action-secondary-03;
+      }
+   }
+}
+
+.scroll-button {
+   background: $neutral-00;
+   color: $action-secondary-06;
+   border: 1px solid $neutral-06;
+   font-size: 0.625rem;
+   margin-left: -1px;
+   padding: 1px 0 0px 0;
+   position: absolute;
+   text-align: center;
+   width: calc(100% + 2px);
+
+   z-index: 1;
+
+   &--top {
+       top: -0.875rem;
+   }
+
+   &--bottom {
+       bottom: -0.9375rem;
+   }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+      max-height: 0;
+  }
+  100% {
+      display: block;
+      max-height: 18.75rem;
+  }
+}

@@ -1,0 +1,54 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+@import '../constants/fonts';
+@import '../constants/colors';
+@import '../constants/settings';
+
+.st-draggable-card {
+   background-color: $neutral-00;
+   box-shadow: 0 1px 2px 0 $neutral-05;
+   border-radius: 4px;
+   border: solid 1px $neutral-03;
+   cursor: move; /* fallback: no `url()` support or images disabled */
+   cursor: -webkit-grab; /* Chrome 1-21, Safari 4+ */
+   cursor:    -moz-grab; /* Firefox 1.5-26 */
+   cursor:         grab; /* W3C standards syntax, should come least */
+
+   &.drag-button {
+      color: $neutral-06;
+      font-size: $egeo-font-size-medium;
+   }
+}
+
+.st-draggable-card.dragging {
+   cursor: grabbing !important;
+   cursor: -moz-grabbing !important;
+   cursor: -webkit-grabbing !important;
+   background-color: $neutral-00;
+   box-shadow: 0 1px 4px 2px $neutral-05;
+   border: solid 1px $input-field-onfocus;
+   z-index:0;
+   position: relative;
+}
+
+.st-draggable-card:active {
+   cursor: grabbing;
+   cursor: -moz-grabbing;
+   cursor: -webkit-grabbing;
+   cursor:         grabbing;
+}
+
+.st-draggable-card.shadow {
+   background-color: $action-secondary-02;
+   color: transparent;
+   border: none;
+   box-shadow: none;
+}

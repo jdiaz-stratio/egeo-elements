@@ -1,0 +1,79 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+@import '../constants/fonts';
+@import '../constants/colors';
+
+.sth-radio-menu-option {
+   font-weight: normal;
+   color: $neutral-09;
+
+   &.active {
+      color: $neutral-12;
+      background-color: $neutral-02;
+
+      &:after {
+         border-left: 60px solid $neutral-02;
+      }
+
+      &:before {
+         background-color: $neutral-02;
+      }
+   }
+
+   &.no-active {
+      color: $neutral-06;
+   }
+}
+
+.theme-gray-1 {
+   .sth-radio-menu-option {
+      &.active {
+         background-color: $neutral-03;
+
+         &:after {
+            border-left: 60px solid $neutral-03;
+         }
+
+         &:before {
+            background-color: $neutral-03;
+         }
+      }
+
+      &.no-active {
+         color: $neutral-07;
+      }
+   }
+}
+
+.theme-gray-2 {
+   .sth-radio-menu-option {
+
+      background-color: $neutral-00;
+      &.active {
+         background-color: $neutral-02;
+
+         &:after {
+            border-left: 60px solid $neutral-02;
+         }
+
+         &:before {
+            background-color: $neutral-02;
+         }
+      }
+
+      &.no-active {
+         color: $neutral-06;
+      }
+   }
+}
+
+
+

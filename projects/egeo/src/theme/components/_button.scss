@@ -1,0 +1,281 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+ @import '../constants/colors';
+ @import '../constants/fonts';
+
+/// VARS:
+$hover: '&:not([disabled]):hover';
+
+%button-label-small {
+   color:         $neutral-00;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   600;
+   font-size:     $egeo-font-size-xxsmall;
+   line-height:   $egeo-line-height-xxsmall;
+   height:        25px;
+   &[disabled] {
+      color:      $neutral-06;
+      cursor:     not-allowed;
+
+   }
+}
+%button-label-small-secondary {
+   color:         $action-primary-default;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   600;
+   font-size:     $egeo-font-size-xxsmall;
+   line-height:   $egeo-line-height-xxsmall;
+   height:        25px;
+}
+/// tipography EXTENDS (@extend %button-label-regular;):
+%button-label-regular {
+   color:         $neutral-00;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   600;
+   font-size:     $egeo-font-size-small;
+   line-height:   $egeo-line-height-small;
+   height:        40px;
+   &[disabled] {
+      color:      $neutral-06;
+      cursor:     not-allowed;
+   }
+}
+%button-label-regular-secondary {
+   color:         $action-primary-default;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   600;
+   font-size:     $egeo-font-size-small;
+   line-height:   $egeo-line-height-small;
+   height:        40px;
+   &[disabled] {
+      color:      $neutral-06;
+      cursor:     not-allowed;
+   }
+}
+%button-label-large {
+   color:         $neutral-00;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   600;
+   font-size:     $egeo-font-size-medium;
+   line-height:   $egeo-line-height-medium;
+   height:        50px;
+   &[disabled] {
+      color:      $neutral-06;
+      cursor:     not-allowed;
+   }
+}
+%button-label-large-secondary {
+   color:         $action-primary-default;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   600;
+   font-size:     $egeo-font-size-medium;
+   line-height:   $egeo-line-height-medium;
+   height:        50px;
+}
+%button-toolbar-ico-default {
+   color:         $neutral-10;
+   font-family:   $egeo-stratio-icons;
+   font-size:     $egeo-font-size-medium;
+   line-height:   $egeo-line-height-medium;
+   &[disabled] {
+      color:      $neutral-06;
+      cursor:     not-allowed;
+   }
+}
+.button-link-primary {
+   color:         $action-primary-default;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   normal;
+   font-size:     $egeo-font-size-small;
+   line-height:   $egeo-line-height-small;
+   &[disabled] {
+      opacity:    0.4;
+      cursor:     not-allowed;
+   }
+   &:not([disabled]):hover {
+      color:      $action-primary-hover;
+   }
+
+   &.small {
+      font-size:     $egeo-font-size-xxsmall;
+      line-height:   $egeo-line-height-xxsmall;
+   }
+}
+.button-link-secondary {
+   color:         $neutral-09;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   normal;
+   font-size:     $egeo-font-size-small;
+   line-height:   $egeo-line-height-small;
+   text-decoration: underline;
+   &[disabled] {
+      color:      $neutral-06;
+      cursor:     not-allowed;
+   }
+   &:not([disabled]):hover {
+      color:      $neutral-10;
+   }
+   &.small {
+      font-size:     $egeo-font-size-xxsmall;
+      line-height:   $egeo-line-height-xxsmall;
+   }
+}
+
+/// STYLES:
+.button {
+   & {
+      box-sizing: border-box;
+      border-radius: 4px;
+      outline: none;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 100%;
+      vertical-align: middle;
+   }
+
+   #{$hover} {
+      cursor: pointer;
+   }
+
+   &.button-primary,
+   &.button-secondary-line,
+   &.button-secondary-gray,
+   &.button-critical,
+   &.button-warning,
+   &.button-success {
+      @extend %button-label-regular;
+      padding:0.625rem 1.875rem;
+      text-overflow: ellipsis;
+
+      &[disabled] {
+         background-color: $neutral-14;
+      }
+
+      &.block {
+         width:100%;
+      }
+
+      &.large {
+         @extend %button-label-large;
+         padding: .875rem 2.5rem;
+      }
+      &.small {
+         @extend %button-label-small;
+         padding: 0.3rem 1rem;
+      }
+
+      i {
+         margin-top:2px;
+      }
+   }
+
+   &.button-primary {
+      background-color: $action-primary-default;
+
+      #{$hover} {
+         background-color: $action-primary-hover;
+      }
+   }
+
+   &.button-secondary-line {
+      @extend %button-label-regular-secondary;
+      background-color: $neutral-00;
+      border: solid $action-primary-default 1px;
+      padding: .625rem 1.8125rem;
+      color: $action-primary-default;
+
+      #{$hover} {
+         color: $action-primary-hover;
+         border-color: $action-primary-hover;
+      }
+
+      &[disabled] {
+         background-color: $neutral-00;
+         border-color: $neutral-06;
+      }
+
+      &.large {
+         color: $action-primary-default;
+         padding: .875rem 2.4375rem;
+      }
+      &.small {
+         color: $action-primary-default;
+         padding: 0.2rem 1rem;
+      }
+   }
+
+   &.button-secondary-gray {
+      background-color: $action-secondary-04;
+
+      #{$hover} {
+         background-color: $action-secondary-05;
+      }
+   }
+
+   &.button-critical {
+      background-color: $status-critical-default;
+
+      #{$hover} {
+         background-color: $status-critical-hover;
+      }
+   }
+
+   &.button-warning {
+      background-color: $status-warning-default;
+
+      #{$hover} {
+         background-color: $status-warning-hover;
+      }
+   }
+
+   &.button-success {
+      background-color: $status-success-default;
+
+      #{$hover} {
+         background-color: $status-success-hover;
+      }
+   }
+
+   &.button-toolbar {
+      @extend %button-toolbar-ico-default;
+      border-radius: 4px;
+      border:solid 1px $neutral-03;
+      background-color: white;
+
+      &[disabled] {
+         border: none;
+         background-color: $neutral-03;
+      }
+
+      &.small {
+         & i {
+            padding: 0.22rem 0.22rem;
+         }
+      }
+
+      #{$hover} {
+         border:solid 1px $neutral-07;
+      }
+
+      i {
+         display: block;
+         padding:0.625rem;
+      }
+   }
+}
+
+
+
+
+
+
+
+

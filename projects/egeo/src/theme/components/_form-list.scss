@@ -1,0 +1,32 @@
+@import '../constants/colors';
+@import '../constants/fonts';
+
+.st-form-list {
+   .st-form-list__row {
+      &:not(:first-child) {
+         label {
+            display: none;
+         }
+      }
+
+      label {
+         white-space: nowrap;
+         overflow: hidden;
+
+         span {
+            text-overflow: ellipsis;
+            overflow: hidden;
+         }
+      }
+   }
+
+   .remove-button {
+      font-size: $egeo-font-size-large;
+      color: $neutral-09;
+
+      &:hover {
+         color: $neutral-11;
+      }
+   }
+
+}

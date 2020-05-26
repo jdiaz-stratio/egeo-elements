@@ -1,0 +1,148 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+@import '../../theme/constants/index';
+
+$progress-bar-full-animation-duration: 2000ms !default;
+$progress-bar-piece-animation-duration: 250ms !default;
+
+:host {
+   display: block;
+   height:  2px;
+   overflow: hidden;
+   width: 100%;
+   background-color: #bce7fe;
+   position: relative;
+
+   .progress-bar, .progress-bar::after {
+      height: 100%;
+      position: absolute;
+      width: 100%;
+   }
+
+   .progress-bar {
+      animation: none;
+      transform-origin: top left;
+      transition: transform $progress-bar-piece-animation-duration ease;
+   }
+
+   .progress-bar::after {
+      animation: none;
+      content: '';
+      display: inline-block;
+      left: 0;
+      background: linear-gradient(90deg, transparent 5%, $brand 40%, $brand 93%, transparent 97%);
+   }
+
+   .progress-bar-primary {
+      animation: progress-bar-primary-indeterminate-translate
+                 $progress-bar-full-animation-duration
+                 infinite
+                 linear;
+      left: -145.166611%;
+   }
+
+   .progress-bar-primary.progress-bar::after {
+      animation: progress-bar-primary-indeterminate-scale
+                 $progress-bar-full-animation-duration
+                 infinite
+                 linear;
+   }
+
+   .progress-bar-secondary {
+      animation: progress-bar-secondary-indeterminate-translate
+                 $progress-bar-full-animation-duration
+                 infinite
+                 linear;
+      left: -54.888891%;
+      display: block;
+   }
+   .progress-bar-secondary.progress-bar::after {
+      animation: progress-bar-secondary-indeterminate-scale
+                 $progress-bar-full-animation-duration
+                 infinite
+                 linear;
+   }
+
+
+
+   @keyframes progress-bar-primary-indeterminate-translate {
+      0% {
+         transform: translateX(0);
+      }
+      20% {
+         animation-timing-function: cubic-bezier(0.8, 0, 0.701732, 0.495819);
+         transform: translateX(0);
+      }
+      59.20% {
+         animation-timing-function: cubic-bezier(0.302435, 0.381352, 0.55, 0.956352);
+         transform: translateX(83.67142%);
+      }
+      100% {
+         transform: translateX(200.611057%);
+      }
+   }
+
+   @keyframes progress-bar-primary-indeterminate-scale {
+      0% {
+         transform: scaleX(0.08);
+      }
+      37.60% {
+         animation-timing-function: cubic-bezier(0.334731, 0.12482, 0.785844, 1);
+         transform: scaleX(0.08);
+      }
+      69.50% {
+         animation-timing-function: cubic-bezier(0.06, 0.11, 0.6, 1);
+         transform: scaleX(0.661479);
+      }
+      100% {
+         transform: scaleX(0.08);
+      }
+   }
+
+   @keyframes progress-bar-secondary-indeterminate-translate {
+      0% {
+        animation-timing-function: cubic-bezier(0.15, 0, 0.515058, 0.409685);
+        transform: translateX(0);
+      }
+      25% {
+        animation-timing-function: cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);
+        transform: translateX(37.651913%);
+      }
+      48.35% {
+        animation-timing-function: cubic-bezier(0.4, 0.627035, 0.6, 0.902026);
+        transform: translateX(84.386165%);
+      }
+      100% {
+        transform: translateX(160.277782%);
+      }
+    }
+
+   @keyframes progress-bar-secondary-indeterminate-scale {
+      0% {
+         animation-timing-function: cubic-bezier(0.15, 0, 0.515058, 0.409685);
+         transform: scaleX(0.08);
+      }
+      19.15% {
+        animation-timing-function: cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);
+        transform: scaleX(0.457104);
+      }
+      44.15% {
+        animation-timing-function: cubic-bezier(0.4, 0.627035, 0.6, 0.902026);
+        transform: scaleX(0.72796);
+      }
+      100% {
+        transform: scaleX(0.08);
+      }
+   }
+}
+
+
+

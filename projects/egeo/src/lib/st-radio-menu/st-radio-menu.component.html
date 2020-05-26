@@ -1,0 +1,26 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<section class="st-radio-menu sth-radio-menu">
+   <ul class="st-radio-menu__list">
+      <li *ngFor="let option of options; let i = index;" class="st-radio-menu__option">
+
+         <div class="st-radio-menu__option sth-radio-menu-option" (click)="activateOption(option)" [ngClass]="{'active': isActive(option),
+           'no-active': !isActive(option) && activeOption}" [attr.id]="qaTag + '-option-' + i">
+
+            <st-radio [name]="option.label" [value]="option.value" [checked]="checkedOption(option)">
+               <span class="st-radio-menu__option-text">{{ option.label }}</span>
+            </st-radio>
+         </div>
+      </li>
+   </ul>
+</section>

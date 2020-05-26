@@ -1,0 +1,31 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<div>
+   <st-horizontal-tabs [options]="options" [(activeOption)]="active" qaTag="horizontal-tabs-demo" (changedOption)="onChangeOption($event)">
+   </st-horizontal-tabs>
+   <div class="st-docs">
+      <div *ngIf="active.id === 'demo'">
+         <ng-content></ng-content>
+      </div>
+      <div *ngIf="active.id === 'html'">
+         <st-prism-highlight [language]="'html'" id="codeinput">{{htmlCode}}</st-prism-highlight>
+      </div>
+      <div *ngIf="active.id === 'implementation'">
+         <st-prism-highlight [language]="'javascript'" id="codeinput">{{demoTsCode}}</st-prism-highlight>
+      </div>
+
+      <div *ngIf="active.id === 'component'">
+         <st-prism-highlight [language]="'javascript'" id="codeinput">{{componentTsCode}}</st-prism-highlight>
+      </div>
+   </div>
+</div>

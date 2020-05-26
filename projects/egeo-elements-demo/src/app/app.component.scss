@@ -1,0 +1,18 @@
+div {
+    display: flex;
+}
+
+st-spinner {
+  --egeo-st-spinner__primary-color--stroke: red;
+}
+
+st-input {
+  --egeo-st-form-cotrol--height:20px;
+  --egeo-theme-space-110: red;
+}
+
+
+.components-content {
+    display: flex;
+    flex-direction: column;
+}

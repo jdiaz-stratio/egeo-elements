@@ -1,0 +1,103 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+@import '../../theme/constants/index';
+
+$height-header: 50px;
+
+:host {
+   display: block;
+   padding: 0;
+   height: 100%;
+   width: 100%;
+
+   .st-widget {
+      height: 100%;
+      width: 100%;
+      border-radius: 4px;
+
+      &__header {
+         height: $height-header;
+         padding: 15px 19.5px;
+
+         .drag-drop-action {
+
+            cursor: move;
+
+            .icon-actions {
+               display: inline
+            }
+
+            .icon-actions:last-of-type {
+               margin-left: -13px;
+            }
+
+         }
+         .setting-action {
+            cursor: pointer;
+            float: right;
+            visibility: hidden;
+         }
+      }
+
+      &__title {
+         text-transform: capitalize;
+      }
+
+      &__body {
+         position: relative;
+         width: 100%;
+         height: calc(100% - #{$height-header});
+         padding: 30px;
+
+         .loading-status {
+            align-items: center;
+            background-color: $action-secondary-01;
+            color: $neutral-08;
+            display: flex;
+            font-weight: 400;
+            height: 100%;
+            justify-content: center;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+
+            .progress-bar {
+               position: absolute;
+               top: 0;
+               left: 0;
+            }
+         }
+      }
+      &__content {
+         height: 100%;
+         width: 100%;
+         overflow: hidden;
+      }
+
+      &:hover {
+
+         .setting-action {
+            visibility: visible;
+         }
+
+      }
+
+      &:hover {
+         .setting-action {
+            visibility: visible;
+         }
+
+      }
+   }
+
+}

@@ -1,0 +1,38 @@
+@import '../../theme/constants/settings';
+
+:host {
+  display: inline-block;
+}
+
+.st-menu {
+   &__action {
+      position: relative;
+      display: inline-block;
+   }
+
+   &__link {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+   }
+
+   &__options {
+      position: absolute;
+      z-index: $menu-z-index;
+      -webkit-transform: translate3d(0,0,0);
+      top: 0;
+      height: 100%;
+      margin-top: 5px;
+      &--left {
+         right: 0;
+      }
+   }
+
+   &--disabled {
+      cursor: not-allowed;
+   }
+
+   &__button--disabled {
+      pointer-events: none;
+   }
+}

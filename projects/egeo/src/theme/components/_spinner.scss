@@ -1,0 +1,82 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+@import '../constants/colors';
+
+@keyframes rotate {
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+@keyframes dash {
+   0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+   }
+   50% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -35px;
+   }
+   100% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -124px;
+   }
+}
+
+@keyframes primary-color {
+   100%,
+   0% {
+      stroke: $brand;
+   }
+   50% {
+      stroke: $brand;
+   }
+}
+
+@keyframes secondary-color {
+   100%,
+   0% {
+      stroke: $neutral-00;
+   }
+   50% {
+      stroke: $neutral-00;
+   }
+}
+
+.st-spinner {
+   .circular {
+      animation: rotate 2s linear infinite;
+      transform-origin: center center;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+
+      .path {
+         stroke-dasharray: 1, 200;
+         stroke-dashoffset: 0;
+         stroke-linecap: round;
+
+         &--primary {
+            animation: dash 1.5s ease-in-out infinite, primary-color 6s ease-in-out infinite;
+         }
+
+         &--secondary {
+            animation: dash 1.5s ease-in-out infinite, secondary-color 6s ease-in-out infinite;
+
+         }
+      }
+
+   }
+}
+
+

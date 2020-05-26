@@ -1,0 +1,66 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<form #form="ngForm" *ngIf="innerValue"
+      [ngClass]="{'category': nestingLevel === 0,
+                  'section': nestingLevel === 1,
+                  'subsection': nestingLevel > 1,
+                  'accordion': isAnAccordion(),
+                   'accordion--open': isAnAccordion() && showCollapsedSectionFields}"
+      novalidate>
+   <h1 *ngIf="schema.title && !isASwitchSection()" class="title" (click)="onClickTitle()">{{schema.title}}</h1>
+   <p *ngIf="schema.description && nestingLevel <= sectionDescriptionLevel" class="description">{{schema.description}}</p>
+   <span class="optional-fields-button" *ngIf="iShowMoreSection()">
+   <button class="button button-link-primary"
+           (click)="onChangeOptionalFieldsVisibility()">
+      <span> <i
+         [ngClass]="{'icon-arrow2_down': showCollapsedSectionFields, 'icon-arrow2_right': !showCollapsedSectionFields}"></i> {{getOptionalButtonLabel()}}</span>
+   </button>
+   </span>
+   <ng-container *ngFor="let property of schema.properties | stObjectToArray; let index = index;">
+      <div class="form-field-container">
+         <st-form-field *ngIf="property.value.type !== 'object' && fieldHasToBeCreated(property.key)" class="form-field"
+                        [schema]="property"
+                        [name]="property.key"
+                        [maxWidth]="textFieldMaxWidth"
+                        [ngModel]="innerValue[property.key]"
+                        [forceValidations]="forceValidations"
+                        (ngModelChange)="onChangeProperty($event, property.key)"
+                        [required]="isRequired(property.key)"
+                        [hasDependencies]="isAParentField(property.key) || (isASwitchSection() && isTheFirstField(property.key))"
+                        [ngClass]="getFieldClasses(property.key)"
+                        [showTooltip]="showTooltips"
+                        [qaTag]="property.key"
+                        [attr.id]="property.key + '-form-field'">
+         </st-form-field>
+
+         <div *ngIf="property.value.type === 'object' && fieldHasToBeCreated(property.key)">
+            <st-form
+               [hidden]="isCollapsedSection() && !showCollapsedSectionFields"
+               [schema]="property.value"
+               [parentName]="schema.title"
+               [name]="property.key"
+               [textFieldMaxWidth]="textFieldMaxWidth"
+               [ngModel]="innerValue[property.key]"
+               (ngModelChange)="onChangeProperty($event, property.key)"
+               [attr.id]="property.key + '-section'"
+               [nestingLevel]="nestingLevel + 1"
+               [showTooltips]="showTooltips"
+               [sectionDescriptionLevel]="sectionDescriptionLevel">
+            </st-form>
+         </div>
+      </div>
+      <span class="line-break" *ngIf="!isRelatedField(property.key)"></span>
+   </ng-container>
+
+   <p *ngIf="isInADisabledSection()" class="disabled-section-info"> {{schema.title}} {{disabledSectionMessage}}</p>
+</form>
