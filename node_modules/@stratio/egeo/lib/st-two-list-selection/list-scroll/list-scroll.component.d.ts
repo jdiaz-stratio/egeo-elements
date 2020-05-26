@@ -1,0 +1,31 @@
+import { ChangeDetectorRef, ElementRef, EventEmitter, OnInit } from '@angular/core';
+import { StDropDownMenuItem } from '../../st-dropdown-menu/st-dropdown-menu.interface';
+import { StTwoListSelectionElement, StTwoListSelectExtraLabelAction } from '../st-two-list-selection.model';
+export declare class ListScrollComponent implements OnInit {
+    private cd;
+    private elemRef;
+    list: StTwoListSelectionElement[];
+    editable: boolean;
+    fetchingDataText: string;
+    hasAllList?: boolean;
+    isLoading?: boolean;
+    itemAll?: StTwoListSelectionElement;
+    menuOptionList?: StDropDownMenuItem[];
+    qaTag: string;
+    mode: 'compact' | 'normal';
+    scrollBottom: EventEmitter<any>;
+    selectItem: EventEmitter<StTwoListSelectionElement>;
+    selectItemNonEditable: EventEmitter<StTwoListSelectionElement>;
+    selectExtraLabel: EventEmitter<StTwoListSelectExtraLabelAction>;
+    search: EventEmitter<string>;
+    atBottom: Boolean;
+    delay: any;
+    firstEl: number;
+    scrollItems: StTwoListSelectionElement[];
+    showLoading: Boolean;
+    constructor(cd: ChangeDetectorRef, elemRef: ElementRef);
+    ngOnInit(): void;
+    readonly listQaTag: string;
+    readonly listCheckAllQaTag: string;
+    onScroll(): void;
+}

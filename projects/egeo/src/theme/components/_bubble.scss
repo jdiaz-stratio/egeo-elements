@@ -1,0 +1,85 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+@import '../constants/colors';
+@import '../constants/fonts';
+
+@keyframes bounceAnimation {
+   0% {
+      margin-top: 0;
+   }
+
+   50% {
+      margin-top: 5px;
+   }
+}
+
+.st-bubble {
+   &__content {
+      background-color: $action-secondary-07;
+      min-width: 130px;
+      border-radius: 5px;
+      transition: opacity 0.5s ease-in-out;
+      opacity: 0;
+
+      &--show {
+         opacity: 1;
+      }
+
+      &--animated.st-bubble__content--show {
+         animation-duration: 0.3s;
+         animation-name: bounceAnimation;
+         animation-iteration-count: 2;
+         transition: margin-top 0.5s ease-in-out;
+      }
+
+      .text {
+         color: $neutral-00;
+         padding: 15px 20px;
+         font-size: $egeo-font-size-xxsmall;
+         font-weight: 400;
+         text-align: center;
+         line-height: normal;
+      }
+
+      &--small {
+         .text {
+            padding: 10px 15px;
+         }
+      }
+
+      &--with-arrow:before {
+         content: '';
+         background-color: $action-secondary-07;
+         border: 1px solid $action-secondary-07;
+         border-bottom-width: 0;
+         border-left-width: 0;
+         border-radius: 2px;
+         transition: margin-top 0.4s;
+         position: absolute;
+         top: 0;
+         width: 20px;
+         height: 20px;
+         bottom: 47px;
+         margin-right: 15px;
+         transform: rotate(45deg) skew(15deg, 15deg);
+         z-index: -1;
+      }
+
+      &--to-left:before {
+         right: 14px;
+      }
+
+      &--to-right:before {
+         left: 14px;
+      }
+   }
+
+}

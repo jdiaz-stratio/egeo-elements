@@ -1,0 +1,153 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+ @import '../../theme/constants/index';
+
+:host {
+   display: flex;
+   flex-direction: column;
+   opacity: 0;
+   pointer-events: none;
+   transition-duration: 1s;
+   transition-property: opacity;
+
+   .foreground-notification {
+      font-size: 14px;
+      text-align: center;
+      padding: 8px;
+      position: relative;
+      width: 100%;
+      text-align: justify;
+      display: flex;
+
+      .close {
+         cursor: pointer;
+         font-size: 18px;
+         top: 11px;
+         right: 11px;
+         flex-direction: row-reverse;
+         margin-left: auto;
+      }
+
+      .link-more {
+         cursor: pointer;
+         text-decoration: underline;
+         padding-right: 19px;
+         padding-left: 10px;
+      }
+
+      &.critical,
+      &.success,
+      &.warning &.running {
+         border-bottom-right-radius: 4px;
+      }
+
+      &__component {
+         display: flex;
+         flex-direction: row;
+         min-height: 40px;
+      }
+
+      &__pagination {
+         border-bottom-left-radius: 4px;
+         color: $neutral-00;
+         display: flex;
+         align-items: center;
+         padding: 5px;
+         font-size: $egeo-font-size-xxsmall;
+         height: 40px;
+
+         &.critical {
+            background-color: $status-critical-hover;
+         }
+         &.success {
+            background-color: $status-success-hover;
+         }
+
+         &.warning {
+            background-color: $status-warning-hover;
+         }
+
+         &.running {
+            background-color: $action-primary-hover;
+         }
+
+         &.default {
+            color: $neutral-13;
+            border: 0px;
+            box-shadow: 0 1px 4px 1px rgba(124, 124, 124, 0.15);
+         }
+
+         span:nth-child(2) {
+            margin-left: 5px;
+         }
+
+         span:nth-child(3) {
+            margin-right: 5px;
+            margin-left: 5px;
+         }
+
+         span:nth-child(4) {
+            margin-right: 5px;
+         }
+
+         i {
+            cursor: pointer;
+         }
+      }
+
+      &__container {
+         margin: 0 60px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         text-align: justify;
+         width: 100%;
+         padding-left: 13px;
+         padding-right: 13px;
+         align-items: flex-start;
+
+         i {
+            margin-right: 10px;
+            font-size: 18px;
+
+         }
+
+         &.more-lines {
+            margin: 0 0px 0px 0px;
+            width: fit-content;
+         }
+      }
+
+      &__content {
+         display: flex;
+         &.limit-one-line {
+
+            span {
+               overflow: hidden;
+               text-overflow: ellipsis;
+               display: -webkit-box;
+               line-height: 16px;
+               max-height: 16px;
+               -webkit-line-clamp: 1;
+               padding: 4px 0;
+            }
+         }
+      }
+   }
+
+   &.visible {
+      pointer-events: all;
+      opacity: 1;
+      transition-duration: 1s;
+      transition-property: opacity;
+   }
+}

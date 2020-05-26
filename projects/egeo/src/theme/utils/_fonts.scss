@@ -1,0 +1,77 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+@import '../constants/index';
+/// EXTENDS (@extend .egeo-title-giant;):
+
+/// titles:
+.egeo-title-giant {
+   color:         $neutral-11;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   700;
+   font-size:     $egeo-font-size-xxxlarge;
+   line-height:   $egeo-line-height-xxxlarge;
+}
+.egeo-title-extra-large {
+   color:         $neutral-11;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   600;
+   font-size:     $egeo-font-size-xxlarge;
+   line-height:   $egeo-line-height-xxlarge;
+}
+.egeo-title-large {
+   color:         $neutral-11;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   700;
+   font-size:     $egeo-font-size-xlarge;
+   line-height:   $egeo-line-height-xlarge;
+}
+.egeo-title-medium {
+   color:         $neutral-11;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   700;
+   font-size:     $egeo-font-size-large;
+   line-height:   $egeo-line-height-large;
+}
+.egeo-title-small {
+   color:         $neutral-11;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   700;
+   font-size:     $egeo-font-size-medium;
+   line-height:   $egeo-line-height-medium;
+}
+.egeo-title-mini {
+   color:         $neutral-11;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   700;
+   font-size:     $egeo-font-size-small;
+   line-height:   $egeo-line-height-small;
+}
+
+/// text:
+.egeo-p {
+   color:         $neutral-10;
+   font-weight:   400;
+   font-family:   $egeo-nunito-sans;
+   font-size:     $egeo-font-size-small;
+   line-height:   $egeo-line-height-small;
+}
+.egeo-p-small {
+   color:         $neutral-10;
+   font-family:   $egeo-nunito-sans;
+   font-weight:   400;
+   font-size:     $egeo-font-size-xxsmall;
+   line-height:   $egeo-line-height-xxsmall;
+}
+
+
+/// IMPORTS:
+@import '../vendors/fonts/stratio_fonticon';
+@import '../vendors/fonts/nunito-sans';

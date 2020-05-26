@@ -1,0 +1,43 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+/// VARS:
+$egeo-fontface-src: './assets/fonts' !default;
+$egeo-image-src: 'assets/images' !default;
+$egeo-droid-sans-mono: true !default;
+
+/// font-family:
+$egeo-nunito-sans:                  'Nunito Sans' !default;
+$egeo-stratio-icons:                'ico_stratio' !default;
+
+/// font-size:
+$egeo-font-size-giant:     2rem !default;       // 32px
+$egeo-font-size-xxxlarge:  1.813rem !default;   // 29px
+$egeo-font-size-xxlarge:   1.563rem !default;   // 25px
+$egeo-font-size-xlarge:    1.375rem !default;   // 22px
+$egeo-font-size-large:     1.25rem !default;    // 20px
+$egeo-font-size-medium:    1.125rem !default;   // 18px
+$egeo-font-size-small:     1rem !default;       // 16px
+$egeo-font-size-xsmall:    0.938rem !default;   // 15px
+$egeo-font-size-xxsmall:   0.875rem !default;   // 14px
+$egeo-font-size-xxxsmall:  0.75rem !default;    // 12px
+
+/// line-height:
+$egeo-line-height-giant:      2.375rem !default;  // 38px
+$egeo-line-height-xxxlarge:   2.125rem !default;  // 34px
+$egeo-line-height-xxlarge:    1.875rem !default;  // 30px
+$egeo-line-height-xlarge:     1.625rem !default;  // 26px
+$egeo-line-height-large:      1.5rem !default;    // 24px
+$egeo-line-height-medium:     1.375rem !default;  // 22px
+$egeo-line-height-small:      1.313rem !default;  // 21px
+$egeo-line-height-xsmall:     1.25rem !default;   // 20px
+$egeo-line-height-xxsmall:    1.125rem !default;  // 18px
+$egeo-line-height-xxxsmall:   1.063rem !default;  // 17px

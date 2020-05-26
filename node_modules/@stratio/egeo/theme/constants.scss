@@ -1,0 +1,187 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+// brand:
+$brand: #37B5E4 !default;
+
+// action:
+$action: #0776DF !default;
+$action-10: #E6F1FC !default;
+$action-40: #9CC8F2 !default;
+$action-60: #6AADEC !default;
+$action-80: #3991E5 !default;
+$action-120: #065EB2 !default;
+$action-150: #033B70 !default;
+
+// space:
+$space: #27323D !default;
+$space-5: #F3F6F8 !default;
+$space-10: #EAEFF5 !default;
+$space-20: #CDD6DF !default;
+$space-30: #AAB7C4 !default;
+$space-40: #9AA9B8 !default;
+$space-50: #8898A7 !default;
+$space-70: #6C7B8B !default;
+$space-80: #566574 !default;
+$space-110: #0F1B27 !default;
+
+// success:
+$success: #0CAA70 !default;
+$success-10: #E7F7F1 !default;
+$success-120: #0A885A !default;
+$success-140: #076643 !default;
+
+// warning:
+$warning: #EC7E13 !default;
+$warning-10: #FDF2E7 !default;
+$warning-120: #BD650F !default;
+$warning-140: #8E4C0B !default;
+
+// error:
+$error: #DF2935 !default;
+$error-10: #FCEAEB !default;
+$error-120: #B2212A !default;
+$error-140: #861920 !default;
+
+// neutral:
+$neutral: #111111 !default;
+$neutral-2: #FAFAFA !default;
+$neutral-4: #F5F5F5 !default;
+$neutral-8: #ECECEC !default;
+$neutral-10: #E7E7E7 !default;
+$neutral-15: #DBDBDB !default;
+$neutral-20: #CFCFCF !default;
+$neutral-30: #B8B8B8 !default;
+$neutral-40: #A0A0A0 !default;
+$neutral-50: #888888 !default;
+$neutral-60: #707070 !default;
+$neutral-70: #585858 !default;
+$neutral-80: #414141 !default;
+$neutral-full: #FFFFFF !default;
+
+// misc:
+$misc-coral:            #fa7167 !default;
+$misc-coral-light:      #ffcac6 !default;
+$misc-tangerine:        #fa9c7d !default;
+$misc-tangerine-light:  #ffd4c5 !default;
+$misc-peach:            #fdbd2b !default;
+$misc-peach-light:      #fff0c4 !default;
+$misc-olive:            #acc952 !default;
+$misc-olive-light:      #e9f3d0 !default;
+$misc-turquoise:        #2dcfbe !default;
+$misc-turquoise-light:  #b4eeea !default;
+$misc-aqua:             #3dc9fc !default;
+$misc-aqua-light:       #bce7f6 !default;
+$misc-viking:           #77b1e1 !default;
+$misc-viking-light:     #cde3f8 !default;
+$misc-lavender:         #cd89d2 !default;
+$misc-lavender-light:   #f5daf7 !default;
+
+// deprecated:
+$status-warning-default: #fa932f !default;
+$neutral-14: #f0f0f0 !default;
+$input-field-onfocus: #88c5ee !default;
+
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+/// VARS:
+$egeo-fontface-src: './assets/fonts' !default;
+$egeo-image-src: 'assets/images' !default;
+$egeo-droid-sans-mono: true !default;
+
+/// font-family:
+$egeo-nunito-sans:                  'Nunito Sans' !default;
+$egeo-stratio-icons:                'ico_stratio' !default;
+
+/// font-size (base 14):
+$egeo-font-size-10: 0.714rem !default; // 10px
+$egeo-font-size-11: 0.786rem !default; // 11px
+$egeo-font-size-12: 0.857rem !default; // 12px
+$egeo-font-size-14: 1rem !default;     // 14px
+$egeo-font-size-16: 1.143rem !default; // 16px
+$egeo-font-size-18: 1.286rem !default; // 18px
+$egeo-font-size-20: 1.429rem !default; // 20px
+$egeo-font-size-24: 1.714rem !default; // 24px
+$egeo-font-size-28: 2rem !default;     // 28px
+$egeo-font-size-32: 2.286rem !default; // 32px
+$egeo-font-size-38: 2.714rem !default; // 38px
+$egeo-font-size-42: 3rem !default;     // 42px
+$egeo-font-size-48: 3.429rem !default; // 48px
+$egeo-font-size-52: 3.714rem !default; // 52px
+
+/// line-height (base 14):
+$egeo-line-height-18: 1.286rem !default; // 18px
+$egeo-line-height-20: 1.429rem !default; // 20px
+$egeo-line-height-22: 1.571rem !default; // 22px
+$egeo-line-height-24: 1.714rem !default; // 24px
+$egeo-line-height-26: 1.857rem !default; // 26px
+$egeo-line-height-28: 2rem !default;     // 28px
+$egeo-line-height-32: 2.286rem !default; // 32px
+$egeo-line-height-35: 2.5rem !default;   // 35px
+$egeo-line-height-42: 3rem !default;     // 42px
+$egeo-line-height-46: 3.286rem !default; // 46px
+$egeo-line-height-50: 3.571rem !default; // 50px
+$egeo-line-height-58: 4.143rem !default; // 58px
+$egeo-line-height-62: 4.429rem !default; // 62px
+
+// deprecated:
+$egeo-font-size-xxxlarge:  1.813rem !default;   // 29px (base 16)
+$egeo-font-size-xxlarge:   1.563rem !default;   // 25px (base 16)
+$egeo-font-size-xlarge:    1.375rem !default;   // 22px (base 16)
+$egeo-font-size-xsmall:    0.938rem !default;   // 15px (base 16)
+
+$egeo-line-height-xxxlarge:   2.125rem !default;  // 34px (base 16)
+$egeo-line-height-xxlarge:    1.875rem !default;  // 30px (base 16)
+$egeo-line-height-small:      1.313rem !default;  // 21px (base 16)
+$egeo-line-height-xxxsmall:   1.063rem !default;  // 17px (base 16)
+
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+// z-index
+
+// This positions have to be sorted in a descendant order. When you add a new position, make sure they are sorted correctly.
+$modal-z-index: 10000 !default;
+$alert-z-index: 9000 !default;
+$fullscreen-z-index: 8000 !default;
+$menu-z-index: 7500 !default;
+$header-z-index: 7000 !default;
+
+
+
+

@@ -1,0 +1,27 @@
+<div class="st-menu" [ngClass]="{'st-menu--disabled': disabled}">
+  <div class="st-menu__action">
+    <div class="st-menu__link"
+      [ngClass]="{'st-menu__button--disabled': disabled}"
+      [id]="qaTag"
+      (click)="!disabled && activateMenu($event)" >
+      <ng-content></ng-content>
+    </div>
+    <div class="st-menu__options"
+      *ngIf="showMenu"
+      clickOutside
+      (clickOutside)="hideMenu()"
+      [ngClass]="{'st-menu__options--left': position === 'left'}">
+      <st-menu-options
+        [searchFormControl]="searchFormControl"
+        [searchLabel]="searchLabel"
+        [menuOptions]="menuOptions"
+        [animate]="animate"
+        [dynamicHeight]="dynamicHeight"
+        [activeOption]="activeOption"
+        [position]="position"
+        [marginTop]="marginTop"
+        [qaTag]="qaTag"
+        (selectedOption)="selectedMenuOption($event)"></st-menu-options>
+    </div>
+  </div>
+</div>

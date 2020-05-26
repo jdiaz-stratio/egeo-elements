@@ -1,0 +1,227 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "egeo-elements": {
+         "projectType": "application",
+         "schematics": {},
+         "root": "projects/egeo-elements",
+         "sourceRoot": "projects/egeo-elements/src",
+         "prefix": "app",
+         "architect": {
+             "build": {
+               "builder": "@angular-builders/custom-webpack:browser",
+               "options": {
+                  "customWebpackConfig": {
+                     "path": "./projects/egeo-elements/elements-webpack.config.js"
+                  },
+                     "outputPath": "dist/tmp",
+                     "index": "projects/egeo-elements/src/index.html",
+                     "main": "projects/egeo-elements/src/main.ts",
+                     "polyfills": "projects/egeo-elements/src/polyfills.ts",
+                     "tsConfig": "projects/egeo-elements/tsconfig.app.json",
+                     "styles": [
+                       "projects/egeo-elements/src/styles.scss"
+                      ],
+                     "scripts": [
+                     ],
+                     "assets": [
+
+                      ]
+                 },
+                 "configurations": {
+                  "production": {
+                       "optimization": true,
+                        "outputHashing": "none",
+                        "sourceMap": false,
+                        "extractCss": true,
+                        "namedChunks": false,
+                        "aot": true,
+                        "extractLicenses": true,
+                        "vendorChunk": false,
+                        "buildOptimizer": true,
+                        "budgets": [
+                              {
+                                 "type": "initial",
+                                 "maximumWarning": "2mb",
+                                 "maximumError": "5mb"
+                              }
+                        ]
+                  }
+              }
+             },
+             "serve": {
+                 "builder": "@angular-devkit/build-angular:dev-server",
+                 "options": {
+                     "browserTarget": "egeo-elements:build"
+                 },
+                 "configurations": {
+                     "production": {
+                         "browserTarget": "egeo-elements:build:production"
+                     }
+                 }
+             },
+             "extract-i18n": {
+                 "builder": "@angular-devkit/build-angular:extract-i18n",
+                 "options": {
+                     "browserTarget": "egeo-elements:build"
+                 }
+             },
+             "lint": {
+                 "builder": "@angular-devkit/build-angular:tslint",
+                 "options": {
+                     "tsConfig": ["projects/egeo-elements/tsconfig.app.json"],
+                     "exclude": ["**/node_modules/**"]
+                 }
+             }
+         }
+     },
+    "egeo-elements-demo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/egeo-elements-demo",
+      "sourceRoot": "projects/egeo-elements-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/egeo-elements-demo",
+            "index": "projects/egeo-elements-demo/src/index.html",
+            "main": "projects/egeo-elements-demo/src/main.ts",
+            "polyfills": "projects/egeo-elements-demo/src/polyfills.ts",
+            "tsConfig": "projects/egeo-elements-demo/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/egeo-elements-demo/src/favicon.ico",
+              "projects/egeo-elements-demo/src/assets",
+              {
+                "glob": "{*adapter.js, *loader.js,bundles/*.js}",
+                "input": "node_modules/@webcomponents/webcomponentsjs/",
+                "output": "node_modules/@webcomponents/webcomponentsjs"
+              },
+              {
+                "glob": "**/*.*",
+                "input": "node_modules/@stratio/egeo-ui-base/assets",
+                "output": "/assets/fonts"
+              },
+              {
+                "glob": "stratio-fonticon.css",
+                "input": "node_modules/@stratio/egeo-ui-base",
+                "output": "/assets"
+              }
+            ],
+            "styles": [
+              "node_modules/@stratio/egeo/theme/constants.scss",
+              "node_modules/@stratio/egeo/theme/theme.css",
+               "projects/egeo-elements-demo/src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js",
+              "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",
+              "dist/components/st-input-es2015.js",
+              "dist/components/st-select-es2015.js",
+              "dist/components/st-pagination-es2015.js",
+              "dist/components/st-spinner-es2015.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/egeo-elements-demo/src/environments/environment.ts",
+                  "with": "projects/egeo-elements-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "egeo-elements-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "egeo-elements-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "egeo-elements-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/egeo-elements-demo/src/test.ts",
+            "polyfills": "projects/egeo-elements-demo/src/polyfills.ts",
+            "tsConfig": "projects/egeo-elements-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/egeo-elements-demo/karma.conf.js",
+            "assets": [
+              "projects/egeo-elements-demo/src/favicon.ico",
+              "projects/egeo-elements-demo/src/assets"
+            ],
+            "styles": [
+              "projects/egeo-elements-demo/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/egeo-elements-demo/tsconfig.app.json",
+              "projects/egeo-elements-demo/tsconfig.spec.json",
+              "projects/egeo-elements-demo/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/egeo-elements-demo/e2e/protractor.conf.js",
+            "devServerTarget": "egeo-elements-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "egeo-elements-demo:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "egeo-elements-demo"
+}

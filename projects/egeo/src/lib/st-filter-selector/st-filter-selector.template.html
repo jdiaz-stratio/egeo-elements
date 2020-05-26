@@ -1,0 +1,27 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España. All rights reserved.
+
+    This software – including all its source code – contains proprietary
+    information of Stratio Big Data Inc., Sucursal en España and
+    may not be revealed, sold, transferred, modified, distributed or
+    otherwise made available, licensed or sublicensed to third parties;
+    nor reverse engineered, disassembled or decompiled, without express
+    written authorization from Stratio Big Data Inc., Sucursal en España.
+
+-->
+
+<st-dropdown-menu
+   class="st-filter-selector"
+   [items]="filterList"
+   [active]="openFilter"
+   [placement]="menuPlacement"
+   [openToLeft]="menuAlignedToRight"
+   [visualMode]="sectionMenuVisualMode"
+   (change)="onClickFilter($event)"
+   (clickOutside)="onCloseFilter()">
+   <div (click)="onChangeFilterVisibility()" class="filter-title">
+      <span>{{ selected?.label }}</span>
+      <i class="icon-arrow2_down arrow"></i>
+   </div>
+</st-dropdown-menu>

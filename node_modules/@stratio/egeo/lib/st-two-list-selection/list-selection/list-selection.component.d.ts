@@ -1,0 +1,33 @@
+import { EventEmitter } from '@angular/core';
+import { StDropDownMenuItem } from '../../st-dropdown-menu/st-dropdown-menu.interface';
+import { StTwoListSelectionElement, StTwoListSelectExtraLabelAction } from '../st-two-list-selection.model';
+export declare class ListSelectionComponent {
+    list: StTwoListSelectionElement[];
+    editable: boolean;
+    title: string;
+    subtitle?: string;
+    searchPlaceholder: string;
+    qaTag: string;
+    important: boolean;
+    hasAllList?: boolean;
+    hasSearch: boolean;
+    isLoading?: boolean;
+    itemAll?: StTwoListSelectionElement;
+    menuOptionList?: StDropDownMenuItem[];
+    orderOptions: StDropDownMenuItem[];
+    orderPlaceholder?: string;
+    mode: 'compact' | 'normal';
+    showSearchNumber?: number;
+    fetchingDataText: string;
+    scrollBottom: EventEmitter<any>;
+    selectItem: EventEmitter<StTwoListSelectionElement>;
+    selectItemNonEditable: EventEmitter<StTwoListSelectionElement>;
+    selectExtraLabel: EventEmitter<StTwoListSelectExtraLabelAction>;
+    search: EventEmitter<string>;
+    changeOrder: EventEmitter<any>;
+    scrollItems: StTwoListSelectionElement[];
+    readonly searchQaTag: string;
+    readonly listCheckAllQaTag: string;
+    readonly listQaTag: string;
+    readonly hasOrder: boolean;
+}

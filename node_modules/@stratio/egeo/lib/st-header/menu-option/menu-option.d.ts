@@ -1,0 +1,30 @@
+import { ChangeDetectorRef, ElementRef, EventEmitter, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
+import { StHeaderMenuItem, StHeaderMenuOption, StHeaderSelection } from '../st-header.model';
+import { StDropDownVisualMode } from './../../st-dropdown-menu/st-dropdown-menu.interface';
+export declare class StHeaderMenuOptionComponent implements OnDestroy {
+    private elementRef;
+    private router;
+    private cd;
+    showMenuName: boolean;
+    selectMenu: EventEmitter<StHeaderSelection>;
+    menu: ElementRef;
+    readonly isCurrentRoute: boolean;
+    isActive: boolean;
+    visualMode: StDropDownVisualMode;
+    hasSubmenu: boolean;
+    qaId: string;
+    submenuList: StHeaderMenuItem[];
+    private _subscription;
+    private _actualPath;
+    private _option;
+    option: StHeaderMenuOption;
+    constructor(elementRef: ElementRef, router: Router, cd: ChangeDetectorRef);
+    ngOnDestroy(): void;
+    onMenuClick(): void;
+    changeOption(selected: StHeaderMenuItem): void;
+    onClickOutside(event: Event): void;
+    private _onRouterEvent;
+    private _getQaId;
+    private _getSubmenuList;
+}

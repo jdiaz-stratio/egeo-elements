@@ -1,0 +1,26 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+
+<ul class="item-list" [ngClass]="{'item-list--inner': deep > 0, 'complex-mode': displayAsComplexModeValue}">
+   <li [id]="item.id" class="item" [ngClass]="getItemClasses(item, index)" *ngFor="let item of items; let index = index">
+      <span class="item__label" [ngClass]="{'item__label--with-results': item.result}" (click)="onSelectItem(item, index)">{{item.label}}</span>
+      <span *ngIf="item.result" class="result__box"><span class="result__text">{{item.result}}</span></span>
+      <st-sidebar-item-list *ngIf="item.items && item.items.length && expanded[index]"
+                            [items]="item.items"
+                            [active]="active"
+                            [visualMode]="visualMode"
+                            [deep]="deep + 1"
+                            (change)="onChange($event)">
+      </st-sidebar-item-list>
+   </li>
+</ul>

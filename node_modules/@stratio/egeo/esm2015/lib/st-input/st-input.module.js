@@ -1,0 +1,35 @@
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/st-input/st-input.module.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/*
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StInputComponent } from './st-input.component';
+import { StLabelModule } from '../st-label/st-label.module';
+import { StFormDirectiveModule } from '../directives/form/form-directives.module';
+import { StDropdownMenuModule } from '../st-dropdown-menu/st-dropdown-menu.module';
+import { StClickOutsideModule } from '../directives/st-click-outside/st-click-outside.module';
+import { StMinValidator } from '../directives/form/st-min-validator/st-min-validator';
+import { StMaxValidator } from '../directives/form/st-max-validator/st-max-validator';
+export class StInputModule {
+}
+StInputModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [CommonModule, FormsModule, ReactiveFormsModule, StLabelModule, StFormDirectiveModule, StDropdownMenuModule, StClickOutsideModule],
+                declarations: [StInputComponent],
+                exports: [StInputComponent, StMinValidator, StMaxValidator]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3QtaW5wdXQubW9kdWxlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vQHN0cmF0aW8vZWdlby8iLCJzb3VyY2VzIjpbImxpYi9zdC1pbnB1dC9zdC1pbnB1dC5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7O0FBVUEsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGlCQUFpQixDQUFDO0FBQy9DLE9BQU8sRUFBRSxRQUFRLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFDekMsT0FBTyxFQUFFLFdBQVcsRUFBRSxtQkFBbUIsRUFBRSxNQUFNLGdCQUFnQixDQUFDO0FBRWxFLE9BQU8sRUFBRSxnQkFBZ0IsRUFBRSxNQUFNLHNCQUFzQixDQUFDO0FBQ3hELE9BQU8sRUFBRSxhQUFhLEVBQUUsTUFBTSw2QkFBNkIsQ0FBQztBQUM1RCxPQUFPLEVBQUUscUJBQXFCLEVBQUUsTUFBTSwyQ0FBMkMsQ0FBQztBQUNsRixPQUFPLEVBQUUsb0JBQW9CLEVBQUUsTUFBTSw2Q0FBNkMsQ0FBQztBQUNuRixPQUFPLEVBQUUsb0JBQW9CLEVBQUUsTUFBTSx3REFBd0QsQ0FBQztBQUM5RixPQUFPLEVBQUUsY0FBYyxFQUFFLE1BQU0sc0RBQXNELENBQUM7QUFDdEYsT0FBTyxFQUFFLGNBQWMsRUFBRSxNQUFNLHNEQUFzRCxDQUFDO0FBT3RGLE1BQU0sT0FBTyxhQUFhOzs7WUFMekIsUUFBUSxTQUFDO2dCQUNQLE9BQU8sRUFBRSxDQUFDLFlBQVksRUFBRSxXQUFXLEVBQUUsbUJBQW1CLEVBQUUsYUFBYSxFQUFFLHFCQUFxQixFQUFFLG9CQUFvQixFQUFFLG9CQUFvQixDQUFDO2dCQUMzSSxZQUFZLEVBQUUsQ0FBQyxnQkFBZ0IsQ0FBQztnQkFDaEMsT0FBTyxFQUFFLENBQUMsZ0JBQWdCLEVBQUUsY0FBYyxFQUFFLGNBQWMsQ0FBQzthQUM3RCIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiDCqSAyMDE3IFN0cmF0aW8gQmlnIERhdGEgSW5jLiwgU3VjdXJzYWwgZW4gRXNwYcOxYS5cbiAqXG4gKiBUaGlzIHNvZnR3YXJlIGlzIGxpY2Vuc2VkIHVuZGVyIHRoZSBBcGFjaGUgTGljZW5zZSwgVmVyc2lvbiAyLjAuXG4gKiBUaGlzIHByb2dyYW0gaXMgZGlzdHJpYnV0ZWQgaW4gdGhlIGhvcGUgdGhhdCBpdCB3aWxsIGJlIHVzZWZ1bCwgYnV0IFdJVEhPVVQgQU5ZIFdBUlJBTlRZO1xuICogd2l0aG91dCBldmVuIHRoZSBpbXBsaWVkIHdhcnJhbnR5IG9mIE1FUkNIQU5UQUJJTElUWSBvciBGSVRORVNTIEZPUiBBIFBBUlRJQ1VMQVIgUFVSUE9TRS5cbiAqIFNlZSB0aGUgdGVybXMgb2YgdGhlIExpY2Vuc2UgZm9yIG1vcmUgZGV0YWlscy5cbiAqXG4gKiBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogQXBhY2hlLTIuMC5cbiAqL1xuaW1wb3J0IHsgQ29tbW9uTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29tbW9uJztcbmltcG9ydCB7IE5nTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBGb3Jtc01vZHVsZSwgUmVhY3RpdmVGb3Jtc01vZHVsZSB9IGZyb20gJ0Bhbmd1bGFyL2Zvcm1zJztcblxuaW1wb3J0IHsgU3RJbnB1dENvbXBvbmVudCB9IGZyb20gJy4vc3QtaW5wdXQuY29tcG9uZW50JztcbmltcG9ydCB7IFN0TGFiZWxNb2R1bGUgfSBmcm9tICcuLi9zdC1sYWJlbC9zdC1sYWJlbC5tb2R1bGUnO1xuaW1wb3J0IHsgU3RGb3JtRGlyZWN0aXZlTW9kdWxlIH0gZnJvbSAnLi4vZGlyZWN0aXZlcy9mb3JtL2Zvcm0tZGlyZWN0aXZlcy5tb2R1bGUnO1xuaW1wb3J0IHsgU3REcm9wZG93bk1lbnVNb2R1bGUgfSBmcm9tICcuLi9zdC1kcm9wZG93bi1tZW51L3N0LWRyb3Bkb3duLW1lbnUubW9kdWxlJztcbmltcG9ydCB7IFN0Q2xpY2tPdXRzaWRlTW9kdWxlIH0gZnJvbSAnLi4vZGlyZWN0aXZlcy9zdC1jbGljay1vdXRzaWRlL3N0LWNsaWNrLW91dHNpZGUubW9kdWxlJztcbmltcG9ydCB7IFN0TWluVmFsaWRhdG9yIH0gZnJvbSAnLi4vZGlyZWN0aXZlcy9mb3JtL3N0LW1pbi12YWxpZGF0b3Ivc3QtbWluLXZhbGlkYXRvcic7XG5pbXBvcnQgeyBTdE1heFZhbGlkYXRvciB9IGZyb20gJy4uL2RpcmVjdGl2ZXMvZm9ybS9zdC1tYXgtdmFsaWRhdG9yL3N0LW1heC12YWxpZGF0b3InO1xuXG5ATmdNb2R1bGUoe1xuICAgaW1wb3J0czogW0NvbW1vbk1vZHVsZSwgRm9ybXNNb2R1bGUsIFJlYWN0aXZlRm9ybXNNb2R1bGUsIFN0TGFiZWxNb2R1bGUsIFN0Rm9ybURpcmVjdGl2ZU1vZHVsZSwgU3REcm9wZG93bk1lbnVNb2R1bGUsIFN0Q2xpY2tPdXRzaWRlTW9kdWxlXSxcbiAgIGRlY2xhcmF0aW9uczogW1N0SW5wdXRDb21wb25lbnRdLFxuICAgZXhwb3J0czogW1N0SW5wdXRDb21wb25lbnQsIFN0TWluVmFsaWRhdG9yLCBTdE1heFZhbGlkYXRvcl1cbn0pXG5leHBvcnQgY2xhc3MgU3RJbnB1dE1vZHVsZSB7XG59XG4iXX0=

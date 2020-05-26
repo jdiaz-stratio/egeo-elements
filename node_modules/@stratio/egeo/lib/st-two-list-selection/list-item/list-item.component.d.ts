@@ -1,0 +1,33 @@
+import { EventEmitter } from '@angular/core';
+import { StTwoListSelectionElement, StTwoListSelectExtraLabelAction } from '../st-two-list-selection.model';
+import { StDropDownMenuItem, StDropDownVisualMode } from '../../st-dropdown-menu/st-dropdown-menu.interface';
+import { StPopPlacement } from '../../st-pop/st-pop.model';
+export declare class ListItemComponent {
+    item: StTwoListSelectionElement;
+    qaTag: string;
+    editable: boolean;
+    mode: 'compact' | 'normal';
+    disabled: boolean;
+    menuOptionList?: StDropDownMenuItem[];
+    selectItem: EventEmitter<StTwoListSelectionElement>;
+    selectItemNonEditable: EventEmitter<StTwoListSelectionElement>;
+    selectExtraLabel: EventEmitter<StTwoListSelectExtraLabelAction>;
+    hoverRow: boolean;
+    menuVisualMode: StDropDownVisualMode;
+    placement: StPopPlacement;
+    showActionList: boolean;
+    constructor();
+    readonly itemName: string;
+    readonly itemQaTag: string;
+    readonly checkQaTag: string;
+    readonly selected: boolean;
+    readonly itemMode: string;
+    getModeStyle(): string;
+    emitOnClickNonEditable(event: Event): void;
+    emitOnSelect(event: Event): void;
+    mouseHoverRow(): void;
+    mouseLeftRow(): void;
+    onCloseActionMenu(): void;
+    onChangeOption(option: StDropDownMenuItem): void;
+    onEllipsisClick(): void;
+}

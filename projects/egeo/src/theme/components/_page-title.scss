@@ -1,0 +1,75 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+ @import '../constants/fonts';
+@import '../constants/colors';
+
+.sth-page-title {
+   border-bottom: 2px solid $neutral-06;
+}
+
+.sth-page-title-main-title {
+  font-weight: normal;
+  font-size: $egeo-font-size-giant;
+}
+
+.sth-page-title-title {
+  color: $neutral-11;
+  text-transform: uppercase;
+}
+
+.sth-page-title-pre-title {
+   color: $neutral-07;
+   text-transform: uppercase;
+}
+
+.sth-page-title-button-box {
+   border-right: 2px solid $neutral-06;
+
+   .st-temporal-button-style {
+      border-radius: 100%;
+      border: 2px solid $neutral-08;
+      height: 30px;
+      width: 30px;
+      &:active {
+         box-shadow: 0 0 0 2px $brand;
+      }
+      &:hover {
+         border: 2px solid $neutral-09 !important;
+      }
+      & i {
+         padding: 0;
+         font-size: $egeo-font-size-xxsmall;
+      }
+   }
+}
+
+
+.sth-error {
+   border-color: $status-critical-default !important;
+}
+
+.sth-error-text {
+   font-size: 13px;
+   color: $status-critical-default;
+}
+
+.sth-button-edit {
+   color: $neutral-08;
+}
+
+.sth-editable {
+   .sth-page-title-title {
+      &:hover {
+         border-color: $neutral-04
+      }
+   }
+}
+

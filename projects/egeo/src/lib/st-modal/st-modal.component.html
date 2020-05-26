@@ -1,0 +1,44 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<div class="st-modal-container">
+   <section *ngIf="emptyModal" class="st-modal" [ngClass]="{'st-modal-fullscreen': isFullscreen}" [ngStyle]="modalStyles" [hidden]="emptyModal">
+      <div #stModalBodyEmpty></div>
+   </section>
+   <section *ngIf="!emptyModal" class="st-modal" [ngClass]="{'st-modal-fullscreen': isFullscreen}" [ngStyle]="modalStyles" [hidden]="!emptyModal">
+      <div class="st-modal-header">
+         <div class="container">
+            <p class="title">{{title}}</p> <span class="icon-cross close-button" *ngIf="showCloseBtn" (click)="onClose()"></span>
+
+            <st-modal-buttons *ngIf="isFullscreen" [buttonConfig]="buttons" [fullscreen]="isFullscreen" (click)="click.emit($event)"></st-modal-buttons>
+         </div>
+      </div>
+      <div class="st-modal-body">
+         <div class="container">
+
+            <div *ngIf="isMessageModal" class="message">
+               <h1 id="st-modal-message-plain-title" class="st-modal-message-plain-title">{{messageTitle}}</h1>
+               <p id="st-modal-message-plain-message" class="st-modal-message-plain-message">{{message}}</p>
+            </div>
+            <div *ngIf="isComplexMessageModal" [innerHTML]="html" id="st-modal-message-html"></div>
+            <div #stModalBody id="st-modal-message-component"></div>
+
+         </div>
+      </div>
+      <footer class="st-modal-footer" *ngIf="buttons && buttons.length > 0">
+         <div class="container">
+            <st-modal-buttons *ngIf="!isFullscreen" [buttonConfig]="buttons" (click)="click.emit($event)"></st-modal-buttons>
+         </div>
+      </footer>
+   </section>
+</div>
+

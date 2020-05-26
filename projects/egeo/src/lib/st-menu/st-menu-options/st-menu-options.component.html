@@ -1,0 +1,80 @@
+<div class="st-menu-options"
+   [style.marginTop.px]="marginTop"
+   [ngClass]="{
+      'st-menu-options--left': position === 'left',
+      'st-menu-options--initilized': initialized
+   }">
+
+   <div class="scroll-button scroll-button--top"
+      *ngIf="dynamicHeight"
+      [style.opacity]="scrollTopEnabled ? 1 : 0"
+      (mouseover)="scrollTo(false)"
+      (mouseout)="stopScroll()">
+      <span class="icon-arrow2_up"></span>
+   </div>
+
+   <div class="st-menu-options__container"
+    [ngClass]="{
+      'st-menu-options__container--animation': animate && level === 0
+    }">
+    <ul class="st-menu-options__list st-custom-scrollbar"
+      #childList
+      [style.maxHeight.px]="maxHeight"
+      (scroll)="onScroll()">
+
+      <li class="st-menu-options__item st-menu-options__search" *ngIf="searchFormControl">
+        <input class="st-menu-options__input"
+          [attr.id]="qaTag + '-search'"
+          type="text"
+          autocomplete="off"
+          [formControl]="searchFormControl"
+          [placeholder]="searchLabel" />
+        <span class="st-menu-options__delete icon-cross"
+          (click)="removeSearch()"
+          *ngIf="searchFormControl.value.length"></span>
+      </li>
+
+      <li class="st-menu-options__item"
+        *ngFor="let item of menuOptions; let i = index; trackBy: trackByFn"
+        [ngClass]="{
+          'st-menu-options__item--active' : openedItem === item,
+          'disabled' : (activeOption && activeOption === item.value) || item.disabled,
+          'st-menu-options__item--success' : item.status === 'success',
+          'st-menu-options__item--warning' : item.status === 'warning',
+          'st-menu-options__item--critical' : item.status === 'critical',
+          'separator': item.separator
+        }"
+        [attr.id]="getItemId(item)"
+        (click)="!item.disabled && onSelectOption($event, item)"
+        (mouseenter)="showMenu($event, item)">
+
+        <div class="item-content">
+          <i *ngIf="item.icon" [ngClass]="item.icon" class="item-icon"></i>
+          <span class="label">{{item.name}}</span>
+          <i class="icon icon-arrow2_right has-submenu" *ngIf="item.subMenus && item.subMenus.length"></i>
+        </div>
+
+        <st-menu-options
+          *ngIf="item.subMenus && item.subMenus.length && openedItem === item"
+          [style.top.px]="menuPosition - scrollTop"
+          [menuOptions]="item.subMenus"
+          [position]="position"
+          [maxHeight]="maxHeightChild"
+          [activeOption]="activeOption"
+          [dynamicHeight]="dynamicHeight"
+          [level]="level + 1"
+          (selectedOption)="selectedOption.emit($event)"
+          class="st-menu-options__submenu">
+        </st-menu-options>
+      </li>
+    </ul>
+  </div>
+
+  <div class="scroll-button scroll-button--bottom"
+    *ngIf="dynamicHeight"
+    [style.opacity]="scrollBottomEnabled ? 1 : 0"
+    (mouseover)="scrollTo(true)"
+    (mouseout)="stopScroll()">
+    <span class="icon-arrow2_down"></span>
+  </div>
+</div>

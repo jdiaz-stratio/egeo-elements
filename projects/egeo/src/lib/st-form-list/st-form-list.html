@@ -1,0 +1,20 @@
+<form novalidate class="st-form-list">
+   <div *ngFor="let row of value; let i=index" class="st-form-list__row">
+         <st-form-field class="st-form-list__row-item"
+                        *ngFor="let property of schema.properties | stObjectToArray"
+                        [schema]="property"
+                        [formControl]="formArray.controls[i].get(property.key)"
+                        [ngModel]="row[property.key]"
+                        (ngModelChange)="onChangeProperty($event, i, property.key)"
+                        name="{{property.key}}"
+                        qaTag="{{property.key}}-{{i}}"
+                        (blur)="onBlur()"
+                        [required]="isRequired(property.key)">
+         </st-form-field>
+         <i class="icon-cross remove-button" (click)="removeItem(i)"></i>
+   </div>
+
+   <button *ngIf="formArray && !formArray.disabled" class="button button-link-primary" (click)="addItem()">
+      <i class="icon-circle-plus"></i><span>{{buttonLabel}}</span>
+   </button>
+</form>

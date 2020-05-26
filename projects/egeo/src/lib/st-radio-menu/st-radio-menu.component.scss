@@ -1,0 +1,109 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+$st-print---radio-menu: true !default;
+
+$st-radio-menu---height: 100%;
+$st-radio-menu---width: 100%;
+$st-radio-menu---display: block;
+$st-radio-menu---position: relative;
+
+$st-radio-menu__list---height: 100%;
+$st-radio-menu__list---position: relative;
+$st-radio-menu__list---list-style: none;
+$st-radio-menu__list---float: left;
+$st-radio-menu__list---width: 100%;
+$st-radio-menu__list---padding-right: 30px;
+
+$st-radio-menu__option---height: 40px;
+$st-radio-menu__option---margin-top: -1px;
+$st-radio-menu__option---line-height: 38px;
+$st-radio-menu__option---box-sizing: border-box;
+$st-radio-menu__option---border-style: solid;
+$st-radio-menu__option---invisible-border: 0;
+
+$st-radio-menu--active---font-weight: bold;
+$st-radio-menu--active---color: rgb(102, 102, 102);
+
+$st-radio-menu__text---margin-top: 2px;
+$st-radio-menu__text---margin-left: 15px;
+$st-radio-menu__text---cursor: pointer;
+$st-radio-menu__text---text-decoration: none;
+$st-radio-menu__text---font-weight: 400;
+$st-radio-menu__text---font-style: normal;
+$st-radio-menu__text---font-size: 15px;
+$st-radio-menu__text---text-align: left;
+$st-radio-menu__text---line-height: 16px;
+$st-radio-menu__text---text-transform: uppercase;
+$st-radio-menu__text--hover---color: rgb(0, 0, 0);
+
+$st-radio-menu__option---height: 29px;
+$st-radio-menu__option---selected--before---transform: rotate(45deg);
+$st-radio-menu__option---selected--before---float: right;
+$st-radio-menu__option---selected--before---size: 20px;
+$st-radio-menu__option---selected--before---margin-top: 1.7px;
+$st-radio-menu__option---selected--before---margin-right: -10.4px;
+
+@mixin st-radio-menu() {
+  height: $st-radio-menu---height;
+  width: $st-radio-menu---width;
+  display: $st-radio-menu---display;
+  position: $st-radio-menu---position;
+
+  &__list {
+    height: $st-radio-menu__list---height;
+    position: $st-radio-menu__list---position;
+    list-style: $st-radio-menu__list---list-style;
+    width: $st-radio-menu__list---width;
+    padding-right: $st-radio-menu__list---padding-right;
+  }
+
+  &__option {
+    padding: 3px 0 0 8px;
+    height: $st-radio-menu__option---height;
+    font-size: 15px;
+    margin-bottom: 6px;
+    cursor: pointer;
+
+    &-text{
+      padding-left: 7px;
+    }
+
+    &.active {
+      width: 80%;
+      &:after {
+        border-top: 60px solid transparent;
+        border-bottom: 60px solid transparent;
+
+      }
+      &:before {
+        transform: $st-radio-menu__option---selected--before---transform;
+        content: " ";
+        float: $st-radio-menu__option---selected--before---float;
+        width: $st-radio-menu__option---selected--before---size;
+        height: $st-radio-menu__option---selected--before---size;
+        margin-top: $st-radio-menu__option---selected--before---margin-top;
+        margin-right: $st-radio-menu__option---selected--before---margin-right;
+      }
+    }
+
+  }
+}
+
+@if ($st-print---radio-menu) {
+  :host {
+    display: block;
+  }
+
+  .st-radio-menu {
+    @include st-radio-menu;
+  }
+}
+

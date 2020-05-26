@@ -1,0 +1,33 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<div class="st-two-list sth-two-list">
+   <!--ALL ELEMENTS-->
+   <list-selection *ngIf="editable" class="list sth-two-list__list sth-two-list__all-list" [list]="allElements" [itemAll]="itemAll" [title]="allTitle" [subtitle]="allSubtitle" [searchPlaceholder]="allPlaceholder" [orderPlaceholder]="orderPlaceholder"
+       [qaTag]="allQaTag" [editable]="editable" [showSearchNumber]="showSearchNumber" (search)="searchOverAll.emit($event)" (selectItem)="selectAllElement.emit($event)" [hasAllList]="hasAllListAll" [important]="false" [hasSearch]="hasSearch"
+       (selectExtraLabel)="selectExtraLabelAll.emit($event)" [orderOptions]="orderAllOptions" (changeOrder)="changeOrderAll.emit($event)" [mode]="mode" (scrollBottom)="scrollBottomAll.emit($event)" [isLoading]="isLoading" [fetchingDataText]="fetchingDataText">
+   </list-selection>
+
+   <!--SELECTORS-->
+   <div class="pick-buttons" *ngIf="editable">
+      <button *ngIf="moveAllToSelectedButton" class="button button-toolbar" type="button" title="Move all to selected" (click)="moveAllToSelected.emit($event)" [attr.id]="qaTag + '-left-all-button'"><i class="icon-fast-forward"></i></button>
+      <button class="button button-toolbar" type="button" title="Move to selected" (click)="moveToSelected.emit($event)" [attr.id]="qaTag + '-left-button'" [ngClass]="{'empty': allElements.length === 0 || !moveToAllButton}" [disabled]="!moveToAllButton"><i class="icon-arrow2_right" ></i></button>
+      <button class="button button-toolbar" type="button" title="Move to all" (click)="moveToAll.emit($event)" [attr.id]="qaTag + '-right-button'" [ngClass]="{'empty': selectedElements.length === 0 || !moveToSelectedButton}" [disabled]="!moveToSelectedButton"><i class="icon-arrow2_left"></i></button>
+      <button *ngIf="moveAllToAllButton" class="button button-toolbar" type="button" title="Move all to all" (click)="moveAllToAll.emit($event)" [attr.id]="qaTag + '-right-all-button'"><i class="icon-rewind"></i></button>
+   </div>
+
+   <!--SELECTED ELEMENTS-->
+   <list-selection class="list sth-two-list__list sth-two-list__selected-list" [ngClass]="{'not-editable': !editable}" [list]="selectedElements" [itemAll]="itemAll" [title]="selectedTitle" [subtitle]="selectedSubtitle"
+       [searchPlaceholder]="selectedPlaceholder" [orderPlaceholder]="orderPlaceholder" [showSearchNumber]="showSearchNumber" [qaTag]="selectedQaTag" [editable]="editable" [menuOptionList]="menuOptionList" (search)="searchOverSelected.emit($event)" (selectItem)="selectSelectedElement.emit($event)"
+       [important]="true" [hasSearch]="hasSearch" [hasAllList]="hasAllListSelected" (selectExtraLabel)="selectExtraLabelSelected.emit($event)" (selectItemNonEditable)="selectItemNonEditable.emit($event)" [orderOptions]="orderSelectedOptions" (changeOrder)="changeOrderSelected.emit($event)" [mode]="mode">
+   </list-selection>
+</div>

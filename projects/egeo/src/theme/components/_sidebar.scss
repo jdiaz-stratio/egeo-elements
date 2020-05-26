@@ -1,0 +1,182 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+@import '../constants/colors';
+@import '../constants/fonts';
+
+.st-sidebar {
+   padding: 30px;
+   background-color: $neutral-00;
+   box-shadow: 2px 2px 5px 0 $neutral-03;
+   border: solid 1px $neutral-03;
+   text-transform: capitalize;
+   font-family: $egeo-nunito-sans;
+
+   .item-list {
+      &--inner {
+         margin-top: 15px;
+         padding-left: 15px;
+
+         .item {
+            margin-bottom: 15px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+         }
+
+         & > li:last-of-type {
+            margin-bottom: 0;
+         }
+      }
+
+      & .item > .item__label {
+         vertical-align: top;
+         overflow: hidden;
+         display: inline-block;
+         text-overflow: ellipsis;
+
+         &--with-results {
+            max-width: calc(100% - 40px);
+            padding-right: 10px;
+            white-space: nowrap;
+         }
+      }
+
+      &:not(.complex-mode) {
+         & > .item > .item__label {
+            padding-left: 15px;
+         }
+      }
+
+      &.item-list--inner:not(.complex-mode) {
+         .item > .item__label {
+            padding-left: 15px;
+         }
+      }
+
+      &.item-list--inner.complex-mode {
+         padding-left: 23px;
+      }
+
+      &.complex-mode:not(.item-list--inner) {
+
+         & > .item--complex > .item__label {
+            padding-left: 0 !important;
+         }
+
+         & > .item {
+            margin-bottom: 15px;
+            position: relative;
+         }
+
+         &:not(.item-list--inner) > .item:after {
+            content: '';
+            padding-top: 15px;
+            display: block;
+            height: 0;
+            border-bottom: solid 1px $neutral-05;
+         }
+
+         &:not(.item-list--inner) .item--complex > .item__label:before {
+            content: '\E605';
+            font-family: $egeo-stratio-icons;
+            display: inline-block;
+            font-size: $egeo-font-size-small;
+            color: $neutral-07;
+            padding-right: 6px;
+            vertical-align: bottom;
+            height: 22px;
+            float: left;
+         }
+
+         &:not(.item-list--inner) .item--complex.item--expanded > .item__label:before {
+            content: '\E63F';
+         }
+
+         .item:not(.item--complex) > .item__label {
+            padding-left: 15px;
+         }
+      }
+   }
+
+   .title {
+      font-weight: 900;
+      font-size: $egeo-font-size-large;
+      line-height: $egeo-line-height-large;
+      color: $neutral-13;
+      padding-bottom: 30px;
+   }
+
+   .item {
+      font-weight: 400;
+      font-size: $egeo-font-size-small;
+      line-height: $egeo-line-height-small;
+      color: $neutral-11;
+      margin-bottom: 20px;
+      position: relative;
+
+      &--active {
+         font-weight: bold;
+
+         &::before {
+            content: '';
+            width: 5px;
+            height: 20px;
+            background-color: $brand;
+            border-radius: 4px;
+            position: absolute;
+            left: 0;
+            top: 0;
+         }
+      }
+
+      &--has-active > .item__label {
+         font-weight: bold;
+      }
+
+      &.warning {
+         .item__label:after {
+            content: '\E613';
+            font-family: $egeo-stratio-icons;
+            color: $status-critical-default;
+            font-size: $egeo-font-size-small;
+            position: relative;
+            padding-left: 10px;
+            vertical-align: text-top;
+         }
+      }
+
+      & > .result {
+         &__box {
+            width: 40px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: $neutral-05;
+            font-weight: 400;
+            font-size: $egeo-font-size-xxxsmall;
+            float: right;
+            display: inline-block;
+            .result__text {
+               color: $neutral-10;
+               text-align: center;
+               display: inline-block;
+               width: 100%;
+            }
+         }
+      }
+
+      &--disabled {
+         color: $neutral-07;
+         cursor: default !important;
+      }
+   }
+
+}
+
+
