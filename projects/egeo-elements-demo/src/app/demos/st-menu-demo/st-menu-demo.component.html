@@ -1,0 +1,48 @@
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid">
+      <div class="launcher-container">
+         <div class="st-live-example">
+            <h1 class="st-live-example-title">Menu with submenus, status and sections</h1>
+            <st-menu [menuOptions]="menuOptions2" qaTag="nested-menu">
+               <button class="button button-toolbar button-toolbar--arrow">
+                  <i class="icon-message-circle"></i>
+                  <span class="icon icon-arrow2_down"></span>
+               </button>
+            </st-menu>
+         </div>
+         <div class="st-live-example">
+            <h1 class="st-live-example-title">Dynamic height menu:</h1>
+            <st-menu
+               [menuOptions]="longMenuOptions"
+               [dynamicHeight]="true"
+               qaTag="dynamic-menu"
+               (selectedOption)="selectedOption($event)">
+               <button class="button button-primary">Show options</button>
+            </st-menu>
+         </div>
+         <div class="st-live-example">
+            <h1 class="st-live-example-title">Menu with left position</h1>
+            <st-menu
+               [menuOptions]="menuOptions2"
+               (selectedOption)="selectedOption($event)"
+               qaTag="left-menu"
+               position="left">
+               <button class="button button-toolbar button-toolbar--arrow">
+                  <i class="icon-plus"></i>
+                  <span class="icon icon-arrow2_down"></span>
+               </button>
+             </st-menu>
+         </div>
+
+         <div class="st-live-example">
+            <h1 class="st-live-example-title">Menu with search input</h1>
+            <st-menu
+               [menuOptions]="menuOptions2"
+               [search]="true"
+               qaTag="menu-with-search">
+               <button class="button button-primary">Show options</button>
+            </st-menu>
+         </div>
+      </div>
+   </section>
+</st-docs>

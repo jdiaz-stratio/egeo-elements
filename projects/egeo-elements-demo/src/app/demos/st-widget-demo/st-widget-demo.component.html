@@ -1,0 +1,52 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+      <section class="container">
+            <h2>Loading Data</h2>
+            <div class="row">
+               <div class="col-md-4">
+                  <st-widget title="widget" class="widget-demo" [loading]=true>
+                     <div class="widget-demo__content"></div>
+                  </st-widget>
+               </div>
+               <div class="col-md-4">
+                  <st-widget title="widget" class="widget-demo" [loading]=true overwriteLoadingData="Text overwrited">
+                     <div class="widget-demo__content"></div>
+                  </st-widget>
+               </div>
+            </div>
+            <h2>Loaded Data</h2>
+            <div class="row">
+               <div class="col-md-4">
+                  <st-widget title="widget" class="widget-demo">
+                     <div class="widget-demo__content"></div>
+                  </st-widget>
+               </div>
+               <div class="col-md-4">
+                  <st-widget title="widget" class="widget-demo" [draggable]="false">
+                     <div class="widget-demo__content">
+                        Not draggable widget
+                     </div>
+                  </st-widget>
+               </div>
+               <div class="col-md-4">
+                  <st-widget title="widget" class="widget-demo" [displaySettingsButton]="false">
+                     <div class="widget-demo__content">
+                        Widget without settings button
+                     </div>
+                  </st-widget>
+               </div>
+            </div>
+
+         </section>
+</st-docs>

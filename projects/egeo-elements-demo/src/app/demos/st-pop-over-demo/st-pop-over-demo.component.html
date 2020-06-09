@@ -1,0 +1,31 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid">
+      <div class="pop-over-demo-container">
+         <div class="pop-over-demo-items">
+            <st-pop-over class="pop-over-demo-component" qaTag="pop-over-demo" [title]="title" [hidden]="hidden" [offset]="{x: 0, y:0}"
+                [showSettingBtn]="true">
+
+               <button pop-over-button class="pop-over-demo-button button button-primary" (click)="onClick()">
+                  <span>Pop Over</span>
+               </button>
+
+               <div pop-over-content class="pop-over-demo-content">
+                  <span>{{content}}</span>
+               </div>
+            </st-pop-over>
+         </div>
+      </div>
+   </section>
+</st-docs>

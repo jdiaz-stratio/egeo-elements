@@ -1,0 +1,144 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid demo-layout">
+
+      <p class="introduction"> Tags are used for items that need to be labeled, categorized, or organized using keywords
+         that describe them. Inside an input you can enter your own tags or be force to select among a list of them.
+      </p>
+      <span class="separator"></span>
+
+      <h1 class="title">Design and behaviour</h1>
+
+      <p class="paragraph">In a Tag input you write your tag and press enter to consolidate it. If you want to remove it
+         you select it and press Delete key.</p>
+      <span class="separator"></span>
+
+
+      <h1 class="subtitle">Model driven / Reactive example</h1>
+      <form [formGroup]="reactiveForm" novalidate (ngSubmit)="onSubmitReactiveForm()">
+
+         <div class="example">
+            <st-tag-input class="st-form-field" name="tag-input-reactive" formControlName="tag-input-reactive" [label]="'Tag Input with fordidden value: test'"
+                [id]="'tag-input-reactive-demo'" [placeholder]="'Add tags separated by commas'" infoMessage="This is an informative message"
+                [tooltip]="'This is a Tag Input component tooltip'" [forbiddenValues]="['test']">
+            </st-tag-input>
+            <span>Output: {{reactiveForm.controls['tag-input-reactive'].value | json}}</span>
+         </div>
+         <div class="example">
+            <st-tag-input class="st-form-field" name="number-tag-input" formControlName="tag-input-number" [label]="'Tag Input of numbers'" [id]="'tag-input-reactive-demo'"
+                infoMessage="This is an informative message" [placeholder]="'Add tags separated by commas'" [tooltip]="'This is a Tag Input component tooltip'"
+                type="number">
+            </st-tag-input>
+            <span>Output: {{reactiveForm.controls['tag-input-number'].value | json}}</span>
+         </div>
+         <div class="example">
+
+            <st-tag-input class="st-form-field" name="number-tag-input-integer" formControlName="tag-input-integer" [label]="'Tag Input of integers'"
+                [id]="'tag-input-reactive-demo'" [placeholder]="'Add tags separated by commas'" infoMessage="This is an informative message"
+                [tooltip]="'This is a Tag Input component tooltip'" type="integer">
+            </st-tag-input>
+            <span>Output: {{reactiveForm.controls['tag-input-integer'].value | json}}</span>
+         </div>
+
+         <div class="example">
+            <st-tag-input class="st-form-field" name="tag-input-reactive-required" formControlName="tag-input-reactive-required" [regularExpression]="pattern"
+                [errorMessage]="errorReactiveMessage" [label]="'Tag Input with pattern of a valid IP'" [id]="'tag-input-reactive-required-demo'"
+                [placeholder]="'Add tags separated by commas'" infoMessage="This is an informative message" [tooltip]="'This is a Tag Input component tooltip'">
+            </st-tag-input>
+            <span>Output: {{reactiveForm.controls['tag-input-reactive-required'].value | json}}</span>
+         </div>
+         <div class="example">
+
+            <st-tag-input class="st-form-field" name="tag-input-reactive-disabled" formControlName="tag-input-reactive-disabled" [disabled]="disabledReactive"
+                [label]="'Tag Input with disable'" [id]="'tag-input-reactive-disabled-demo'" [placeholder]="'Add tags separated by commas'"
+                infoMessage="This is an informative message" [tooltip]="'This is a Tag Input component tooltip'">
+            </st-tag-input>
+
+         </div>
+         <div class="example">
+
+            <st-tag-input class="st-form-field" name="tag-input-reactive-autocomplete" formControlName="tag-input-reactive-autocomplete"
+                [autocompleteList]="filteredList" [withAutocomplete]="true" [label]="'Tag Input with autocomplete'" [id]="'tag-input-reactive-autocomplete-demo'"
+                [placeholder]="'Add tags separated by commas'" [tooltip]="'This is a Tag Input component tooltip'" infoMessage="This is an informative message"
+                (input)="onFilterList($event)">
+            </st-tag-input>
+            <span>Output: {{reactiveForm.controls['tag-input-reactive-autocomplete'].value | json}}</span>
+
+         </div>
+
+         <div class="example">
+            <st-tag-input class="st-form-field" name="tag-input-auto-completed-group-list" formControlName="tag-input-auto-completed-group-list"
+                [label]="'Tag Input with group autocomplete list'" [id]="'tag-input-reactive-demo'" [placeholder]="'Add tags separated by commas'"
+                [tooltip]="'This is a Tag Input component tooltip'" [withAutocomplete]="true" [autocompleteList]="filteredGroupList" [errorMessage]="getGroupAutoCompletedErrorMessage()"
+                infoMessage="This is an informative message" (input)="onFilterGroupList($event)" [charsToShowAutocompleteList]="0">
+            </st-tag-input>
+            <span>Output: {{reactiveForm.controls['tag-input-auto-completed-group-list'].value | json}}</span>
+         </div>
+
+         <button type="submit" class="button button-primary"><span>Validate</span></button>
+         <button type="button" class="button button-borderless" (click)="changeReactiveFormDisabled()">Disable</button>
+
+      </form>
+
+      <h1 class="subtitle">Template driven example</h1>
+
+      <form #templateDrivenForm="ngForm" novalidate autocomplete="off" (ngSubmit)="onSubmitTemplateDrivenForm()">
+         <div class="example">
+
+            <st-tag-input class="st-form-field" name="tag-input-template-driven" [(ngModel)]="tags.templateDriven" [label]="'Tag Input'" [disabled]="true"
+                [id]="'tag-input-template-driven-demo'" [placeholder]="'Add tags separated by commas'" infoMessage="This is an informative message"
+                [tooltip]="'This is a Tag Input component tooltip'">
+            </st-tag-input>
+         </div>
+         <div class="example">
+
+            <st-tag-input class="st-form-field" name="tag-input-template-driven-required" [(ngModel)]="tags.templateDrivenRequired" [errorMessage]="errorTemplateDriveMessage"
+                required [forceValidations]="true" minlength="2" maxlength="3" [label]="'Tag Input with require'" [id]="'tag-input-template-driven-required-demo'"
+                [placeholder]="'Add tags separated by commas'" infoMessage="This is an informative message" [tooltip]="'This is a Tag Input component tooltip'">
+            </st-tag-input>
+         </div>
+         <div class="example">
+
+            <st-tag-input class="st-form-field" name="tag-input-template-driven-disabled" [(ngModel)]="tags.templateDrivenDisabled" [disabled]="disabledTemplateDrive"
+                [label]="'Tag Input with disable'" [id]="'tag-input-template-driven-disabled-demo'" [placeholder]="'Add tags separated by commas'"
+                infoMessage="This is an informative message" [tooltip]="'This is a Tag Input component tooltip'">
+            </st-tag-input>
+         </div>
+         <div class="example">
+
+            <st-tag-input class="st-form-field" name="tag-input-template-driven-autocomplete" [(ngModel)]="tags.templateDrivenAutocomplete"
+                [autocompleteList]="filteredlist" [withAutocomplete]="true" [label]="'Tag Input with autocomplete'" [id]="'tag-input-template-driven-autocomplete-demo'"
+                [placeholder]="'Add tags separated by commas'" infoMessage="This is an informative message" [tooltip]="'This is a Tag Input component tooltip'"
+                (input)="onFilterList($event)">
+            </st-tag-input>
+         </div>
+         <button type="submit" class="button button-primary"><span>Validate</span></button>
+         <button type="button" class="button button-borderless" (click)="changeTemplateDrivenFormDisabled()"><span>Disable</span>
+         </button>
+
+      </form>
+
+      <span class="separator"></span>
+
+      <h1 class="title">Usage and best practices</h1>
+
+      <ul class="list">
+
+         <li> Multiple or single tags can be used to categorize items.</li>
+         <li> Use Tags when content is mapped to multiple categories, and the user needs a way to differentiate between
+            them. </li>
+         <li> Tags can also be used as a method of filtering data, to show only items within that particular category.</li>
+      </ul>
+   </section>
+</st-docs>

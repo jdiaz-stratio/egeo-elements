@@ -1,0 +1,63 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid">
+
+      <h1>IN A TEMPLATE DRIVEN FORM</h1>
+      <form #templateDrivenForm="ngForm" novalidate>
+         <st-form-list [schema]="jsonSchema" [ngModel]="model1" name="list" (blur)="onBlur($event)" (add)="onAddItem($event)" (remove)="onRemoveItem($event)">
+         </st-form-list>
+      </form>
+
+      <div class="result-div">
+         <h2> Form value: </h2>
+         <p>{{ templateDrivenForm.value | json }}</p>
+         <h2>Form status:</h2>
+         <p>{{ templateDrivenForm.disabled ? 'DISABLED' : templateDrivenForm.valid ? 'VALID' : 'INVALID'
+            }}</p>
+         <h2> Model:</h2>
+         <p>{{model1 | json}} </p>
+      </div>
+      <button class="button button-primary" (click)="onChangeTemplateFormStatus(templateDrivenForm)"> DISABLE/ENABLE FORM ARRAY</button>
+      <button class="button button-primary " (click)="showStatus(templateDrivenForm)">SHOW STATUS</button>
+
+   </section>
+   <section class="container-liquid">
+
+      <h1>IN A MODEL DRIVEN FORM</h1>
+
+      <form [formGroup]="reactiveForm" novalidate>
+         <st-form-list [schema]="jsonSchema" [(value)]="model2" formControlName="list">
+         </st-form-list>
+      </form>
+
+      <h2>Model:</h2>
+      <p>{{model2 | json}}</p>
+      <h2>Form value:</h2>
+      <p>{{ reactiveForm.value | json }}</p>
+      <h2>Form status:</h2>
+      <p>{{ reactiveForm.disabled ? 'DISABLED' : reactiveForm.valid ? 'VALID' : 'INVALID' }}</p>
+
+      <button class="button button-primary" (click)="onChangeReactiveFormStatus(reactiveForm)"> DISABLE/ENABLE FORM ARRAY</button>
+      <button class="button button-primary " (click)="showStatus(reactiveForm)">SHOW STATUS</button>
+
+   </section>
+
+   <section class="container-liquid">
+      <h1>WITHOUT FORM</h1>
+      <st-form-list [schema]="jsonSchema" [(value)]="model3"></st-form-list>
+
+      <h2>Model:</h2>
+      <p>{{model3 | json}}</p>
+   </section>
+</st-docs>

@@ -1,0 +1,110 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid demo-layout">
+      <h1 class="title">Master</h1>
+      <div class="inline">
+         <st-tag [tag]="simpleTag" class="tag small" [removable]="true"></st-tag>
+         <st-tag [tag]="simpleTag" class="tag medium" [removable]="true"></st-tag>
+         <st-tag [tag]="simpleTag" class="tag large" [removable]="true"></st-tag>
+      </div>
+
+      <div class="row">
+         <div class="col-sm-3">
+            <h1 class="title">Information</h1>
+            <div class="tag-container">
+               <div class="column">
+                  <span>Default</span>
+                  <span>info</span>
+                  <span>error</span>
+                  <span>waning</span>
+                  <span>success</span>
+               </div>
+               <div class="column">
+                  <st-tag [tag]="simpleTag"></st-tag>
+                  <st-tag [tag]="simpleTag" class="info"></st-tag>
+                  <st-tag [tag]="simpleTag" class="error"></st-tag>
+                  <st-tag [tag]="simpleTag" class="warning"></st-tag>
+                  <st-tag [tag]="simpleTag" class="success"></st-tag>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-3">
+            <h1 class="title">Small</h1>
+            <div class="tag-container">
+               <div class="column">
+                  <span>Default</span>
+                  <span>Icon</span>
+                  <span>Selected</span>
+                  <span>Disabled</span>
+               </div>
+
+               <div class="tag-row">
+                  <div class="column">
+                     <st-tag [tag]="simpleTag" class="small"></st-tag>
+                     <st-tag [tag]="tagWithIcon" class="small"></st-tag>
+                     <st-tag class="st-tag--selected small" [tag]="simpleTag"></st-tag>
+                     <st-tag [tag]="simpleTag" class="small" [attr.disabled]="true"></st-tag>
+                  </div>
+                  <div class="column">
+                     <st-tag [tag]="simpleTag" class="small" [removable]="true"></st-tag>
+                     <st-tag [tag]="tagWithIcon" class="small" [removable]="true"></st-tag>
+                     <st-tag [tag]="simpleTag" class="small st-tag--selected" [removable]="true"></st-tag>
+                     <st-tag [tag]="simpleTag" class="small" [attr.disabled]="true" [removable]="true"></st-tag>
+                  </div>
+               </div>
+
+            </div>
+
+         </div>
+         <div class="col-sm-3">
+            <h1 class="title">Medium</h1>
+            <div class="tag-container">
+               <div class="tag-row">
+                  <div class="column">
+                     <st-tag [tag]="simpleTag" class="medium"></st-tag>
+                     <st-tag [tag]="tagWithIcon" class="medium"></st-tag>
+                     <st-tag [tag]="simpleTag" class="medium st-tag--selected"></st-tag>
+                     <st-tag [tag]="simpleTag" class="medium" [attr.disabled]="true"></st-tag>
+                  </div>
+                  <div class="column">
+                     <st-tag [tag]="simpleTag" class="medium" [removable]="true"></st-tag>
+                     <st-tag [tag]="tagWithIcon" class="medium" [removable]="true"></st-tag>
+                     <st-tag [tag]="tagWithIcon" class="medium st-tag--selected"  [removable]="true"></st-tag>
+                     <st-tag [tag]="simpleTag" class="medium" disabled [removable]="true"></st-tag>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-3">
+            <h1 class="title">Large</h1>
+            <div class="tag-container">
+               <div class="tag-row">
+                  <div class="column">
+                     <st-tag [tag]="simpleTag" class="large"></st-tag>
+                     <st-tag [tag]="tagWithIcon" class="large"></st-tag>
+                     <st-tag [tag]="simpleTag" class="large st-tag--selected"></st-tag>
+                     <st-tag [tag]="simpleTag" class="large" disabled></st-tag>
+                  </div>
+                  <div class="column">
+                     <st-tag [tag]="simpleTag" class="large" [removable]="true"></st-tag>
+                     <st-tag [tag]="tagWithIcon" class="large" [removable]="true"></st-tag>
+                     <st-tag [tag]="simpleTag" class="large st-tag--selected" [removable]="true"></st-tag>
+                     <st-tag [tag]="simpleTag" class="large" [attr.disabled]="true" [removable]="true"></st-tag>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+</st-docs>

@@ -17,6 +17,10 @@
      "lib": [
        "es2018",
        "dom"
-     ]
+     ],
+     "paths": {
+       "@app/shared/*": ["./projects/egeo-elements-demo/src/app/shared/*"],
+       "@app/demos/*": ["./projects/egeo-elements-demo/src/app/demos/*"]
+     }
    }
  }

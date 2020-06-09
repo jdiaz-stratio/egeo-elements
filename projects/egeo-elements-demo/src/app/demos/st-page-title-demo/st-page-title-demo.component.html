@@ -1,0 +1,66 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="page-container col-md-24">
+      <h3>Title without left button:</h3>
+      <st-page-title [title]="title" qaTag="page-title">
+         <div class="right-content">
+            <st-search qa="test-page-title" placeholder="search" class="margin-right"></st-search>
+            <button class="button button-primary">
+               <span>Create</span>
+            </button>
+         </div>
+      </st-page-title>
+   </section>
+
+   <section class="page-container col-md-24">
+      <h3>Title without left button and with pretitle:</h3>
+      <st-page-title title="Egeo" preTitle="Project" qaTag="page-title-pretitle"></st-page-title>
+   </section>
+
+   <section class="page-container col-md-24">
+      <h3>Title with back button:</h3>
+      <st-page-title leftButton="icon-reply" [title]="title" qaTag="page-title-button">
+         <div class="right-content">
+            <st-search qa="test-page-title" placeholder="search" class="margin-right"></st-search>
+            <button class="button button-primary">
+               <span>Create</span>
+            </button>
+         </div>
+      </st-page-title>
+   </section>
+
+   <section class="page-container col-md-24">
+      <h3>Title editable:</h3>
+      <st-page-title [title]="title" qaTag="page-title-editable" [editable]="true" placeholder="Page Title Editable" [maxlength]="20" [minlength]="1">
+         <div class="right-content">
+            <button class="button button-primary">
+               <span>Create</span>
+            </button>
+         </div>
+      </st-page-title>
+   </section>
+
+   <section class="page-container col-md-24">
+      <h3>Title editable with errors:</h3>
+      <st-page-title [title]="title" qaTag="page-title-editable" [editable]="true" placeholder="Page Title Editable" [maxlength]="maxlength"
+          [minlength]="minlength" [error]="error" [errorMessage]="errorMsg" (edit)=editTitle($event)>
+         <div class="right-content">
+            <button class="button button-primary">
+               <span>Create</span>
+            </button>
+         </div>
+      </st-page-title>
+   </section>
+
+</st-docs>

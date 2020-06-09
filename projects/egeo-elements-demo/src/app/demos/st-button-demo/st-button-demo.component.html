@@ -1,0 +1,468 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid demo-layout">
+      <h1 class="title">Theme customization</h1>
+      <p class="paragraph">You can customize some styles using the following css variables</p>
+      <demo-css-property-table [cssProperties]="cssProperties"></demo-css-property-table>
+
+      <h1 class="title">Examples</h1>
+      <div class="row">
+         <div class="col-md-12">
+            <h1>REGULAR BUTTONS:</h1>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-primary">
+               <span>Primary</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-primary" disabled>
+               <span>Primary</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-secondary">
+               <span>Secondary</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-secondary" disabled>
+               <span>Secondary</span>
+            </button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3">
+            <i class="temp1">.button.button-primary</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-primary[disabled]</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-secondary</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-secondary[disabled]</i>
+         </div>
+      </div>
+
+      <div class="row">
+      <div class="col-md-3 button-example">
+            <button class="button button-critical">
+               <span>Critical</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-critical" disabled>
+               <span>Critical</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-borderless">
+               <span>Borderless</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-borderless" disabled>
+               <span>Borderless</span>
+            </button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3">
+            <i class="temp1">.button.button-critical</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-critical[disabled]</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-borderless</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-borderless[disabled]</i>
+         </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+         <div class="col-md-12">
+            <h1>ICON VERSION:</h1>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-primary">
+               <i class="icon-circle-check"></i>
+               <span>Primary</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-primary" disabled>
+               <i class="icon-circle-check"></i>
+               <span>Primary</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-primary">
+               <span>Primary</span>
+               <i class="icon-circle-check"></i>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-primary" disabled>
+               <span>Primary</span>
+               <i class="icon-circle-check"></i>
+            </button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3">
+            <i class="temp1">.button.button-primary</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-primary[disabled]</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-primary</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-primary[disabled]</i>
+         </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+         <div class="col-md-12">
+            <h1>BLOCK VERSION:</h1>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-primary block">
+               <span>Primary</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-primary block" disabled>
+               <span>Primary</span>
+            </button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3">
+            <i class="temp1">.button.button-primary.block</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-primary[disabled].block</i>
+         </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+         <div class="col-md-12">
+            <h1>LARGE VERSION:</h1>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-primary large">
+               <span>Primary</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-primary large" disabled>
+               <span>Primary</span>
+            </button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3">
+            <i class="temp1">.button.button-primary.large</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-primary[disabled].large</i>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="col-md-3 button-example">
+            <button class="button button-borderless large">
+               <span>Borderless</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-borderless large" disabled>
+               <span>Borderless</span>
+            </button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3">
+            <i class="temp1">.button.button-borderless.large</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-borderless[disabled].large</i>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <h1>SMALL VERSION:</h1>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-primary small">
+               <span>Primary</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-primary small" disabled>
+               <span>Primary</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-secondary small">
+               <span>Primary</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-secondary small" disabled>
+               <span>Primary</span>
+            </button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3">
+            <i class="temp1">.button.button-primary.small</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-primary[disabled].small</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-secondary.small</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-secondary[disabled].small</i>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3 button-example">
+            <button class="button button-borderless small">
+               <span>Borderless</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-borderless small" disabled>
+               <span>Borderless</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-critical small">
+               <span>Critical</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-critical small" disabled>
+               <span>Critical</span>
+            </button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3">
+            <i class="temp1">.button.button-borderless.small</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-borderless[disabled].small</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-critical.small</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-critical[disabled].small</i>
+         </div>
+      </div>
+
+
+      <br>
+
+      <div class="row">
+         <div class="col-md-12">
+            <h1>TOOLBAR BUTTONS:</h1>
+         </div>
+         <div class="col-md-1 button-example">
+            <button class="button button-toolbar">
+               <i class="icon-circle-check"></i>
+            </button>
+         </div>
+         <div class="col-md-1 button-example">
+            <button class="button button-toolbar">
+               <i class="icon-download"></i>
+            </button>
+         </div>
+         <div class="col-md-1 button-example">
+            <button class="button button-toolbar">
+               <i class="icon-circle-plus"></i>
+            </button>
+         </div>
+         <div class="col-md-1 button-example">
+            <button class="button button-toolbar">
+               <i class="icon-arrow-up"></i>
+            </button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <i class="temp1">.button.button-toolbar</i>
+         </div>
+      </div>
+      <br>
+
+      <div class="row">
+         <div class="col-md-1">
+            <button class="button button-toolbar" disabled>
+               <i class="icon-circle-check"></i>
+            </button>
+         </div>
+         <div class="col-md-1">
+            <button class="button button-toolbar" disabled>
+               <i class="icon-download"></i>
+            </button>
+         </div>
+         <div class="col-md-1">
+            <button class="button button-toolbar" disabled>
+               <i class="icon-circle-plus"></i>
+            </button>
+         </div>
+         <div class="col-md-1">
+            <button class="button button-toolbar" disabled>
+               <i class="icon-arrow-up"></i>
+            </button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <i class="temp1">.button.button-toolbar[disabled]</i>
+         </div>
+      </div>
+
+      <br>
+      <div class="row">
+         <div class="col-md-12">
+            <h1>SMALL TOOLBAR BUTTONS:</h1>
+         </div>
+         <div class="col-md-1 button-example">
+            <button class="button button-toolbar small">
+               <i class="icon-circle-check"></i>
+            </button>
+         </div>
+         <div class="col-md-1 button-example">
+            <button class="button button-toolbar small">
+               <i class="icon-download"></i>
+            </button>
+         </div>
+         <div class="col-md-1 button-example">
+            <button class="button button-toolbar small">
+               <i class="icon-circle-plus"></i>
+            </button>
+         </div>
+         <div class="col-md-1 button-example">
+            <button class="button button-toolbar small">
+               <i class="icon-arrow-up"></i>
+            </button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <i class="temp1">.button.button-toolbar.small</i>
+         </div>
+      </div>
+      <br>
+      <div class="row">
+         <div class="col-md-12">
+            <h1>DISABLED SMALL TOOLBAR BUTTONS:</h1>
+         </div>
+         <div class="col-md-1 button-example">
+            <button class="button button-toolbar small" disabled>
+               <i class="icon-circle-check"></i>
+            </button>
+         </div>
+         <div class="col-md-1 button-example">
+            <button class="button button-toolbar small" disabled>
+               <i class="icon-download"></i>
+            </button>
+         </div>
+         <div class="col-md-1 button-example">
+            <button class="button button-toolbar small" disabled>
+               <i class="icon-circle-plus"></i>
+            </button>
+         </div>
+         <div class="col-md-1 button-example">
+            <button class="button button-toolbar small" disabled>
+               <i class="icon-arrow-up"></i>
+            </button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <i class="temp1">.button.button-toolbar[disabled].small</i>
+         </div>
+      </div>
+      <br>
+
+      <div class="row">
+         <div class="col-md-12">
+            <h1>LINK BUTTONS:</h1>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-link">
+               <span>Button link</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-link" disabled>
+               <span>Disabled link</span>
+            </button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3">
+            <i class="temp1">.button.button-link</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-link[disabled]</i>
+         </div>
+      </div>
+
+      <br>
+      <div class="row">
+         <div class="col-md-12">
+            <h1>SMALL LINK BUTTONS:</h1>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-link small">
+               <span>Button link</span>
+            </button>
+         </div>
+         <div class="col-md-3 button-example">
+            <button class="button button-link small" disabled>
+               <span>Disabled Link</span>
+            </button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3">
+            <i class="temp1">.button.button-link.small</i>
+         </div>
+         <div class="col-md-3">
+            <i class="temp1">.button.button-link[disabled].small</i>
+         </div>
+      </div>
+
+   </section>
+</st-docs>

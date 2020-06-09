@@ -1,0 +1,68 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-fluid col-md-24">
+      <div class="row">
+         <div class="col-md-12 item-list-container">
+            <div class="item-list-example-A">
+               <st-item-list [list]="listShortFilteredA" [config]="configAll" [qaTag]="qaTag" [hasSearch]="true" [align]="'left'" [theme]="themeA"
+                   (selectItem)="onSelectItem($event)" (search)="onSearchItem($event, 0)"></st-item-list>
+            </div>
+         </div>
+         <div class="col-md-12 item-list-container">
+            <div class="item-list-example-A">
+               <st-item-list [list]="listLongFilteredA" [config]="configAll" [qaTag]="qaTag" [hasSearch]="true" [align]="'right'" [theme]="themeB"
+                   (selectItem)="onSelectItem($event)" (search)="onSearchItem($event, 1)"></st-item-list>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12 item-list-container">
+            <div class="item-list-example-B">
+               <st-item-list [list]="listLongFilteredB" [config]="configSearch" [hasSearch]="true" [qaTag]="qaTag" [theme]="themeB" (selectItem)="onSelectItem($event)"
+                   (search)="onSearchItem($event, 2)"></st-item-list>
+            </div>
+         </div>
+         <div class="col-md-12 item-list-container">
+            <div class="item-list-example-B">
+               <st-item-list [list]="listShortFilteredB" [config]="configSearch" [hasSearch]="true" [qaTag]="qaTag" [align]="'right'" [theme]="themeA"
+                   (selectItem)="onSelectItem($event)" (search)="onSearchItem($event, 3)"></st-item-list>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12 item-list-container">
+            <div class="item-list-example-A">
+               <st-item-list [list]="listLong" [config]="configTitle" [qaTag]="qaTag" [theme]="themeA" (selectItem)="onSelectItem($event)"></st-item-list>
+            </div>
+         </div>
+         <div class="col-md-12 item-list-container">
+            <div class="item-list-example-A">
+               <st-item-list [list]="listShort" [config]="configTitle" [qaTag]="qaTag" [align]="'right'" [theme]="themeB" (selectItem)="onSelectItem($event)"></st-item-list>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12 item-list-container">
+            <div class="item-list-example-B">
+               <st-item-list [list]="listShort" [theme]="themeB" (selectItem)="onSelectItem($event)"></st-item-list>
+            </div>
+         </div>
+         <div class="col-md-12 item-list-container">
+            <div class="item-list-example-B">
+               <st-item-list [list]="listLong" [align]="'right'" [theme]="themeA" (selectItem)="onSelectItem($event)"></st-item-list>
+            </div>
+         </div>
+      </div>
+   </section>
+</st-docs>

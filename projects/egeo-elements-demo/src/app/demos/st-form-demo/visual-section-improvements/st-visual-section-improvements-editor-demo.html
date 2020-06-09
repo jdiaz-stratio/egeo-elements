@@ -1,0 +1,49 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<section>
+   <h2 class="subtitle">Section Switch</h2>
+   <p class="paragraph">This section can be used when it contains fields that depend on another one. When switch is
+      disabled, only field associated to switch is added to the form output. First field has to be a boolean</p>
+   <p class="code-demo">
+      {{ {
+      ui: {
+      component: 'switch'
+      }
+      } | json }}
+   </p>
+
+   <h2 class="subtitle">Section Accordion</h2>
+   <p class="paragraph">It displays all its fields collapsed by default and its name only is visible.
+      This section has only visual effects and always section fields are added to the form output</p>
+
+   <p class="code-demo">
+      {{ {
+      ui: {
+      component: 'accordion'
+      }
+      } | json }}
+   </p>
+
+   <h2 class="subtitle">Optional Section</h2>
+   <p class="paragraph">This type of section can be choose for fields which user does not need to modify them. This section has only visual effects and it displays all its fields hidden by default.</p>
+
+   <p class="code-demo">
+      {{ {
+      ui: {
+      component: 'show-more'
+      }
+      } | json }}
+   </p>
+
+</section>
+

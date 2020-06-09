@@ -1,0 +1,111 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+ <section class="container-liquid">
+
+      <st-select placeholder="Select option" options="options" disabled="disabled" keyBoardMove="true"
+                 default="options[2].value">
+      </st-select>
+
+      <!-- <div class="separator"></div>
+      <button class="button button-primary" (click)="changeOptions()">Change options</button>
+
+      <div class="separator"></div>
+      <br><br>
+      <h1>TEMPLATE DRIVEN EXAMPLE</h1>
+      <form #templateDrivenForm="ngForm" novalidate autocomplete="off" class="col-md-3">
+         <div class="form-group">
+
+            <st-select stCheckValidations errorMessage="This field is required" label="Option 1"
+                       [forceValidations]="true" [formControl]="formControl" tooltip="This field is required"
+                       placeholder="Select option" [options]="options" name="option1" required id="test"
+                       (select)="onSelect($event)" class="st-form-field">
+            </st-select>
+            <div class="separator"></div>
+
+
+            Disabled select
+
+            <st-select stCheckValidations label="Option 1" tooltip="Disabled field" placeholder="Select option"
+                       [options]="options" [(ngModel)]="model.option1"
+                       name="option1" required [disabled]="true" id="disabled-test" (select)="onSelect($event)"
+                       class="st-form-field">
+            </st-select>
+
+            <button class="button button-primary"><span>Submit</span></button>
+
+            <div class="separator"></div>
+
+            <p>Form value: {{ templateDrivenForm.value | json }}</p>
+            <p>Form status: {{ templateDrivenForm.disabled ? 'DISABLED' : templateDrivenForm.valid ? 'VALID' : 'INVALID'
+               }}</p>
+         </div>
+      </form>
+
+      <div class="separator"></div>
+      <div class="separator"></div>
+      <div class="separator"></div>
+
+      <h1>MODEL DRIVEN / REACTIVE EXAMPLE</h1>
+      <form [formGroup]="reactiveForm" novalidate autocomplete="off" class="col-md-3">
+         <div class="form-group">
+
+            <st-select stCheckValidations formControlName="option1" placeholder="Select option" [options]="options"
+                       class="st-form-field">
+            </st-select>
+         </div>
+
+         <div class="separator"></div>
+
+         <button class="button button-primary"><span>Submit</span></button>
+
+         <div class="separator"></div>
+
+         <p>Form value: {{ reactiveForm.value | json }}</p>
+         <p>Form status: {{ reactiveForm.status | json }}</p>
+      </form>
+
+      <br><br>
+      <h1>TEMPLATE DRIVEN EXAMPLE</h1>
+      <br>
+      <button class="button button-primary" (click)="changeDisabled()">Change disable</button>
+
+      <div class="separator"></div>
+
+      <h1>SEARCH OPTION EXAMPLE</h1>
+
+      <st-select [enabledSearcher]="true" placeholder="Select option" placeholderSearch="Search..."
+                 [options]="filteredOptions"
+                 [disabled]="disabled"
+                 (search)="onSearch($event)">
+      </st-select>
+
+      <div class="separator"></div>
+
+      <h1>SCROLL WITH SPINNER OPTION</h1>
+      <st-select [enabledSearcher]="true" placeholder="Select option" placeholderSearch="Search..." [options]="filteredOptions"
+                 [disabled]="disabled" [isLoading]="isLoading" (scrollAtBottom)="onScrollAtBottom()" (search)="onSearch($event)">
+      </st-select>
+
+      <div class="separator"></div>
+
+      <h1>WITHOUT FORM</h1>
+
+      <st-select class="st-pagination__selector"
+         [options]="options"
+         label="Select option"
+         [selected]="options[1]"
+         [attr.id]="selectId"
+         (select)="onChangePerPage($event)"></st-select>
+      <br>
+      <br> -->
+   </section>

@@ -1,0 +1,80 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-fluid col-md-12 search-demo">
+      <div class="search-container">
+
+         <div class="search-example">
+            <h3>Normal search:</h3>
+            <st-search [placeholder]="placeholder" [qaTag]="qaTag" [value]="searched" [debounce]="debounceTime" [minLength]="minLength" (search)="onSearchResult($event)"></st-search>
+         </div>
+
+         <div class="search-example">
+            <h3>Search without icon:</h3>
+            <st-search [placeholder]="placeholder" [showIcon]="false" [qaTag]="qaTag" [value]="searched" [debounce]="debounceTime" [minLength]="minLength" (search)="onSearchResult($event)"></st-search>
+         </div>
+         <div class="search-example">
+            <h3>With filter select:</h3>
+            <st-search [placeholder]="placeholder" [qaTag]="qaTag" [value]="searched" [debounce]="debounceTime" [minLength]="minLength"
+                [filterOptions]="[
+                     { label: 'All', value: 1 },
+                     { label: 'Type ', value: 2 },
+                     { label: 'Color', value: 3 }
+                  ]"
+                (search)="onSearchResult($event)"></st-search>
+            <h3>Disabled:</h3>
+            <st-search [placeholder]="placeholder" [disabled]="true" [qaTag]="qaTag" [value]="searched" [debounce]="debounceTime" [minLength]="minLength"
+                [filterOptions]="[
+                     { label: 'All', value: 1 },
+                     { label: 'Type ', value: 2 },
+                     { label: 'Color', value: 3 }
+                  ]"
+                (search)="onSearchResult($event)"></st-search>
+         </div>
+
+         <div class="search-example">
+            <h3>Live Search false:</h3>
+            <st-search [placeholder]="placeholder" [qaTag]="qaTag" [value]="searched" [debounce]="debounceTime" [minLength]="minLength" (search)="onSearchResult($event)"
+                [liveSearch]="false"></st-search>
+         </div>
+
+         <div class="search-example">
+            <h3>Disabled:</h3>
+            <st-search placeholder="Text for search with clear button" [value]="searched" [qaTag]="qaTag" [debounce]="debounceTime" [minLength]="minLength"
+                [disabled]="true" (search)="onSearchResult($event)"></st-search>
+         </div>
+
+         <div class="search-example">
+            <h3>Autocomplete:</h3>
+            <st-search placeholder="Text for search with clear button" [value]="searchedAutocomplete" [qaTag]="qaTag" [debounce]="debounceTime"
+                [minLength]="minLength" [autocompleteList]="filteredMenu" [withAutocomplete]="true" [emptyAutocompleteListMessage]="'There are no matches for your search. Please, try it again with another term.'"
+                (search)="searchWithAutocompleteSearch($event)"></st-search>
+         </div>
+
+      </div>
+      <div class="option">
+         <span class="option-title">Search value: </span>
+         <span class="option-value">normal {{searched}}</span>
+         <span class="option-value">autocomplete {{searchedAutocomplete}}</span>
+      </div>
+      <div class="option">
+         <span class="option-title">debounce: </span>
+         <input type="number" [(ngModel)]="debounceTime" min="0" class="debounceTime">
+      </div>
+      <div class="option">
+         <span class="option-title">minLength: </span>
+         <input type="number" [(ngModel)]="minLength" min="0" class="debounceTime">
+      </div>
+   </section>
+
+</st-docs>

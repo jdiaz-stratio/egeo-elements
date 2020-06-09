@@ -1,0 +1,51 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid demo-layout">
+
+      <h1 class="title">Theme customization</h1>
+      <p class="paragraph">You can customize some table styles using the following css variables</p>
+      <demo-css-property-table [cssProperties]="cssProperties"></demo-css-property-table>
+      <br>
+      <h2 class="subtitle">Size of spinner</h2>
+      <st-input class="st-form-field size-input" type="number" [(ngModel)]="size" placeholder="Enter a size for the spinner" label="Size of spinner">
+      </st-input>
+      <br>
+      <h2 class="subtitle">Spinner with theme 'primary'</h2>
+
+      <st-spinner [style.width.px]="size" [style.height.px]="size" class="spinner">
+      </st-spinner>
+
+      <h2 class="subtitle">Spinner with theme 'secondary'</h2>
+      <div class="secondary-theme-container">
+         <st-spinner theme="secondary" class="spinner" [style.width.px]="size" [style.height.px]="size">
+         </st-spinner>
+      </div>
+      <br>
+
+      <h2 class="subtitle">Spinner inside a button</h2>
+      <div class="col-md-3">
+         <button class="button button-primary">
+            <st-spinner theme="secondary" class="spinner">
+            </st-spinner>
+         </button>
+      </div>
+      <br>
+      <div class="col-md-3">
+         <button class="button button-primary large">
+            <st-spinner theme="secondary" class="spinner">
+            </st-spinner>
+         </button>
+      </div>
+   </section>
+</st-docs>

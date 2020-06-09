@@ -1,0 +1,55 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<section>
+   <h2 class="subtitle">Show/Hide fields</h2>
+   <p class="paragraph">Fields can be hidden or displayed dynamically according to the value of another field. Next, you can see an example to configure the conditions for which a field will be visible. Take into account that all conditions have to be fulfilled to display a field.</p>
+   <p class="code-demo">
+      {{ {
+      ui: {
+      visible: {field_key1: 'field_value1', field_key2: 'field_value2'}
+      }
+      } | json }}
+   </p>
+   <h2 class="subtitle">Related fields</h2>
+   <p class="paragraph">When there are some fields related with each other, they can be placed together in the same line. To place a field next to the next one, you have to add this:</p>
+
+   <p class="code-demo">
+      {{ {
+      ui: {
+      relatedTo: 'next_field_key'
+      }
+      }| json }}
+   </p>
+
+   <h2 class="subtitle">Customization of options in a select</h2>
+   <p class="paragraph">When we want to give a more descriptive label to options in a select, we can use the property <b>options</b> of ui.
+      There we can define a list of pair of name and value that will be used to create the option menu.</p>
+   <p class="paragraph"> If you use this property, you have to know that options will be combined with the options specified in <b>enum</b> property from json schema.
+   The options defined in enum property but not in options property will be displayed without label.
+   </p>
+
+   <p class="code-demo">
+      {{ {
+      ui: {
+      options: [
+      {label: 'Spanish',
+      value: 'es'},
+      {
+      label: 'English',
+      value: 'en'
+      }
+      ]
+      } }| json }}
+   </p>
+</section>
+

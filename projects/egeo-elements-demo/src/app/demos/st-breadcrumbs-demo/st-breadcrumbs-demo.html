@@ -1,0 +1,59 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <h1>With ng-content</h1>
+   <st-breadcrumbs qaTag="breadcrumb">
+      <st-breadcrumbs-item qaTag="Example 1">
+         <i class="icon-home"></i>
+         <span>Example 1</span>
+      </st-breadcrumbs-item>
+      <st-breadcrumbs-item [active]="true" qaTag="Example 2">
+         <i class="icon-hand_ponting"></i>
+         <span>Example 2</span>
+      </st-breadcrumbs-item>
+   </st-breadcrumbs>
+   <br>
+   <h1>Without ng-content and only icons</h1>
+   <st-breadcrumbs [options]="otherOptions" (select)="outputEmitter($event)" qaTag="breadcrumbs2">
+   </st-breadcrumbs>
+   <br>
+   <h1>Without ng-content and icons or labels</h1>
+   <st-breadcrumbs [options]="otherOptions2" (select)="outputEmitter($event)" qaTag="breadcrumbs2">
+   </st-breadcrumbs>
+   <br>
+   <h1>Without ng-content, icons and labels and 5 elements max</h1>
+   <st-breadcrumbs [options]="options" (select)="outputEmitter($event)" qaTag="breadcrumbs2">
+   </st-breadcrumbs>
+   <br>
+   <h1>Without ng-content, icons and labels and 10 elements max</h1>
+   <st-breadcrumbs [options]="options" (select)="outputEmitter($event)" qaTag="breadcrumbs3" [elementsToShow]="10">
+   </st-breadcrumbs>
+   <br>
+   <br>
+   <h1>Title mode</h1>
+   <st-breadcrumbs [options]="options" (select)="outputEmitter($event)" mode="title" qaTag="breadcrumbs4" [elementsToShow]="4">
+   </st-breadcrumbs>
+   <br>
+   <h1>Breadcrumb with a long text</h1>
+   <st-breadcrumbs [options]="options" (select)="outputEmitter($event)" mode="title" qaTag="breadcrumbs5" 
+      [ngStyle]="{'width': '250px', 'display':'flex', 'border': '1px solid #cdcdcd','padding': '5px'}">
+   </st-breadcrumbs>
+
+   <br>
+   <br>
+   <br>
+
+   <button class="button button-primary" (click)="reset()">Reset</button>
+
+   <st-demo-logger></st-demo-logger>
+</st-docs>

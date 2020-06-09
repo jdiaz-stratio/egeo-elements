@@ -1,0 +1,37 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid demo-layout">
+      <p class="introduction">This component is useful to display any content using the entire screen. It can be used
+         customizing its title, header buttons and content</p>
+
+      <span class="separator"></span>
+      <st-switch class="full-width-switch" label="Enabled full width" [formControl]="fullwWidthFormControl">
+      </st-switch>
+      <button class="button button-primary" (click)="onClickShowButton()">Show full screen layout</button>
+
+      <div *ngIf="showFullscreenLayout">
+         <st-fullscreen-layout [fullWidth]="fullwWidthFormControl.value">
+            <p class="st-fullscreen-layout-title"><i class="icon-home"></i>Customized title</p>
+            <div class="st-fullscreen-layout-buttons">
+               <button class="button button-secondary button-separator" (click)="onClickHideButton()">Cancel</button>
+               <button class="button button-primary" (click)="onClickHideButton()">Save</button>
+            </div>
+            <div class="st-fullscreen-layout-content">
+               <h1>TEST</h1>
+            </div>
+         </st-fullscreen-layout>
+
+      </div>
+   </section>
+</st-docs>

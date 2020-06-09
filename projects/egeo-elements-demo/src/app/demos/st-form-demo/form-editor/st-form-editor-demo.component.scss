@@ -1,0 +1,101 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+@import '../theme/constants.scss';
+
+
+:host {
+   padding: 20px 0;
+
+   .form-result, .textarea-container {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+   }
+
+   .title {
+      padding-top: 14px;
+   }
+
+   .subtitle {
+      padding-top: 0;
+   }
+
+   .textarea-container {
+      height: 50vh;
+      padding-right: 20px;
+
+      .textarea-title {
+         color: $neutral;
+         display: inline-block;
+         font-size: $egeo-font-size-xlarge;
+         font-stretch: normal;
+         font-style: normal;
+         font-weight: bold;
+         letter-spacing: normal;
+         line-height: $egeo-line-height-26;
+         padding: 26px 0;
+      }
+
+      .textarea {
+         border: 1px solid $neutral-20;
+         color: $neutral-60;
+         font-family: monospace;
+         font-size: 14px;
+         height: 100%;
+         line-height: 1.6em;
+         padding: 15px 20px;
+         width: 100%;
+         resize: none;
+      }
+   }
+
+   .form-result {
+      .form {
+         display: block;
+         margin-top: -25px;
+         padding-right: 30px;
+      }
+   }
+
+   .schema-error {
+      color: $error;
+      font-size: $egeo-font-size-xsmall;
+      font-weight: 100;
+      width: 100%;
+   }
+
+   .button-toolbar {
+      margin-top: 20px;
+      text-align: right;
+   }
+
+   .form-output {
+      background-color: $neutral-2;
+      font-size: $egeo-font-size-14;
+      font-weight: 100;
+      line-height: $egeo-font-size-18;
+      margin-top: 20px;
+      padding: 5px 20px 20px;
+      width: 100%;
+
+      h2 {
+         color: $neutral-60;
+         font-size: $egeo-font-size-16;
+         font-stretch: normal;
+         font-style: normal;
+         font-weight: bold;
+         letter-spacing: normal;
+         line-height: $egeo-font-size-16;
+         padding-bottom: 15px;
+         padding-top: 15px;
+      }
+   }
+}

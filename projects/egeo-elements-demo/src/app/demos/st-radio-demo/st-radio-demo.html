@@ -1,0 +1,34 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid">
+      <form [formGroup]="form" novalidate autocomplete="off">
+         <h1>Radio buttons in horizontal</h1>
+
+         <st-radio-group class="radio-inline">
+            <st-radio value="1">Enabled 1</st-radio>
+            <st-radio value="2" [disabled]="false">Enabled 2</st-radio>
+            <st-radio value="3" [checked]="true" [disabled]="true">Disabled checked</st-radio>
+         </st-radio-group>
+         <br>
+         <br>
+         <h1>Radio buttons in vertical</h1>
+
+         <st-radio-group class="radio-flex">
+            <st-radio value="1">Enabled 1</st-radio>
+            <st-radio value="2" [disabled]="false">Enabled 2</st-radio>
+            <st-radio value="3" [checked]="true" [disabled]="true">Disabled checked</st-radio>
+         </st-radio-group>
+      </form>
+   </section>
+</st-docs>

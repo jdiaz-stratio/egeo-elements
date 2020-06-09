@@ -1,0 +1,39 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid demo-layout">
+      <p class="introduction">Color picker has been designed to quickly choose a color from a palette</p>
+      <span class="separator"></span>
+      <h1 class="title">Design and behaviour</h1>
+      <p class="paragraph">Color picker can be displayed with a label or without it</p>
+      <st-color-picker label="Choose a Status color" [selected]="selectedColors[0]" [palette]="palette1"
+                       (change)="onSelectColor($event, 0)"></st-color-picker>
+      <span class="separator"></span>
+      <st-color-picker [selected]="selectedColors[1]" [palette]="palette2"
+                       (change)="onSelectColor($event, 1)"></st-color-picker>
+      <span class="separator"></span>
+      <p class="paragraph">Color picker can be used as part of a form</p>
+      <st-color-picker label="Choose a Status color" [selected]="formControl.value" [palette]="palette1" [formControl]="formControl">
+      </st-color-picker>
+      <p class="paragraph">Form control Value: {{formControl.value | json}}</p>
+      <span class="separator"></span>
+
+      <h1 class="title">Usage and best practices</h1>
+      <ul class="list">
+         <li> Use color picker for selecting a color between several colors</li>
+         <li> Don’t use color picker if you don´t want to limit the colors which can be chosen
+         </li>
+         <li> Avoid using similar colors.</li>
+      </ul>
+   </section>
+</st-docs>

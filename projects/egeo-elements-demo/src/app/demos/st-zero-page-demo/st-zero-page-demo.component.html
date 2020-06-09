@@ -1,0 +1,41 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid demo-layout">
+      <p class="introduction">Zero page is displayed when there are no results to show in a table</p>
+      <span class="separator"></span>
+      <h1 class="title">Design and behaviour</h1>
+      <p class="paragraph">This component is displayed with a button when users can perform a main action, usually create a new asset. This component can appear without button for informational purpose only in case the users can't perform any action when the table appears. In case the users could perform an action when the regular table view is displayed, like creating a new asset, please insert a button under the texts.
+      </p>
+      <span class="separator"></span>
+      <h1 class="title">Theme customization</h1>
+      <p class="paragraph">You can customize some styles using the following css variables</p>
+      <demo-css-property-table [cssProperties]="cssProperties"></demo-css-property-table>
+      <span class="separator"></span>
+
+      <h1 class="title">Zero page without content</h1>
+      <st-zero-page class="zero-page-example"
+                    title="Ups! There are no results for this search."
+                    info="Try with other terms."
+                    imageSource="assets/images/empty-box-icon.svg">
+      </st-zero-page>
+
+      <h1 class="title">Zero page with button in content</h1>
+      <st-zero-page class="zero-page-example"
+                    title="There are no Variables created yet "
+                    info="Variables help you to have consistent values through your Quality Rules, Attributes…"
+                    imageSource="assets/images/variable-icon.svg">
+                    <button class="button button-primary">Create Variable</button>
+      </st-zero-page>
+   </section>
+</st-docs>

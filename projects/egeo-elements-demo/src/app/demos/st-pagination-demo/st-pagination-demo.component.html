@@ -1,0 +1,48 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="demo-layout">
+      <h1 class="title">Theme customization</h1>
+      <p class="paragraph">You can customize some pagination styles using the following css variables</p>
+      <demo-css-property-table [cssProperties]="cssProperties"></demo-css-property-table>
+
+
+      <div class="pagination">
+         <h1 class="title">Example</h1>
+         <st-pagination [total]="items.length" [perPage]="perPage" [currentPage]="page" [id]="'pagination-demo'"
+                        (change)="onChangePage($event)"
+                        (changePerPage)="onChangePerPage($event)">
+         </st-pagination>
+      </div>
+
+      <ul class="list-items">
+         <li *ngFor="let item of items | paginate: { perPage: perPage, currentPage: page }">
+            {{ item.label }}
+         </li>
+      </ul>
+
+      <div class="pagination">
+         <st-pagination [total]="items.length" [perPage]="perPage" [currentPage]="page" [id]="'pagination-demo'"
+                        (change)="onChangePage($event)">
+         </st-pagination>
+      </div>
+
+      <div class="separator"></div>
+
+      <button type="button" class="button button-primary" (click)="setItems(300)"><span>Generate 300 Items</span>
+      </button>
+      <button type="button" class="button button-primary" (click)="setItems(150)"><span>Generate 150 Items</span>
+      </button>
+      <button type="button" class="button button-primary" (click)="setItems(30)"><span>Generate 30 Items</span></button>
+   </section>
+</st-docs>

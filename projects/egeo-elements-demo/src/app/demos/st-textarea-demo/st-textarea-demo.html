@@ -1,0 +1,41 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <form [formGroup]="myForm" novalidate>
+      <h1>In a form</h1>
+      <div class="example">
+         <st-textarea name="Disabled" placeholder="Enter description" value="This is a description" label="Description" contextualHelp="This is the contextual help of the components"
+             formControlName="disabledField" class="st-form-field" [cols]="50" [rows]="3">
+         </st-textarea>
+      </div>
+
+      <div class="example">
+
+         <st-textarea name="enabledFormControl" placeholder="Enter description" value="This is a description" label="Enabled" contextualHelp="This is the contextual help of the components"
+             formControlName="enabledField" class="st-form-field" [cols]="50" [rows]="3">
+         </st-textarea>
+      </div>
+
+      <div class="example">
+         <st-textarea name="requiredField" placeholder="Enter description" value="This is a description" label="Required field" [required]="true"
+             contextualHelp="This is the contextual help of the components" formControlName="requiredField" class="st-form-field" [cols]="50" [rows]="3">
+         </st-textarea>
+      </div>
+      <h1>Out a form</h1>
+      <div class="example">
+         <st-textarea placeholder="Enter description" value="This is a description" label="Description" contextualHelp="This is the contextual help of the components"
+             [cols]="50" [rows]="3">
+         </st-textarea>
+      </div>
+   </form>
+</st-docs>

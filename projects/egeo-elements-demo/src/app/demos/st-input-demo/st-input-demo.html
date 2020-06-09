@@ -1,0 +1,51 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="col-sm-4">
+      <h1>Without form control</h1>
+      <st-input class="st-form-field" type="text" name="outForm" placeholder="Enter your name" value="Peter" default="def" label="Name"></st-input>
+
+      <br>
+
+      <h1>Inside form</h1>
+
+      <form [formGroup]="myForm" novalidate>
+         <st-input class="st-form-field" type="text" formControlName="name" placeholder="Enter your name" label="Field" default="default name"
+                   contextualHelp="This is a normal field"></st-input>
+         <st-input class="st-form-field" type="text" formControlName="disabledField" placeholder="This field is disabled" label="Disabled field"></st-input>
+         <st-input class="st-form-field" type="text" formControlName="disabledFieldWithValue" placeholder="This field is disabled" label="Disabled field"></st-input>
+
+         <st-input class="st-form-field" type="text" formControlName="requiredField" placeholder="This field is required" [errors]="requiredError"
+                   label="Required field" contextualHelp="This is a required field"></st-input>
+
+         <st-input class="st-form-field" type="text" formControlName="numberField" placeholder="This is a number field" label="Number field"
+                   fieldType="number" step="0.6"></st-input>
+
+         <st-input class="st-form-field" type="text" formControlName="autocompletedField" placeholder="This field has an autocomplete list"
+                   [autocompleteList]="autocompleteList" [charsToShowAutocompleteList]="0"
+                   label="Field with autocomplete list" contextualHelp="Only one character is required to display the autocomplete list"></st-input>
+
+         <div class="st-form-field">
+            <label class="st-label">Native Input with st-input class</label>
+            <input class="st-input st-form-field" formControlName="requiredField" placeholder="This field is created with st-input class" />
+
+            <input class="st-input st-form-field" formControlName="numberField" placeholder="Number field" type="number" [min]="1" [maxlength]="1" />
+         </div>
+         <div class="st-form-field">
+            <label class="st-label">Native disabled Input with class</label>
+            <input class="st-input st-form-field" formControlName="disabledField" placeholder="This field is disabled" />
+         </div>
+      </form>
+      <button class="button button-primary" (click)="disableInput()">DISABLE/ENABLE INPUTS</button>
+   </section>
+</st-docs>

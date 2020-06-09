@@ -1,0 +1,78 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section>
+      <h2>Show selected elements in console</h2>
+
+      <button class="button button-primary" (click)="showSelectedElements()">
+         <span>Show</span>
+      </button>
+
+      <br><br><br><br>
+
+      <h2>Full component, view component and behaviour class</h2>
+      <div style="width: 100%; height: 500px">
+         <st-two-list-selection [allElements]="completeUserList" [(selectedElements)]="selectedUserList" (selectExtraLabelAll)="selectExtraLabel($event)"
+             (selectExtraLabelSelected)="selectExtraLabel($event)" [config]="config" [editable]="true" qaTag="container-list"></st-two-list-selection>
+      </div>
+      <br><br><br>
+      <h2>Only view component</h2>
+      <div style="width: 100%; height: 500px">
+         <st-two-list-selection-view [allElements]="completeUserList" [selectedElements]="selectedUserList" [config]="config" [editable]="true" qaTag="example-two-list"
+             [orderSelectedOptions]="orderOptions" (changeOrderSelected)="changeOrder($event)"></st-two-list-selection-view>
+      </div>
+
+      <br><br><br>
+      <h2>Only view component in no edition mode</h2>
+      <div style="width: 50%; height: 500px">
+         <st-two-list-selection-view [selectedElements]="selectedUserList" [config]="config" [editable]="false" qaTag="example-two-list-disable" mode="compact"></st-two-list-selection-view>
+      </div>
+
+      <br><br><br>
+      <h2>Only view component in no edition mode with menu options</h2>
+      <div style="width: 50%; height: 500px">
+         <st-two-list-selection-view [selectedElements]="selectedUserList" [config]="configWithMenuOption" [editable]="false" qaTag="example-two-list-disable" mode="compact" (selectItemNonEditable)="onSelectItemNonEditable($event)"></st-two-list-selection-view>
+      </div>
+
+      <br><br><br>
+      <h2>Checkbox all, and condition show search</h2>
+      <div style="width: 855px; height: 570px">
+         <st-two-list-selection [allElements]="completeUserList" [(selectedElements)]="selectedUserList" [config]="configWithCheckAll" [editable]="true"
+             (numItemsSelectedAll)="onNumItemsAll($event)" (numItemsSelectedSelected)="onNumItemsSelected($event)" qaTag="container-list"
+             [hasAllListAll]="true" [hasAllListSelected]="true" [itemAll]="itemAll" [moveAllToSelectedButton]="false" [moveAllToAllButton]="false"
+             [showSearchNumber]="0" [orderSelectedOptions]="orderOptions" (change)="onChange($event)"></st-two-list-selection>
+      </div>
+      <br><br><br>
+
+      <br><br>
+      <h2>With loading at bottom</h2>
+      <div style="width: 855px; height: 570px">
+         <st-two-list-selection [allElements]="completeUserList" [(selectedElements)]="selectedUserList" [config]="configWithCheckAll" [editable]="true"
+             (numItemsSelectedAll)="onNumItemsAll($event)" (numItemsSelectedSelected)="onNumItemsSelected($event)" qaTag="container-list"
+             [hasAllListAll]="true" [hasAllListSelected]="true" [isLoading]="isLoading" [itemAll]="itemAll" [moveAllToSelectedButton]="false"
+             [moveAllToAllButton]="false" [showSearchNumber]="0" [orderSelectedOptions]="orderOptions" (change)="onChange($event)" (scrollBottomAll)="onScrollBottomAll($event)"></st-two-list-selection>
+      </div>
+      <br><br><br>
+
+      <br><br>
+      <h2>With disabled elements</h2>
+      <div style="width: 855px; height: 570px">
+         <st-two-list-selection [allElements]="completeUserListDisabled" [(selectedElements)]="selectedUserList" [config]="configWithCheckAll" [editable]="true"
+             (numItemsSelectedAll)="onNumItemsAll($event)" (numItemsSelectedSelected)="onNumItemsSelected($event)" qaTag="container-list"
+             [hasAllListAll]="true" [hasAllListSelected]="true" [isLoading]="isLoading" [itemAll]="itemAll" [showSearchNumber]="0" [orderSelectedOptions]="orderOptions" (change)="onChange($event)" (scrollBottomAll)="onScrollBottomAll($event)"></st-two-list-selection>
+      </div>
+      <br><br><br>
+
+   </section>
+
+</st-docs>

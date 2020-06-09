@@ -1,0 +1,49 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid demo-layout">
+      <p class="introduction">Tabs are designed to quickly navigate between views within the same context.</p>
+      <span class="separator"></span>
+      <h1 class="title">Design and behaviour</h1>
+      <p class="paragraph">Tabs appear in a single, non-scrollable row, above their content. The width of each tab is
+         dependent on its label. To ensure that all tabs appear in the container, avoid using more than seven tabs and
+         limit labels to one or two words.</p>
+      <st-horizontal-tabs class="demo" [options]="options" [activeOption]="active" qaTag="horizontal-tabs-demo">
+         <st-filter-selector class="filter"
+                             [filterList]="filterList"
+                             [selected]="selectedFilter"
+                             (clickFilter)="onChangeFilter($event)"
+                             [openFilter]="openFilter"
+                             (changeFilterVisibility)="openFilter = !openFilter"
+                             (closeFilter)="openFilter = false">
+         </st-filter-selector>
+      </st-horizontal-tabs>
+      <span class="separator"></span>
+      <h1 class="title">Usage and best practices</h1>
+      <ul class="list">
+         <li> Use tabs for alternate views within the sidenav, the aside or main content area.</li>
+         <li> Don’t use tabs to break user interactions into a series of steps. Serial workflows are best presented in a
+            wizard.
+         </li>
+         <li> Avoid using tabs in cards and modals.</li>
+         <li> Ensure that the content in each view is independent of the content in other views.</li>
+         <li> Don’t force users to navigate back and forth to compare data–keep such content in the same view.</li>
+         <li> Avoid cross-linking between tabs.</li>
+         <li> If the content within a view is broad, divide it into subsections.</li>
+         <li> Users should not have to move between tabs in order to complete a task</li>
+         <li> Favor nouns over verbs, for example, Settings, Permissions, and Performance.</li>
+         <li> Use title-style caps.</li>
+         <li> Avoid using icons in labels.</li>
+      </ul>
+   </section>
+</st-docs>

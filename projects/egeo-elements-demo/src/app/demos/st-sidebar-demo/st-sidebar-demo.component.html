@@ -1,0 +1,44 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="col-sm-12 demo-layout">
+      <p class="introduction">Sidebar allows to navigate user through content.</p>
+      <span class="separator"></span>
+      <h1 class="title">Theme customization</h1>
+      <p class="paragraph">You can customize some table styles using the following css variables</p>
+      <demo-css-property-table [cssProperties]="cssProperties"></demo-css-property-table>
+
+
+      <h1 class="title">Examples</h1>
+      <st-switch (change)="enableSearchMode = $event" label="Enable search mode" class="col-sm-12 row"></st-switch>
+
+      <div class="sidebar-container">
+         <h1>Normal visualization </h1>
+
+         <st-sidebar class="sidebar" title="Mesos Manager" [items]="items" qaTag="sidebar-demo" [active]="activeItem" [searchMode]="enableSearchMode"
+             (change)="onChangeActive($event)">
+            <span class="header" sidebar-header> HEADER CONTENT</span>
+            <span class="footer" sidebar-footer> FOOTER CONTENT</span>
+         </st-sidebar>
+      </div>
+
+      <div class="sidebar-container">
+         <h1>Complex visualization </h1>
+         <st-sidebar class="sidebar" title="Mesos Manager" [visualMode]="complexMode" [items]="items" qaTag="sidebar-demo" [active]="activeItem"
+             [searchMode]="enableSearchMode" (change)="onChangeActive($event)">
+            <span sidebar-footer> FOOTER CONTENT</span>
+
+         </st-sidebar>
+      </div>
+   </section>
+</st-docs>

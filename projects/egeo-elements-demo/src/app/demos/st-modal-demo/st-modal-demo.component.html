@@ -1,0 +1,67 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-fluid col-md-24">
+      <div class="st-live-example">
+         <h1 class="st-live-example-title">Modals by type of content:</h1>
+
+         <button class="button button-primary" (click)="showModal()">
+            <span>Simple Message Modal</span>
+         </button>
+         <button class="button button-primary" (click)="showModalWithHtml()">
+            <span>Modal with HTML</span>
+         </button>
+         <button class="button button-primary" (click)="showModalWithComponent()">
+            <span>Modal with component</span>
+         </button>
+         <button class="button button-primary" (click)="showModalWithComponentAndIcon()">
+               <span>Modal with component and custom icon</span>
+            </button>
+         <button class="button button-primary" (click)="showModalWithoutButtons()">
+            <span>Modal without buttons</span>
+         </button>
+         <button class="button button-primary" (click)="showFullscreenModalWithComponentAndWithoutContent()">
+            <span>Modal fullscreen only with component</span>
+         </button>
+
+         <br>
+         <br>
+         <h1 class="st-live-example-title">Modals by size:</h1>
+         <button class="button button-primary" (click)="showFullscreenModal()">
+            <span>Fullscreen modal</span>
+         </button>
+
+         <br>
+         <br>
+         <h1 class="st-live-example-title">Other modals:</h1>
+         <button class="button button-primary" (click)="showBasic('delete')">
+            <span>Delete modal</span>
+         </button>
+         <button class="button button-primary" (click)="showBasic('warning')">
+            <span>Warning modal</span>
+         </button>
+         <button class="button button-primary" (click)="showBasic('confirm')">
+            <span>Confirmation modal</span>
+         </button>
+         <button class="button button-primary" (click)="showBasic('info')">
+            <span>Info modal</span>
+         </button>
+
+
+
+      </div>
+   </section>
+   <st-demo-logger></st-demo-logger>
+   <div #loadModal id="modal-container"></div>
+
+</st-docs>

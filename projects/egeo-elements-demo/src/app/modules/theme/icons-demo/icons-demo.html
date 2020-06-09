@@ -1,0 +1,26 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<div class="head">
+   <div class="header-container">
+      <egeo-title title="Icons"></egeo-title>
+      <div *ngIf="hasNotification" class="notification" [style.opacity]="opacity">
+         {{notification}} <i class="icon-cross close-button" (click)="closeNotification()"></i>
+      </div>
+      <st-search placeholder="Search Icon" [value]="searched" [debounce]="200" (search)="onSearchResult($event)"></st-search>
+   </div>
+</div>
+<div class="list">
+   <div *ngFor="let icon of ((iconList | async) || []) | stFilterList:searchBy:searchValue">
+      <icon-demo [icon]="icon" (copyIconName)="onCopyIconName($event)"></icon-demo>
+   </div>
+</div>

@@ -1,0 +1,40 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid">
+      <div class="bubble-demo-container">
+         <div class="buttons">
+            <st-switch label="Enabled animation" [(formControl)]="animationFormControl">
+            </st-switch>
+
+            <st-switch label="Small theme" [(formControl)]="smallFormControl">
+            </st-switch>
+
+            <st-switch label="Open to left" [(formControl)]="openToLeftFormControl">
+            </st-switch>
+         </div>
+         <div class="bubble-container">
+            <st-bubble qaTag="bubble-demo" [text]="text" [hidden]="hidden"
+                       [animation]="animationFormControl.value"
+                       [small]=" smallFormControl.value"
+                       [offset]="{x: 38, y: 17}"
+                       [openToLeft]="openToLeftFormControl.value">
+
+               <button bubble-button class="bubble-demo-button button button-primary" (click)="onClick()">
+                  <span>Bubble</span>
+               </button>
+            </st-bubble>
+         </div>
+      </div>
+   </section>
+</st-docs>

@@ -1,0 +1,56 @@
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+  <section class="container-fluid col-md-24">
+
+    <div class="st-live-example">
+      <h1 class="st-live-example-title">Simple Modal:</h1>
+      <button class="button button-primary" (click)="modal1 = true">
+        <span>Simple Message Modal</span>
+      </button>
+
+      <st-modal2 modalTitle="Modal title"
+        (onClose)="modal1 = false"
+        *ngIf="modal1">
+        <div>
+          Modal content
+        </div>
+      </st-modal2>
+
+    </div>
+
+    <div class="st-live-example">
+      <h1 class="st-live-example-title">Simple modal with ESC control</h1>
+      <button class="button button-primary" (click)="modal2 = true">
+        <span>Simple message modal with ESC control</span>
+      </button>
+  
+      <st-modal2 modalTitle="Modal title"
+        closeOnEscape="true"
+        (onClose)="modal2 = false"
+        *ngIf="modal2">
+        <div>
+          Modal content
+        </div>
+      </st-modal2>
+  
+    </div>
+    <div class="st-live-example">
+      <h1 class="st-live-example-title">Simple modal with custom Header</h1>
+      <button class="button button-primary" (click)="modal3 = true">
+        <span>Custom title Modal</span>
+      </button>
+      
+      <st-modal2
+        closeOnEscape="true"
+        (onClose)="modal3 = false"
+        *ngIf="modal3">
+        <div st-modal-title>
+          Custom <b>title</b>
+        </div>
+        <div>
+          Modal content
+        </div>
+      </st-modal2>
+    
+    </div>
+  </section>
+</st-docs>

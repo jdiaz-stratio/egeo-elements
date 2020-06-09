@@ -1,0 +1,30 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid">
+      <div class="example">
+         <h1 class="example-title"> Default file button </h1>
+         <st-file-button text="IMPORT" accepted='json' (selected)="onUploadValidFile($event)" (error)="onUploadInvalidFile()">
+         </st-file-button>
+      </div>
+      <div class="example">
+         <h1 class="example-title"> Secondary link button </h1>
+         <div class="col-md-3">
+
+            <st-file-button text="Upload Json" accepted='json' buttonClass="button button-link" (selected)="onUploadValidFile($event)"
+                (error)="onUploadInvalidFile()">
+            </st-file-button>
+         </div>
+      </div>
+   </section>
+</st-docs>

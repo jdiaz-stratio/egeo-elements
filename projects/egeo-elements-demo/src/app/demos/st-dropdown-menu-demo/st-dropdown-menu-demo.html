@@ -1,0 +1,56 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <st-demo-logger></st-demo-logger>
+   <section class="container-liquid">
+
+      <div *ngFor="let menu of menus; let idx = index">
+         <ng-container *ngIf="idx < 5">
+            <h1>{{titles[idx]}}</h1>
+            <br>
+            <st-dropdown-menu
+               [keyBoardMove]="true"
+               [items]="menu"
+               [active]="active[idx]"
+               [selectedItem]="selectedValue[idx]"
+               [visualMode]="getVisualMode(idx)"
+               [attr.id]="'dropdown-' + idx"
+               (change)="onChange($event, idx)">
+               <button class="button button-primary" (click)="changeActive(idx)">Show {{titles[idx]}}</button>
+            </st-dropdown-menu>
+            <br>
+            <p>Value: {{selectedValue[idx] | json}}</p>
+            <br>
+            <br>
+         </ng-container>
+      </div>
+   </section>
+   <section class="container-liquid">
+      <div>
+         <h1>Scroll with Loading more spinner</h1>
+         <br>
+         <st-dropdown-menu [keyBoardMove]="true" [items]="menus[5]" [active]="active[5]"
+                           [selectedItem]="selectedValue[5]"
+                           [attr.id]="'dropdown-' + 5" (change)="onChange($event, 5)"
+                           (scrollAtBottom)="onScrollAtBottom()" [isLoading]="isLoading">
+            <button class="button button-primary" (click)="changeActive(5)">Show
+               with Loading more spinner
+            </button>
+         </st-dropdown-menu>
+         <br>
+         <p>Value: {{selectedValue[5] | json}}</p>
+         <br>
+         <br>
+      </div>
+   </section>
+</st-docs>

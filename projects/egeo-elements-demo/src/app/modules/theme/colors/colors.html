@@ -1,0 +1,40 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<section class="demo-layout">
+   <div class="head">
+      <egeo-title title="Colors"></egeo-title>
+      <div class="notification-container ">
+         <div *ngIf="hasNotification" class="notification" [style.opacity]="opacity">
+            {{notification}}
+            <i class="icon-cross close-button" (click)="closeNotification()"></i>
+         </div>
+      </div>
+      <st-search placeholder="Search color" [value]="searched" [debounce]="200"
+                 (search)="onSearchResult($event)">
+      </st-search>
+   </div>
+   <p class="paragraph">Here you can see the available colors of our palette. You can customize any of them using css
+      variables with the prefix "egeo-theme-".
+      For example, if you want to modify the brand color, you need to define a css variable with the name
+      "--egeo-theme-brand"</p>
+   <div class="list">
+      <div *ngFor="let colorGroup of ((colorsList | async) || [])" class="group">
+         <span class="subtitle">{{colorGroup[0].category}}</span>
+         <div class="category">
+            <div *ngFor="let color of colorGroup | stFilterList:searchBy:searchValue">
+               <color-demo [color]="color" (copyColorName)="onCopyColorName($event)"></color-demo>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>

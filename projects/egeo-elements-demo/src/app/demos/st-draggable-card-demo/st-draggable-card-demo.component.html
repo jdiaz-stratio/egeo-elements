@@ -1,0 +1,42 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid">
+      <div class="card-container" (drop)="drop($event)" (dragover)="allowDrop($event)">
+         <st-draggable-card class="card" id="card-1" (onDragStart)="drag($event)">
+            <p>Draggable card 1</p>
+         </st-draggable-card>
+      </div>
+
+      <div class="card-container" (drop)="drop($event)" (dragover)="allowDrop($event)">
+         <st-draggable-card class="card" id="card-2" (onDragStart)="drag($event)">
+            <p>Draggable card 2</p>
+         </st-draggable-card>
+      </div>
+
+      <div class="card-container" (drop)="drop($event)" (dragover)="allowDrop($event)">
+         <st-draggable-card class="card" id="card-3" (onDragStart)="drag($event)">
+            <p>Draggable card 3</p>
+         </st-draggable-card>
+      </div>
+
+      <div class="card-container" (drop)="drop($event)" (dragover)="allowDrop($event)">
+      </div>
+
+      <div class="card-container" (drop)="drop($event)" (dragover)="allowDrop($event)">
+      </div>
+
+      <div class="card-container" (drop)="drop($event)" (dragover)="allowDrop($event)">
+      </div>
+   </section>
+</st-docs>

@@ -1,0 +1,45 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+   <section class="container-liquid">
+      <div class="bubble-demo-container">
+         <div class="buttons">
+            <st-switch label="Open to left" [(formControl)]="openToLeftFormControl">
+            </st-switch>
+            <st-input label="Max with of container" [(formControl)]="containerMaxWidthFormControl"
+                      [fieldType]="'number'"></st-input>
+         </div>
+         <div class="bubble-container" [style.max-width]="containerMaxWidthFormControl.value + 'px'">
+            <st-bubble-on-ellipsis
+               [text]="'Put mouse over to display a bubble when there is ellipsis'"
+               [openToLeft]="openToLeftFormControl.value">
+               Put mouse over to display a bubble when there is ellipsis
+            </st-bubble-on-ellipsis>
+            <br>
+            <st-bubble-on-ellipsis
+               [text]="'This is a long text and we want to display it with ellipsis only if it takes up more than two lines'"
+               [openToLeft]="openToLeftFormControl.value"
+               [lines]="2">
+               This is a long text and we want to display it with ellipsis only if it takes up more than <b>two lines</b>
+            </st-bubble-on-ellipsis>
+            <br>
+            <st-bubble-on-ellipsis
+               [text]="'This is a long text and we want to display it with ellipsis only if it takes up more than three lines'"
+               [openToLeft]="openToLeftFormControl.value"
+               [lines]="3">
+               This is a long text and we want to display it with ellipsis only if it takes up more than <b>three lines</b>
+            </st-bubble-on-ellipsis>
+         </div>
+      </div>
+   </section>
+</st-docs>
