@@ -1,10 +1,10 @@
 import {enableProdMode} from '@angular/core';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
-import { StAlertsElementModule } from './st-alerts.module';
+import { StPopOverElementModule } from './st-pop-over.module';
 
 enableProdMode();
 
 platformBrowserDynamic()
-    .bootstrapModule(StAlertsElementModule)
+    .bootstrapModule(StPopOverElementModule)
     .catch(err => console.error(err));
