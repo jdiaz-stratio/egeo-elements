@@ -1,0 +1,160 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<section class="container-liquid">
+   <div class="demo-layout">
+      <p class="introduction">Dynamic tables are structured grids of information created automatically using a json
+         schema to define their structures</p>
+      <span class="separator"></span>
+      <h1 class="title">Design and behaviour</h1>
+      <p class="paragraph">
+         Dynamic tables are based on egeo table component so they have the same design and behaviour.
+      </p>
+      <h1 class="title">Theme customization</h1>
+      <p class="paragraph">You can customize some table styles using the following css variables</p>
+   </div>
+
+   <demo-css-property-table [cssProperties]="cssProperties"></demo-css-property-table>
+
+   <h2 class="subtitle">Selectable and filterable tables</h2>
+   <div class="row">
+      <div class="col-sm-12 col-lg-12 col-xs-12">
+         <st-dynamic-table [jsonSchema]="jsonSchema" [items]="users" [sortable]="false" [filterable]="true"
+            [selectable]="true" [selectableAll]="true" [hasHoverMenu]="true"
+            [activeHoverMenu]="activeHoverMenuPosition[0]" (selectAll)="onSelectAll($event, 0)"
+            (selectRow)="onSelectRow($event, 0)" (showHoverMenu)="onShowHoverMenu($event, 0)">
+            <st-dropdown-menu st-dynamic-table-hover-menu class="row-menu" [items]="rowActions"
+               [active]="activeHoverMenuPosition[0] !== undefined" [visualMode]="1">
+            </st-dropdown-menu>
+         </st-dynamic-table>
+      </div>
+   </div>
+
+   <h2 class="subtitle">Sortable table</h2>
+   <p class="paragraph">Table can be configured as sortable or not. Moreover, it allows to configure only specific
+      fields as sortable using <b>uiDefinition</b> input. In this example, we have marked "company" column as not
+      sortable.</p>
+   <st-dynamic-table [jsonSchema]="jsonSchema" [items]="sortedUsers" [sortable]="true" [filterable]="false"
+      [currentOrder]="currentOrder" [hasHoverMenu]="true" [uiDefinitions]="{company: {sortable: false}}"
+      [activeHoverMenu]="activeHoverMenuPosition[1]" (changeOrder)="onSortTable($event)"
+      (showHoverMenu)="onShowHoverMenu($event, 1)">
+      <st-dropdown-menu st-dynamic-table-hover-menu class="row-menu" [items]="rowActions"
+         [active]="activeHoverMenuPosition[1] !== undefined" [visualMode]="1">
+      </st-dropdown-menu>
+   </st-dynamic-table>
+
+   <h2 class="subtitle">Filterable and sortable table</h2>
+   <p class="paragraph">Table can be configured as filterable or not. Moreover, it allows to configure only specific
+      fields as filterable </p>
+   <st-dynamic-table [jsonSchema]="jsonSchema" [items]="sortedUsers" [sortable]="true" [filterable]="true"
+      [hasHoverMenu]="true" [currentOrder]="currentOrder" [activeHoverMenu]="activeHoverMenuPosition[2]"
+      (changeOrder)="onSortTable($event)" (showHoverMenu)="onShowHoverMenu($event, 2)">
+      <st-dropdown-menu st-dynamic-table-hover-menu class="row-menu" [items]="rowActions"
+         [active]="activeHoverMenuPosition[2] !== undefined" [visualMode]="1">
+      </st-dropdown-menu>
+   </st-dynamic-table>
+
+   <h2 class="subtitle">Filterable table with custom template</h2>
+   <p class="paragraph">Table can be configured as filterable or not. Moreover, it allows to configure only specific
+      fields as filterable </p>
+
+   <ng-template #filterContent>
+      <div>
+         <st-checkbox name="nameA" value="1">
+            <span>Option A</span>
+         </st-checkbox>
+         <st-checkbox name="nameB" value="2">
+            <span>Option B</span>
+         </st-checkbox>
+         <st-checkbox name="nameC" value="3">
+            <span>Option C</span>
+         </st-checkbox>
+      </div>
+      <button class="button button-primary small st-table__popover-button" (click)="onFilter(index); checkIcon(index)">
+         <span>Apply</span>
+      </button>
+   </ng-template>
+   <st-dynamic-table [jsonSchema]="jsonSchema" [items]="sortedUsers" [sortable]="true" [filterable]="true"
+      [hasHoverMenu]="true" [currentOrder]="currentOrder" [activeHoverMenu]="activeHoverMenuPosition[3]"
+      [templateContentFilter]="filterContent" (changeOrder)="onSortTable($event)"
+      (showHoverMenu)="onShowHoverMenu($event, 3)">
+      <st-dropdown-menu st-dynamic-table-hover-menu class="row-menu" [items]="rowActions"
+         [active]="activeHoverMenuPosition[3] !== undefined" [visualMode]="1">
+      </st-dropdown-menu>
+   </st-dynamic-table>
+
+   <h2 class="subtitle">Table with fixed header</h2>
+   <p class="paragraph">In order to fix the header, it is needed to set the input 'fixedHeader' to true and specify
+      to st-table tag from outside <i><b>"display:flex; height: 'the desired height'</b></i>"</p>
+
+   <st-dynamic-table class="fixed-header-table" [jsonSchema]="jsonSchema" [items]="users" [hasHoverMenu]="true"
+      [fixedHeader]="true" [activeHoverMenu]="activeHoverMenuPosition[4]" [templateContentFilter]="filterContent"
+      (showHoverMenu)="onShowHoverMenu($event, 4)">
+      <st-dropdown-menu st-dynamic-table-hover-menu class="row-menu" [items]="rowActions"
+         [active]="activeHoverMenuPosition[4] !== undefined" [visualMode]="1">
+      </st-dropdown-menu>
+   </st-dynamic-table>
+
+
+   <h2 class="subtitle">Table with fixed header and sticky hover menu</h2>
+
+   <st-dynamic-table class="fixed-header-table" style="max-width: 60%" [jsonSchema]="jsonSchema" [items]="users"
+      [hasHoverMenu]="true" [fixedHeader]="true" [stickyHoverMenu]="true" [activeHoverMenu]="activeHoverMenuPosition[4]"
+      [templateContentFilter]="filterContent" (showHoverMenu)="onShowHoverMenu($event, 4)">
+      <st-dropdown-menu st-dynamic-table-hover-menu class="row-menu" [items]="rowActions"
+         [active]="activeHoverMenuPosition[4] !== undefined" [visualMode]="1">
+      </st-dropdown-menu>
+   </st-dynamic-table>
+
+
+   <h2 class="subtitle">Table without header</h2>
+   <st-dynamic-table [jsonSchema]="jsonSchema" [items]="users" [hasHoverMenu]="true" [header]="false"
+      [activeHoverMenu]="activeHoverMenuPosition[5]" [templateContentFilter]="filterContent"
+      (showHoverMenu)="onShowHoverMenu($event, 5)">
+      <st-dropdown-menu st-dynamic-table-hover-menu class="row-menu" [items]="rowActions"
+         [active]="activeHoverMenuPosition[5] !== undefined" [visualMode]="1">
+      </st-dropdown-menu>
+   </st-dynamic-table>
+
+   <h2 class="subtitle">Table with custom class 'separated rows'</h2>
+   <st-dynamic-table [jsonSchema]="jsonSchema" [items]="users" [hasHoverMenu]="true" [header]="true" [sortable]="false"
+      customClasses="separated-rows" [activeHoverMenu]="activeHoverMenuPosition[4]"
+      [templateContentFilter]="filterContent" (showHoverMenu)="onShowHoverMenu($event, 4)">
+      <st-dropdown-menu st-dynamic-table-hover-menu class="row-menu" [items]="rowActions"
+         [active]="activeHoverMenuPosition[4] !== undefined" [visualMode]="1">
+      </st-dropdown-menu>
+   </st-dynamic-table>
+
+   <h2 class="subtitle">Table with custom css definitions</h2>
+   <st-dynamic-table [jsonSchema]="jsonSchema" [uiDefinitions]="uiDefinition" [currentOrder]="currentOrder"
+      [items]="sortedUsers" [hasHoverMenu]="true" [header]="true" [activeHoverMenu]="activeHoverMenuPosition[4]"
+      [templateContentFilter]="filterContent" (showHoverMenu)="onShowHoverMenu($event, 4)"
+      (changeOrder)="onSortTable($event)">
+      <st-dropdown-menu st-dynamic-table-hover-menu class="row-menu" [items]="rowActions"
+         [active]="activeHoverMenuPosition[4] !== undefined" [visualMode]="1">
+      </st-dropdown-menu>
+   </st-dynamic-table>
+
+   <h2 class="subtitle">Tables with Fks and groups</h2>
+   <div class="row">
+      <div class="col-sm-12 col-lg-12 col-xs-12">
+         <st-dynamic-table [jsonSchema]="jsonSchemaFk" [items]="fks" [sortable]="false" [filterable]="true"
+            [selectable]="true" [selectableAll]="true" [hasHoverMenu]="true"
+            [activeHoverMenu]="activeHoverMenuPosition[0]" (selectAll)="onSelectAll($event, 0)"
+            (selectRow)="onSelectRow($event, 0)" (showHoverMenu)="onShowHoverMenu($event, 0)">
+            <st-dropdown-menu st-dynamic-table-hover-menu class="row-menu" [items]="rowActions"
+               [active]="activeHoverMenuPosition[0] !== undefined" [visualMode]="1">
+            </st-dropdown-menu>
+         </st-dynamic-table>
+      </div>
+   </div>
+</section>

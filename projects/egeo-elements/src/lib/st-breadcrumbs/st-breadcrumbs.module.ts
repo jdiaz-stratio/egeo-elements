@@ -2,7 +2,7 @@ import {Injector, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {ElementModule} from '../../abstract/element.module';
-import {StBreadCrumbsComponent, StBreadcrumbsModule} from '@stratio/egeo';
+import {StBreadCrumbsComponent, StBreadcrumbsModule } from '@stratio/egeo';
 
 @NgModule({
     imports: [BrowserModule, StBreadcrumbsModule],

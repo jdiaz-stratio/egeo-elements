@@ -1,1 +1,157 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '../theme/constants.scss';
+@import '~prismjs/themes/prism.css';
+@import '~@stratio/egeo-ui-base/nunito-sans.css';
+@import '~@stratio/egeo-ui-base/stratio-fonticon.css';
+
+
+:root {
+   --egeo-grid---max: 100%;
+}
+
+body {
+   color: $neutral-40;
+   font-weight: 400;
+   font-size: 14px;
+   font-family: $egeo-nunito-sans;
+   overflow-y: hidden;
+}
+
+main {
+   .page-title:first-child {
+      margin-top: 0;
+      padding-top: 0;
+   }
+}
+
+.page-title {
+   border-bottom: 2px solid;
+   border-color: $brand;
+   color: $space-110;
+   display: inline-block;
+   font-size: $egeo-font-size-xxlarge;
+   font-weight: normal;
+   margin: 0 0 25px;
+   padding: 0 0 8px;
+}
+
+.content {
+   display: flex;
+   height: 100%;
+}
+
+.changelog {
+   h2 {
+      font-weight: 900;
+      font-size: $egeo-font-size-xlarge;
+      line-height: 44px;
+   }
+
+   p {
+      font-weight: 100;
+      line-height: 28px;
+
+      strong {
+         font-weight: 600;
+         line-height: 34px;
+      }
+   }
+
+   ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+   }
+}
+
+.main-content {
+   width: 100%;
+   flex-direction: column;
+   flex: 1;
+   min-width: 0;
+   padding-left: 60px;
+   padding-right: 30px;
+   overflow-y: auto;
+   overflow-x: hidden;
+   height: 100%;
+
+   .container-fnotification {
+      .st-header {
+         position: static;
+      }
+   }
+
+   st-prism-highlight {
+      pre {
+         margin: 0;
+         background-color: $neutral-full;
+      }
+   }
+}
+
+.demo-layout {
+
+   .introduction {
+      font-weight: normal;
+      font-size: 25px;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: $egeo-line-height-xxxlarge;
+      letter-spacing: normal;
+      color: $neutral;
+      height: 100px;
+   }
+
+   .title {
+      font-weight: bold;
+      font-size: $egeo-font-size-xlarge;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: $egeo-line-height-26;
+      letter-spacing: normal;
+      color: $neutral;
+      padding: 26px 0;
+      display: inline-block;
+   }
+
+   .subtitle {
+      font-weight: 400;
+      font-size: $egeo-font-size-20;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: $egeo-line-height-24;
+      letter-spacing: normal;
+      color: $neutral;
+      padding: 26px 0;
+      display: inline-block;
+   }
+
+   .paragraph {
+      font-weight: normal;
+      font-size: $egeo-font-size-18;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: $egeo-line-height-22;
+      letter-spacing: normal;
+      color: $neutral;
+      padding-bottom: 20px;
+   }
+
+   .separator {
+      display: block;
+      width: 75px;
+      height: 1px;
+      background-color: $brand;
+      margin-bottom: 30px;
+   }
+
+   .list {
+      font-weight: 400;
+      font-size: $egeo-font-size-16;
+      line-height: $egeo-line-height-24;
+      color: $neutral-70;
+      padding-left: 25px;
+   }
+
+}

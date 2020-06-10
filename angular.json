@@ -118,16 +118,60 @@
             ],
             "styles": [
               "node_modules/@stratio/egeo/theme/constants.scss",
-              "node_modules/@stratio/egeo/theme/theme.css",
-               "projects/egeo-elements-demo/src/styles.scss"
+              "node_modules/@stratio/egeo/theme/sanitize.css",
+              "node_modules/@stratio/egeo/theme/grid.css",
+              "dist/helpers/main-theme.css",
+              "projects/egeo-elements-demo/src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/@stratio/egeo/theme"
+              ]
+            },
             "scripts": [
               "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js",
               "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",
+              "dist/components/st-alerts-es2015.js",
+              "dist/components/st-breadcrumbs-es2015.js",
+              "dist/components/st-bubble-es2015.js",
+              "dist/components/st-checkbox-es2015.js",
+              "dist/components/st-color-picker-es2015.js",
+              "dist/components/st-docs-es2015.js",
+              "dist/components/st-draggable-card-es2015.js",
+              "dist/components/st-dropdown-menu-es2015.js",
+              "dist/components/st-file-button-es2015.js",
+              "dist/components/st-filter-selector-es2015.js",
+              "dist/components/st-footer-es2015.js",
+              "dist/components/st-foreground-notifications-es2015.js",
+              "dist/components/st-form-es2015.js",
+              "dist/components/st-form-list-es2015.js",
+              "dist/components/st-fullscreen-layout-es2015.js",
+              "dist/components/st-header-es2015.js",
+              "dist/components/st-horizontal-tabs-es2015.js",
               "dist/components/st-input-es2015.js",
-              "dist/components/st-select-es2015.js",
+              "dist/components/st-item-list-es2015.js",
+              "dist/components/st-launcher-es2015.js",
+              "dist/components/st-menu-es2015.js",
+              "dist/components/st-modal-es2015.js",
+              "dist/components/st-page-title-es2015.js",
               "dist/components/st-pagination-es2015.js",
-              "dist/components/st-spinner-es2015.js"
+              "dist/components/st-pop-over-es2015.js",
+              "dist/components/st-progress-bar-es2015.js",
+              "dist/components/st-radio-es2015.js",
+              "dist/components/st-search-es2015.js",
+              "dist/components/st-select-es2015.js",
+              "dist/components/st-spinner-es2015.js",
+              "dist/components/st-switch-es2015.js",
+              "dist/components/st-table-es2015.js",
+              "dist/components/st-tag-es2015.js",
+              "dist/components/st-tag-input-es2015.js",
+              "dist/components/st-text-area-es2015.js",
+              "dist/components/st-toggle-buttons-es2015.js",
+              "dist/components/st-tooltip-es2015.js",
+              "dist/components/st-two-list-selection-es2015.js",
+              "dist/components/st-vertical-tabs-es2015.js",
+              "dist/components/st-widget-es2015.js",
+              "dist/components/st-zero-page-es2015.js"
             ]
           },
           "configurations": {

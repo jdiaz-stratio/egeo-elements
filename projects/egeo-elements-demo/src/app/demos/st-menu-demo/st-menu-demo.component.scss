@@ -1,0 +1,17 @@
+.st-live-example {
+   margin-bottom: 30px;
+}
+
+
+.button-toolbar--arrow {
+   position: relative;
+   padding-right: 20px;
+   .icon {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0.625rem;
+      font-size: 0.6587rem;
+   }
+}

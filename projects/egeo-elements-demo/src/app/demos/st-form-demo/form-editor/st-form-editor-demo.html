@@ -1,0 +1,51 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<section>
+   <h1 class="title">Try it by yourself</h1>
+   <p class="paragraph">Dynamic forms are generating using a json schema to define its fields. Here you can try it
+      making modifications on the json schema of the editor.</p>
+
+   <div class="textarea-container">
+      <h2 class="subtitle">JSON Schema</h2>
+      <textarea class="textarea st-custom-scrollbar" spellcheck="false" [ngClass]="{error: schemaError}"
+                [ngModel]="jsonSchema | json"
+                (ngModelChange)="onChangeSchema($event)">
+      </textarea>
+
+      <div class="form-output">
+         <h2>Form Output</h2>
+         {{model | json}}
+         <h2>Form Validation</h2>
+         <p *ngIf="formModel?.valid">Valid</p>
+         <p *ngIf="formModel?.invalid">Invalid</p>
+      </div>
+      <div class="button-toolbar">
+         <button class="button button-primary" (click)="changeFormStatus()">
+            <span>Disable/Enable form</span>
+         </button>
+      </div>
+   </div>
+
+   <div class="form-result">
+      <h2 class="subtitle">Generated Form</h2>
+
+      <p *ngIf="schemaError" class="schema-error">{{schemaError}}</p>
+
+      <st-form *ngIf="jsonSchema" #formModel="ngModel" class="form" [schema]="jsonSchema" sectionDescriptionLevel="2"
+               [(ngModel)]="model"
+               [textFieldMaxWidth]="70"
+               [errorMessages]="errorMessages"
+               (clickLink)="onClickLink($event)">
+      </st-form>
+   </div>
+</section>

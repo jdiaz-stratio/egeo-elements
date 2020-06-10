@@ -1,0 +1,20 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+
+<div class="font" (click)="onClick()">
+   <div class="name" [style.font-family]="fontFamily" [style.font-size]="fontSize">
+      <span class="font-name">{{font.name}}:</span>
+      <span class="font-value">{{font.value}}</span>
+      <span *ngIf="hasFontPixels" >{{font.pixels}}</span>
+   </div>
+</div>

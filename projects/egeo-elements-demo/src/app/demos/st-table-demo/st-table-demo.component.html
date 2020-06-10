@@ -1,0 +1,427 @@
+<!--
+
+    © 2017 Stratio Big Data Inc., Sucursal en España.
+
+    This software is licensed under the Apache License, Version 2.0.
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the terms of the License for more details.
+
+    SPDX-License-Identifier: Apache-2.0.
+
+-->
+<section class="container-liquid">
+   <div class="demo-layout">
+      <p class="introduction">Tables are structured grids of information that help users understand large amounts of
+         data.</p>
+      <span class="separator"></span>
+      <h1 class="title">Design and behaviour</h1>
+      <p class="paragraph">When a user needs to understand, manipulate, or edit a group of information that is
+         text-based
+         and has the same content structure you use a Table component. Table’s main content can be of two main types:
+         Normal content tables and file system content. Depending on the type of table’s content some options will be
+         available when selecting one or more rows allowing the user to perform bulk options. As well, if 2 or more
+         items
+         are selected a row, a new row will appear under the header of the table allowing to select all the avaiable
+         items
+         on the table even if it has pagination. Tables can have a breadcrumbs row before the table header if the table
+         type allows folder / files navigation. In that case too a first folder with two dots allows the user go back to
+         the parent folder.
+      </p>
+      <h1 class="title">Normal content table design and behaviour</h1>
+      <p class="paragraph">They can have two rows of items before the table header.
+         On the first you can have a title on the top left (optional) and dropdown filters on the right (optional)
+         On second you can have a Search box (Optional) on the left, and toolbar icons (optional) on the right. You can
+         choose between an Add toolbar icon or a more explicit Call to Action button on the right. In case you have
+         toolbar
+         icons and a CTA, please, place your CTA as the latest element of the row.
+         When the user scrolls and reach the header of the table, this element will remain sticked to the main header
+         while
+         scrolling so the user always know what kind of data is seeing on the current table. On scroll up the subheader
+         will appear. To understand better this behaviour please interact with the following tables</p>
+
+      <h1 class="title">Theme customization</h1>
+      <p class="paragraph">You can customize some table styles using the following css variables</p>
+      <demo-css-property-table [cssProperties]="cssProperties"></demo-css-property-table>
+   </div>
+
+   <h2 class="subtitle">Selectable tables</h2>
+   <div class="row">
+      <div class="col-sm-12 col-lg-12 col-xs-12">
+         <st-table [fields]="smallTableFields" [sortable]="false" [selectableAll]="true" [hasHoverMenu]="true"
+            (selectAll)="onSelectAll($event, 0)">
+            <tbody>
+               <tr st-table-row *ngFor="let userData of data; let index = index"
+                  [selected]="selectedCheckboxes[0][index]">
+                  <td st-table-cell class="clickable" st-table-row-content>
+                     <st-checkbox class="st-table__checkbox" [checked]="selectedCheckboxes[0][index]"
+                        (change)="onSelectRow($event, index, selectedCheckboxes[0])">
+                     </st-checkbox>
+                     <label>{{userData.id}}</label>
+                  </td>
+                  <td st-table-cell st-table-row-content>
+                     <label>{{userData.name}}</label>
+                  </td>
+                  <td st-table-cell st-table-row-content>
+                     <label>{{userData.lastName}}</label>
+                  </td>
+                  <td st-table-row-hover class="st-table-hover">
+                     <i class="icon icon-ellipsis"></i>
+                  </td>
+               </tr>
+            </tbody>
+         </st-table>
+      </div>
+   </div>
+
+   <h2 class="subtitle">Sortable table</h2>
+   <p class="paragraph">Table can be configured as sortable or not. Moreover, it allows to configure only specific
+      fields as sortable </p>
+   <st-table [fields]="fields" [hasHoverMenu]="true" [currentOrder]="currentOrder[0]"
+      (changeOrder)="onSortTable($event, 0)">
+      <tbody>
+         <tr st-table-row *ngFor="let userData of sortedData; let index = index">
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.id}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.name}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.lastName}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.phone}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.company}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.completedProfile}}</label>
+            </td>
+
+            <td st-table-row-hover class="st-table-hover">
+               <i class="icon icon-ellipsis"></i>
+            </td>
+         </tr>
+      </tbody>
+   </st-table>
+
+   <h2 class="subtitle">Filterable and sortable table</h2>
+   <p class="paragraph">Table can be configured as filterable or not. Moreover, it allows to configure only specific
+      fields as filterable </p>
+   <st-table [filterable]="true" [fields]="filterFields" [statusFilter]="statusFilter" [hasHoverMenu]="true"
+      [currentOrder]="currentOrder[1]" (changeOrder)="onSortTable($event, 1)"
+      (selectedFilters)="onSelectedFilters($event)">
+      <tbody>
+         <tr st-table-row *ngFor="let userData of filterData; let index = index">
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.id}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.name}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.lastName}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.phone}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.company}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.completedProfile}}</label>
+            </td>
+            <td st-table-row-hover class="st-table-hover">
+               <i class="icon icon-ellipsis"></i>
+            </td>
+         </tr>
+      </tbody>
+   </st-table>
+
+   <h2 class="subtitle">Filterable table with custom template</h2>
+   <p class="paragraph">Table can be configured as filterable or not. Moreover, it allows to configure only specific
+      fields as filterable </p>
+   <ng-template #filterContent let-index="index">
+      <div *ngIf="index === 0">
+         <div>
+            <st-checkbox name="nameA" value="1">
+               <span>Option A</span>
+            </st-checkbox>
+            <st-checkbox name="nameB" value="2">
+               <span>Option B</span>
+            </st-checkbox>
+            <st-checkbox name="nameC" value="3">
+               <span>Option C</span>
+            </st-checkbox>
+         </div>
+         <button class="button button-primary small st-table__popover-button"
+            (click)="onFilter(index); checkIcon(index)">
+            <span>Apply</span>
+         </button>
+      </div>
+      <div *ngIf="index === 3">
+         <div>
+            <span>Hellooo {{index}}</span>
+         </div>
+
+         <button class="button button-primary small st-table__popover-button"
+            (click)="onFilter(index); checkIcon(index)">
+            <span>Apply</span>
+         </button>
+      </div>
+   </ng-template>
+   <st-table [sortable]="false" [filterable]="true" [fields]="filterFields" [hasHoverMenu]="true"
+      [templateContentFilter]="filterContent" [statusFilter]="statusFilter">
+      <tbody>
+         <tr st-table-row *ngFor="let userData of filterData; let index = index">
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.id}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.name}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.lastName}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.phone}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.company}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.completedProfile}}</label>
+            </td>
+            <td st-table-row-hover class="st-table-hover">
+               <i class="icon icon-ellipsis"></i>
+            </td>
+         </tr>
+      </tbody>
+   </st-table>
+
+   <h2 class="subtitle">Table with sticky hover menu</h2>
+   <p class="paragraph">Table can be configured as hove menu always visible using input "stickyHoverMenu" with value
+      "true". </p>
+   <st-table [fields]="fields" [hasHoverMenu]="true" [sortable]="false" [filterable]="false" [stickyHoverMenu]="true"
+      style="display: block; max-width: 50%; overflow: auto">
+      <tbody>
+         <tr st-table-row *ngFor="let userData of data; let index = index">
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.id}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.name}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.lastName}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.phone}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.company}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.completedProfile}}</label>
+            </td>
+
+            <td st-table-row-hover class="st-table-hover">
+               <i class="icon icon-ellipsis"></i>
+            </td>
+         </tr>
+      </tbody>
+   </st-table>
+
+   <h2 class="subtitle">Sortable and selectable table</h2>
+   <p class="paragraph">Table can be configured as sortable and selectable simultaneously</p>
+   <st-table [fields]="fields" [currentOrder]="currentOrder[2]" (changeOrder)="onSortTable($event, 2)"
+      [selectableAll]="true" [hasHoverMenu]="true" (selectAll)="onSelectAll($event, 0)">
+      <tbody>
+         <tr st-table-row *ngFor="let userData of sortedData; let index = index"
+            [selected]="selectedCheckboxes[0][index]">
+            <td class="clickable" st-table-cell st-table-row-content>
+               <st-checkbox class="st-table__checkbox" [checked]="selectedCheckboxes[0][index]"
+                  (click)="$event.stopPropagation()" (change)="onSelectRow($event, index, selectedCheckboxes[0])">
+               </st-checkbox>
+               <label>{{userData.id}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.name}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.lastName}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.phone}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.company}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.completedProfile}}</label>
+            </td>
+
+            <td st-table-row-hover class="st-table-hover">
+               <i class="icon icon-ellipsis"></i>
+            </td>
+         </tr>
+      </tbody>
+   </st-table>
+
+
+   <h2 class="subtitle">Table with fixed header</h2>
+   <p class="paragraph">In order to fix the header, it is needed to set the input 'fixedHeader' to true and specify
+      to st-table tag from outside <i><b>"display:flex; height: 'the desired height'</b></i>"</p>
+
+   <st-table [fields]="fields" [sortable]="false" [fixedHeader]="true" [hasHoverMenu]="true"
+      class="table--fixed-header">
+      <tr st-table-row *ngFor="let userData of data">
+         <td st-table-cell st-table-row-content>
+            <label>{{userData.id}}</label>
+         </td>
+         <td st-table-cell st-table-row-content>
+            <label>{{userData.name}}</label>
+         </td>
+         <td st-table-cell st-table-row-content>
+            <label>{{userData.lastName}}</label>
+         </td>
+         <td st-table-cell st-table-row-content>
+            <label>{{userData.phone}}</label>
+         </td>
+         <td st-table-cell st-table-row-content>
+            <label>{{userData.company}}</label>
+         </td>
+         <td st-table-cell st-table-row-content>
+            <label>{{userData.completedProfile}}</label>
+         </td>
+         <td st-table-row-hover class="st-table-hover">
+            <i class="icon icon-ellipsis"></i>
+         </td>
+      </tr>
+   </st-table>
+
+   <h2 class="subtitle">Table with fixed header and sticky hover menu</h2>
+
+   <st-table [fields]="fields" [sortable]="false" [fixedHeader]="true" [stickyHoverMenu]="true" [hasHoverMenu]="true"
+      class="table--fixed-header" style="max-width: 50%">
+      <tr st-table-row *ngFor="let userData of data">
+         <td st-table-cell st-table-row-content>
+            <label>{{userData.id}}</label>
+         </td>
+         <td st-table-cell st-table-row-content>
+            <label>{{userData.name}}</label>
+         </td>
+         <td st-table-cell st-table-row-content>
+            <label>{{userData.lastName}}</label>
+         </td>
+         <td st-table-cell st-table-row-content>
+            <label>{{userData.phone}}</label>
+         </td>
+         <td st-table-cell st-table-row-content>
+            <label>{{userData.company}}</label>
+         </td>
+         <td st-table-cell st-table-row-content>
+            <label>{{userData.completedProfile}}</label>
+         </td>
+         <td st-table-row-hover class="st-table-hover">
+            <i class="icon icon-ellipsis"></i>
+         </td>
+      </tr>
+   </st-table>
+
+   <h2 class="subtitle">Table without header</h2>
+   <st-table [fields]="fields" [header]="false" [hasHoverMenu]="true">
+      <tbody>
+         <tr st-table-row *ngFor="let userData of data">
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.id}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.name}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.lastName}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.phone}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.company}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.completedProfile}}</label>
+            </td>
+            <td st-table-row-hover class="st-table-hover">
+               <i class="icon icon-arrow2_right"></i>
+            </td>
+         </tr>
+      </tbody>
+   </st-table>
+
+   <h2 class="subtitle">Table with complex hover actions and the custom class 'separated rows'</h2>
+   <st-table [fields]="fields" [sortable]="false" [hasHoverMenu]="true" customClasses="separated-rows"
+      qaTag="table-qa-tag">
+      <tbody>
+         <tr st-table-row *ngFor="let userData of data">
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.id}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.name}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.lastName}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.phone}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.company}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.completedProfile}}</label>
+            </td>
+            <td st-table-row-hover class="st-table-hover">
+               <button class="button button-toolbar"><i class="icon-circle-check"></i></button>
+               <button class="button button-toolbar"><i class="icon-download"></i></button>
+            </td>
+         </tr>
+      </tbody>
+   </st-table>
+
+   <h2 class="subtitle">Table with special content (charts, images)</h2>
+   <st-table [fields]="fields" [sortable]="false" [hasHoverMenu]="false">
+      <tbody>
+         <tr st-table-row *ngFor="let userData of data">
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.id}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.name}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.lastName}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <label>{{userData.phone}}</label>
+            </td>
+            <td st-table-cell st-table-row-content>
+               <img style="width: 50px;" src="assets/images/stratio.png">
+            </td>
+            <td st-table-cell st-table-row-content>
+               <div style="width: 25px;  height: 25px;">
+                  <svg viewBox="0 0 100 100" style="display: block; width: 100%;">
+                     <path d="M 50,50 m 0,-47 a 47,47 0 1 1 0,94 a 47,47 0 1 1 0,-94" stroke="#eee" stroke-width="1"
+                        fill-opacity="0"></path>
+                     <path d="M 50,50 m 0,-47 a 47,47 0 1 1 0,94 a 47,47 0 1 1 0,-94" stroke="rgb(55,181,228)"
+                        stroke-width="6" fill-opacity="0"
+                        style="stroke-dasharray: 295.416, 295.416; stroke-dashoffset: 59.0832;"></path>
+                  </svg>
+               </div>
+            </td>
+         </tr>
+      </tbody>
+   </st-table>
+</section>

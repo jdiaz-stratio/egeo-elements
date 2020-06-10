@@ -1,0 +1,117 @@
+/**
+ * © 2017 Stratio Big Data Inc., Sucursal en España.
+ *
+ * This software is licensed under the Apache License, Version 2.0.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the terms of the License for more details.
+ *
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+@import '../theme/constants.scss';
+
+
+.st-logger {
+   position: fixed;
+   right: 0;
+   top: 0;
+   height: 100vh;
+   width: 400px;
+   transition: right 0.8s ease;;
+}
+
+.drag-icon {
+   position: absolute;
+   left: 0;
+   top: 0;
+   bottom: 0;
+   margin: auto;
+   height: 20px;
+}
+
+.st-logger-tab {
+   background-color: $neutral-full;
+   box-shadow: 0px 2px 14px 0 $neutral-15;
+   position: relative;
+   border-radius: 0 0 0 5px;
+   position: absolute;
+   left: -32px;
+   &:after {
+      height: 100%;
+      width: 5px;
+      background-color: $neutral-full;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -5px;
+   }
+   &:before {
+      display: flex;
+      padding: 7px;
+      font-family: $egeo-stratio-icons;
+      font-size: $egeo-font-size-20;
+      line-height: $egeo-line-height-20;
+      content: '\e90c';
+      cursor: pointer;
+   }
+}
+
+.st-logger-container {
+   height: 100%;
+   padding: 30px;
+   box-shadow: 0 2px 14px 0 $neutral-15;
+   border-left: solid 1px rgb(246, 246, 246);
+   background-color: $neutral-full;
+   overflow-y: auto;
+   flex-grow: 1;
+
+   p:first-child {
+      border-top: solid 1px $neutral-10;
+   }
+}
+
+.info,
+.warning,
+.critical,
+.debug {
+   color: $neutral-60;
+   font-weight: 400;
+   font-size: $egeo-font-size-xsmall;
+   line-height: $egeo-line-height-18;
+   display: inline-flex;
+   border-bottom: solid 1px $neutral-10;
+   padding: 3px;
+   width: 100%;
+   &:before {
+      font-size: $egeo-font-size-16;
+      line-height: $egeo-line-height-xxxsmall;
+      font-family: $egeo-stratio-icons;
+      margin-right: 7px;
+   }
+}
+
+.info {
+   color: $action-120;
+   &:before {
+      content: '\e615';
+   }
+}
+
+.warning {
+   color: $warning;
+   &:before {
+      content: '\e613';
+   }
+}
+
+.critical {
+   color: $error;
+   &:before {
+      content: '\e043';
+   }
+}
+
+.debug {
+   padding-left: 23px;
+}
