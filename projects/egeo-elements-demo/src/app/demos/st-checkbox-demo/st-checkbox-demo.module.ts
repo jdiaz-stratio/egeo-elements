@@ -8,25 +8,24 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StDemoGeneratorModule, StCheckboxModule, StDocsModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StCheckboxDemoComponent } from './st-checkbox-demo.component';
-import { CssPropertyTableModule } from '@app/shared/css-property-table/css-property-table.module';
+import { CssPropertyTableModule } from '../../../app/shared/css-property-table/css-property-table.module';
 
 @NgModule({
    imports: [
       CommonModule,
-      StCheckboxModule,
       CssPropertyTableModule,
       StDemoGeneratorModule.withComponents({
          components: [StCheckboxDemoComponent]
-      }),
-      StDocsModule
+      })
    ],
    declarations: [StCheckboxDemoComponent],
-   providers: []
+   providers: [],
+   schemas: [ CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StCheckboxDemoModule { }
 

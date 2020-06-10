@@ -8,9 +8,9 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StDemoGeneratorModule, StDocsModule, StFooterModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StFooterDemoComponent } from './st-footer-demo';
 
@@ -19,11 +19,10 @@ import { StFooterDemoComponent } from './st-footer-demo';
 @NgModule({
    imports: [
       CommonModule,
-      StFooterModule,
       StDemoGeneratorModule.withComponents({ components: [StFooterDemoComponent] }),
-      StDocsModule
    ],
-   declarations: [StFooterDemoComponent]
+   declarations: [StFooterDemoComponent],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StFooterDemoModule { }
 

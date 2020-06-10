@@ -10,16 +10,15 @@
  */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StDemoGeneratorModule, StDocsModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StButtonDemoComponent } from './st-button-demo.component';
-import { CssPropertyTableModule } from '@app/shared/css-property-table/css-property-table.module';
+import { CssPropertyTableModule } from '../../../app/shared/css-property-table/css-property-table.module';
 
 @NgModule({
    imports: [
       CommonModule,
       StDemoGeneratorModule.withComponents({ components: [StButtonDemoComponent] }),
-      StDocsModule,
       CssPropertyTableModule
    ],
    declarations: [StButtonDemoComponent],

@@ -8,12 +8,10 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
    StDemoGeneratorModule,
-   StDocsModule,
-   StTwoListSelectionModule
 } from '@stratio/egeo';
 
 import { StTwoListSelectionDemoComponent } from './st-two-list-selection-demo';
@@ -21,11 +19,10 @@ import { StTwoListSelectionDemoComponent } from './st-two-list-selection-demo';
 @NgModule({
    imports: [
       CommonModule,
-      StTwoListSelectionModule,
       StDemoGeneratorModule.withComponents({ components: [StTwoListSelectionDemoComponent] }),
-      StDocsModule
    ],
-   declarations: [StTwoListSelectionDemoComponent]
+   declarations: [StTwoListSelectionDemoComponent],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StTwoListSelectionDemoModule { }
 

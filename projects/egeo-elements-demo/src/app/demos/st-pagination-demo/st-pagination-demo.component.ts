@@ -10,7 +10,7 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { Paginate } from '@stratio/egeo';
-import { CssProperty } from '@app/shared/css-property-table/css-property-table.model';
+import { CssProperty } from '../../../app/shared/css-property-table/css-property-table.model';
 
 @Component({
    selector: 'st-pagination-demo',

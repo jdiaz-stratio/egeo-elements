@@ -9,8 +9,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { StDemoGeneratorModule, StDocsModule, StColorPickerModule } from '@stratio/egeo';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StColorPickerDemoComponent } from './st-color-picker-demo';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,12 +19,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
    imports: [
       CommonModule,
-      StColorPickerModule,
       StDemoGeneratorModule.withComponents({ components: [StColorPickerDemoComponent] }),
-      StDocsModule,
       FormsModule,
       ReactiveFormsModule
    ],
-   declarations: [StColorPickerDemoComponent]
+   declarations: [StColorPickerDemoComponent],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StColorPickerDemoModule { }

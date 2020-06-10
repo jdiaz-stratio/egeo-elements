@@ -8,10 +8,10 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { StDemoGeneratorModule, StDocsModule, StTooltipModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StTooltipDemoComponent } from './st-tooltip-demo';
 
@@ -20,11 +20,10 @@ import { StTooltipDemoComponent } from './st-tooltip-demo';
    imports: [
       CommonModule,
       RouterModule,
-      StTooltipModule,
       StDemoGeneratorModule.withComponents({ components: [StTooltipDemoComponent] }),
-      StDocsModule
    ],
-   declarations: [StTooltipDemoComponent]
+   declarations: [StTooltipDemoComponent],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StTooltipDemoModule { }
 

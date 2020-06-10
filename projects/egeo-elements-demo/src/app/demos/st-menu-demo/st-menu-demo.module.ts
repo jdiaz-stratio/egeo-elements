@@ -9,13 +9,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import {
-   StDemoGeneratorModule,
-   StDocsModule,
-   StMenuModule
+   StDemoGeneratorModule
 } from '@stratio/egeo';
 import { StMenuDemoComponent } from './st-menu-demo.component';
 
@@ -23,14 +21,13 @@ import { StMenuDemoComponent } from './st-menu-demo.component';
 @NgModule({
    imports: [
       CommonModule,
-      StMenuModule,
-      StDocsModule,
       StDemoGeneratorModule.withComponents({
          components: [StMenuDemoComponent]
       })
    ],
    declarations: [
       StMenuDemoComponent
-   ]
+   ],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StMenuDemoModule { }

@@ -8,20 +8,19 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StDemoGeneratorModule, StDocsModule, StToggleButtonsModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StToggleButtonsDemoComponent } from './st-toggle-buttons-demo';
 
 @NgModule({
    imports: [
       CommonModule,
-      StToggleButtonsModule,
       StDemoGeneratorModule.withComponents({ components: [StToggleButtonsDemoComponent] }),
-      StDocsModule
    ],
    declarations: [StToggleButtonsDemoComponent],
-   providers: []
+   providers: [],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StToggleButtonsDemoModule { }

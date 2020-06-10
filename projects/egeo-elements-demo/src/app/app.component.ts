@@ -49,10 +49,18 @@ import { environment } from '../environments/environment';
 export class AppComponent {
 
    public areNewVersion: boolean = false;
+   public options: any = [];
 
    constructor(private _appService: AppService) {
       if (environment.production) {
          this._appService.getLastUpdateDate().subscribe(masterDate => this.checkNewVersion(masterDate));
+      }
+      this.options.push({ label: 'Select an option', value: undefined });
+      for (let i: number = 0; i < 10; i++) {
+         this.options.push({
+            label: `option-${i}`,
+            value: i
+         });
       }
    }
 

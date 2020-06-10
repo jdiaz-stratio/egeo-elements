@@ -8,15 +8,11 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {
-   StDemoGeneratorModule,
-   StDocsModule,
-   StHeaderModule,
-   StPopOverModule,
-   StLauncherModule
+   StDemoGeneratorModule
 } from '@stratio/egeo';
 
 import { StHeaderDemoComponent } from './st-header-demo.component';
@@ -28,14 +24,11 @@ import { routing } from './st-header-demo.routing';
    imports: [
       CommonModule,
       RouterModule,
-      StDocsModule,
-      StHeaderModule,
-      StPopOverModule,
-      StLauncherModule,
       StDemoGeneratorModule.withComponents({ components: [StHeaderDemoComponent] }),
       routing
    ],
-   declarations: [StHeaderDemoComponent, StFakePageComponent]
+   declarations: [StHeaderDemoComponent, StFakePageComponent],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StHeaderDemoModule { }
 

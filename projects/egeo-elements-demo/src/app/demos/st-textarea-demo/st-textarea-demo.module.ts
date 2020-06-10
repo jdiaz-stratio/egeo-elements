@@ -8,9 +8,9 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StDemoGeneratorModule, StDocsModule, StTextareaModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { StTextareaDemoComponent } from './st-textarea-demo';
@@ -18,15 +18,14 @@ import { StTextareaDemoComponent } from './st-textarea-demo';
 @NgModule({
    imports: [
       CommonModule,
-      StTextareaModule,
       StDemoGeneratorModule.withComponents({
          components: [StTextareaDemoComponent]
       }),
       FormsModule,
       ReactiveFormsModule,
-      StDocsModule
    ],
    declarations: [StTextareaDemoComponent],
-   providers: []
+   providers: [],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StTextareaDemoModule { }

@@ -8,9 +8,9 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StBreadcrumbsModule, StDemoGeneratorModule, StDocsModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StBreadcrumbsDemoComponent } from './st-breadcrumbs-demo';
 import { StDemoLoggerModule } from '../shared/st-demo-logger/st-demo-logger.module';
@@ -19,13 +19,14 @@ import { StDemoLoggerModule } from '../shared/st-demo-logger/st-demo-logger.modu
    imports: [
       CommonModule,
       StDemoLoggerModule.withService(),
-      StBreadcrumbsModule,
-      StDocsModule,
       StDemoGeneratorModule.withComponents({
          components: [StBreadcrumbsDemoComponent]
       })
    ],
    declarations: [StBreadcrumbsDemoComponent],
-   providers: []
+   providers: [],
+   schemas: [
+      CUSTOM_ELEMENTS_SCHEMA
+   ]
 })
 export class StBreadcrumbsDemoModule { }

@@ -9,22 +9,19 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { StDemoGeneratorModule, StDocsModule, StTableModule, StCheckboxModule, StToggleButtonsModule } from '@stratio/egeo';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StTableDemoComponent } from './st-table-demo.component';
-import { CssPropertyTableModule } from '@app/shared/css-property-table/css-property-table.module';
+import { CssPropertyTableModule } from '../../../app/shared/css-property-table/css-property-table.module';
 
 @NgModule({
    imports: [
       CommonModule,
-      StTableModule,
-      StCheckboxModule,
       StDemoGeneratorModule.withComponents({ components: [StTableDemoComponent] }),
-      StDocsModule,
-      StToggleButtonsModule,
       CssPropertyTableModule
    ],
-   declarations: [StTableDemoComponent]
+   declarations: [StTableDemoComponent],
+   schemas: [ CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StTableDemoModule { }

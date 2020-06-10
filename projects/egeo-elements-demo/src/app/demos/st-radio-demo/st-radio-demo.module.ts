@@ -8,13 +8,11 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {
-   StDemoGeneratorModule,
-   StDocsModule,
-   StRadioModule
+   StDemoGeneratorModule
 } from '@stratio/egeo';
 
 import { StRadioDemoComponent } from './st-radio-demo';
@@ -22,13 +20,12 @@ import { StRadioDemoComponent } from './st-radio-demo';
 @NgModule({
    imports: [
       CommonModule,
-      StRadioModule,
       ReactiveFormsModule,
       FormsModule,
       StDemoGeneratorModule.withComponents({ components: [StRadioDemoComponent] }),
-      StDocsModule
    ],
-   declarations: [StRadioDemoComponent]
+   declarations: [StRadioDemoComponent],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StRadioDemoModule { }
 

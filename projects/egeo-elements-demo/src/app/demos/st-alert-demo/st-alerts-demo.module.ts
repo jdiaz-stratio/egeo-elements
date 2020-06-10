@@ -8,11 +8,10 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
    StDemoGeneratorModule,
-   StAlertsModule,
    StAlertsService,
    StDocsModule
 } from '@stratio/egeo';
@@ -22,12 +21,14 @@ import { StAlertsDemoComponent } from './st-alerts-demo';
 @NgModule({
    imports: [
       CommonModule,
-      StAlertsModule,
       StDemoGeneratorModule.withComponents({ components: [StAlertsDemoComponent] }),
       StDocsModule
    ],
    declarations: [StAlertsDemoComponent],
-   providers: [StAlertsService]
+   providers: [StAlertsService],
+   schemas: [
+      CUSTOM_ELEMENTS_SCHEMA
+   ] 
 })
 export class StAlertsDemoModule { }
 

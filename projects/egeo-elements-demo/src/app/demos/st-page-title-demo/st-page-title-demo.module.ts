@@ -8,23 +8,21 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StDemoGeneratorModule, StDocsModule, StPageTitleModule, StSearchModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StPageTitleDemoComponent } from './st-page-title-demo.component';
 
 @NgModule({
    imports: [
       CommonModule,
-      StPageTitleModule,
-      StSearchModule,
       StDemoGeneratorModule.withComponents({
          components: [StPageTitleDemoComponent]
       }),
-      StDocsModule
    ],
    declarations: [StPageTitleDemoComponent],
-   providers: []
+   providers: [],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StPageTitleDemoModule { }

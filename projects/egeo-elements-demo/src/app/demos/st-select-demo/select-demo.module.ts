@@ -9,9 +9,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { StDemoGeneratorModule, StDocsModule, StSelectModule } from '@stratio/egeo';
+import { StDemoGeneratorModule, StDocsModule } from '@stratio/egeo';
 
 import { SelectDemoComponent } from './select-demo';
 
@@ -19,12 +19,14 @@ import { SelectDemoComponent } from './select-demo';
 @NgModule({
    imports: [
       CommonModule,
-      StSelectModule,
       FormsModule,
       ReactiveFormsModule,
       StDemoGeneratorModule.withComponents({ components: [SelectDemoComponent] }),
       StDocsModule
    ],
-   declarations: [SelectDemoComponent]
+   declarations: [SelectDemoComponent],
+   schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class StSelectDemoModule { }

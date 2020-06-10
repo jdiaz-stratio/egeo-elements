@@ -8,23 +8,22 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StDemoGeneratorModule, StFileButtonModule, StDocsModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StFileButtonDemoComponent } from './st-file-button-demo.component';
 
 @NgModule({
    imports: [
       CommonModule,
-      StFileButtonModule,
       StDemoGeneratorModule.withComponents({
          components: [StFileButtonDemoComponent]
-      }),
-      StDocsModule
+      })
    ],
    declarations: [StFileButtonDemoComponent],
-   providers: []
+   providers: [],
+   schemas: [ CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StFileButtonDemoModule { }
 

@@ -8,32 +8,29 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { StDemoGeneratorModule, StDocsModule, StFormModule, StTextareaModule, StVerticalIconTabsModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 import { StFormDemoComponent } from './st-form-demo';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StFormEditorDemoComponent } from './form-editor/st-form-editor-demo';
 import { StVisualSectionImprovementsDemoComponent } from './visual-section-improvements/st-visual-section-improvements-editor-demo';
 import { StVisualFieldImprovementsDemoComponent } from './visual-field-improvements/st-visual-field-improvements-editor-demo';
-import { StThemeCustomization } from '@app/demos/st-form-demo/visual-customization/st-theme-customization-demo';
-import { CssPropertyTableModule } from '@app/shared/css-property-table/css-property-table.module';
+import { StThemeCustomization } from '../../../app/demos/st-form-demo/visual-customization/st-theme-customization-demo';
+import { CssPropertyTableModule } from '../../../app/shared/css-property-table/css-property-table.module';
 
 @NgModule({
    imports: [
       CommonModule,
       FormsModule,
-      StDocsModule,
-      StFormModule,
       ReactiveFormsModule,
-      StTextareaModule,
-      StVerticalIconTabsModule,
       CssPropertyTableModule,
       StDemoGeneratorModule.withComponents({ components: [StFormDemoComponent] })
    ],
    declarations: [StFormDemoComponent, StFormEditorDemoComponent, StVisualFieldImprovementsDemoComponent,
-      StVisualSectionImprovementsDemoComponent, StThemeCustomization]
+      StVisualSectionImprovementsDemoComponent, StThemeCustomization],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StFormDemoModule { }
 

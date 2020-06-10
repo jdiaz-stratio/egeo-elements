@@ -136,6 +136,7 @@
               "dist/components/st-bubble-es2015.js",
               "dist/components/st-checkbox-es2015.js",
               "dist/components/st-color-picker-es2015.js",
+              "dist/components/st-docs-es2015.js",
               "dist/components/st-draggable-card-es2015.js",
               "dist/components/st-dropdown-menu-es2015.js",
               "dist/components/st-file-button-es2015.js",

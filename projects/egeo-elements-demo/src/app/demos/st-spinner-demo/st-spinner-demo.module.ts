@@ -8,27 +8,24 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { StDemoGeneratorModule, StDocsModule, StSpinnerModule, StInputModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StSpinnerDemoComponent } from './st-spinner-demo';
-import { CssPropertyTableModule } from '@app/shared/css-property-table/css-property-table.module';
+import { CssPropertyTableModule } from '../../../app/shared/css-property-table/css-property-table.module';
 
 @NgModule({
    imports: [
       CommonModule,
-      StSpinnerModule,
-      StInputModule,
       FormsModule,
       CssPropertyTableModule,
       StDemoGeneratorModule.withComponents({
          components: [StSpinnerDemoComponent]
-      }),
-      StDocsModule
-   ],
+      })   ],
    declarations: [StSpinnerDemoComponent],
-   providers: []
+   providers: [],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StSpinnerDemoModule { }

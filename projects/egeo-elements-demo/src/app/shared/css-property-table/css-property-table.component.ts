@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 import { Component, Input } from '@angular/core';
-import { CssProperty } from '@app/shared/css-property-table/css-property-table.model';
+import { CssProperty } from '../../../app/shared/css-property-table/css-property-table.model';
 import { StTableHeader } from '@stratio/egeo';
 
 

@@ -8,19 +8,18 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StDemoGeneratorModule, StDocsModule, StPopOverModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 import { StPopOverDemoComponent } from './st-pop-over-demo.component';
 
 @NgModule({
    imports: [
       CommonModule,
-      StPopOverModule,
       StDemoGeneratorModule.withComponents({ components: [StPopOverDemoComponent] }),
-      StDocsModule
    ],
    declarations: [StPopOverDemoComponent],
-   providers: []
+   providers: [],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StPopOverDemoModule { }

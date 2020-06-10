@@ -106,7 +106,7 @@ export const EGEO_DEMO_MODULES: any[] = [
    StTagInputDemoModule,
    StTextareaDemoModule,
    StToggleButtonsDemoModule,
-   StTooltipDemoModule,
+   //StTooltipDemoModule,
    StTwoListSelectionDemoModule,
    StVerticalIconTabsModule,
    StVerticalTabsDemoModule,

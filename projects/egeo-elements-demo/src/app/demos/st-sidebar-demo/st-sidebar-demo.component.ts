@@ -10,7 +10,7 @@
  */
 import { Component } from '@angular/core';
 import { StSidebarItem, StSidebarVisualMode } from '@stratio/egeo';
-import { CssProperty } from '@app/shared/css-property-table/css-property-table.model';
+import { CssProperty } from '../../../app/shared/css-property-table/css-property-table.model';
 
 @Component({
    selector: 'st-sidebar-demo',

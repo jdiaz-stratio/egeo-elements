@@ -8,25 +8,23 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { StDemoGeneratorModule, StDocsModule, StVerticalIconTabsModule, StInfoBoxModule } from '@stratio/egeo';
-import { StVerticalIconTabsDemoComponent } from '@app/demos/st-vertical-icon-tabs-demo/st-vertical-icon-tabs-demo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
+import { StVerticalIconTabsDemoComponent } from '../../../app/demos/st-vertical-icon-tabs-demo/st-vertical-icon-tabs-demo';
 
 
 @NgModule({
    imports: [
       CommonModule,
-      StVerticalIconTabsModule,
-      StInfoBoxModule,
       StDemoGeneratorModule.withComponents({
          components: [StVerticalIconTabsDemoComponent]
       }),
-      StDocsModule
    ],
    declarations: [StVerticalIconTabsDemoComponent],
-   providers: []
+   providers: [],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StVerticalIconTabsDemoModule { }
 

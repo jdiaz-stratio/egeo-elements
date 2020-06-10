@@ -8,19 +8,18 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StDemoGeneratorModule, StDocsModule, StProgressBarModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 import { StProgresBarDemoComponent } from './st-progress-bar-demo.component';
 
 @NgModule({
    imports: [
       CommonModule,
-      StProgressBarModule,
       StDemoGeneratorModule.withComponents({ components: [StProgresBarDemoComponent] }),
-      StDocsModule
    ],
    declarations: [StProgresBarDemoComponent],
-   providers: []
+   providers: [],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StProgressBarDemoModule { }

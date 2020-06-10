@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 import { Component } from '@angular/core';
-import { EGEO_DEMO_MENU, EgeoDemoMenu } from '@app/demos/demos.routes';
+import { EGEO_DEMO_MENU, EgeoDemoMenu } from '../../../../app/demos/demos.routes';
 
 import { DemoSideMenu } from '../../../shared/menu/menu.model';
 

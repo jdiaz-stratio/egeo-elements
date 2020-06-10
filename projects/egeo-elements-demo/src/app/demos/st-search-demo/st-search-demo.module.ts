@@ -9,9 +9,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { StDemoGeneratorModule, StDocsModule, StSearchModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StSearchDemoComponent } from './st-search-demo';
 
@@ -19,11 +19,10 @@ import { StSearchDemoComponent } from './st-search-demo';
 @NgModule({
    imports: [
       CommonModule,
-      StSearchModule,
       FormsModule,
       StDemoGeneratorModule.withComponents({ components: [StSearchDemoComponent] }),
-      StDocsModule
    ],
-   declarations: [StSearchDemoComponent]
+   declarations: [StSearchDemoComponent],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StSearchDemoModule { }

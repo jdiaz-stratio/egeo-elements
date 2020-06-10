@@ -8,24 +8,22 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StDemoGeneratorModule, StDocsModule, StFilterSelectorModule, StHorizontalTabsModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StHorizontalTabsDemoComponent } from './st-horizontal-tabs-demo.component';
 
 @NgModule({
    imports: [
       CommonModule,
-      StHorizontalTabsModule,
       StDemoGeneratorModule.withComponents({
          components: [StHorizontalTabsDemoComponent]
-      }),
-      StDocsModule,
-      StFilterSelectorModule
+      })
    ],
    declarations: [StHorizontalTabsDemoComponent],
-   providers: []
+   providers: [],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StHorizontalTabsDemoModule { }
 

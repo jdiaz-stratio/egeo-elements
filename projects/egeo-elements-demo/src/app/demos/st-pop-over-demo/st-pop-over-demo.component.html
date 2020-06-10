@@ -10,22 +10,20 @@
     SPDX-License-Identifier: Apache-2.0.
 
 -->
-<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
-   <section class="container-liquid">
-      <div class="pop-over-demo-container">
-         <div class="pop-over-demo-items">
-            <st-pop-over class="pop-over-demo-component" qaTag="pop-over-demo" [title]="title" [hidden]="hidden" [offset]="{x: 0, y:0}"
-                [showSettingBtn]="true">
+<section class="container-liquid">
+   <div class="pop-over-demo-container">
+      <div class="pop-over-demo-items">
+         <st-pop-over class="pop-over-demo-component" qaTag="pop-over-demo" [title]="title" [hidden]="hidden"
+            [offset]="{x: 0, y:0}" [showSettingBtn]="true">
 
-               <button pop-over-button class="pop-over-demo-button button button-primary" (click)="onClick()">
-                  <span>Pop Over</span>
-               </button>
+            <button pop-over-button class="pop-over-demo-button button button-primary" (click)="onClick()">
+               <span>Pop Over</span>
+            </button>
 
-               <div pop-over-content class="pop-over-demo-content">
-                  <span>{{content}}</span>
-               </div>
-            </st-pop-over>
-         </div>
+            <div pop-over-content class="pop-over-demo-content">
+               <span>{{content}}</span>
+            </div>
+         </st-pop-over>
       </div>
-   </section>
-</st-docs>
+   </div>
+</section>

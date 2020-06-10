@@ -8,13 +8,11 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {
-   StDemoGeneratorModule,
-   StDocsModule,
-   StSwitchModule
+   StDemoGeneratorModule
 } from '@stratio/egeo';
 
 import { StSwitchDemoComponent } from './st-switch-demo';
@@ -22,13 +20,12 @@ import { StSwitchDemoComponent } from './st-switch-demo';
 @NgModule({
    imports: [
       CommonModule,
-      StSwitchModule,
       ReactiveFormsModule,
       FormsModule,
       StDemoGeneratorModule.withComponents({ components: [StSwitchDemoComponent] }),
-      StDocsModule
    ],
-   declarations: [StSwitchDemoComponent]
+   declarations: [StSwitchDemoComponent],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StSwitchDemoModule { }
 

@@ -10,40 +10,26 @@
     SPDX-License-Identifier: Apache-2.0.
 
 -->
-<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
-   <section class="container-liquid demo-layout">
-      <p class="introduction">This component allows user to choose between a list of filter options</p>
-      <span class="separator"></span>
-      <h1 class="title">Design and behaviour</h1>
-      <p class="paragraph">It can be stylized from outside in order to be more flexible. Moreover, if there is not any selected option, it will  </p>
-      <div class="row col-sm-12">
-         <st-filter-selector class="filter-1 col-sm-4"
-                             [filterList]="filterList"
-                             [openFilter]="openFilter[0]"
-                             [selected]="selectedFilter[0]"
-                             (clickFilter)="onFilter($event, 0)"
-                             (changeFilterVisibility)="onChangeFilterVisibility($event, 0)"
-                             (closeFilter)="onCloseFilter(0)">
-         </st-filter-selector>
+<section class="container-liquid demo-layout">
+   <p class="introduction">This component allows user to choose between a list of filter options</p>
+   <span class="separator"></span>
+   <h1 class="title">Design and behaviour</h1>
+   <p class="paragraph">It can be stylized from outside in order to be more flexible. Moreover, if there is not any
+      selected option, it will </p>
+   <div class="row col-sm-12">
+      <st-filter-selector class="filter-1 col-sm-4" [filterList]="filterList" [openFilter]="openFilter[0]"
+         [selected]="selectedFilter[0]" (clickFilter)="onFilter($event, 0)"
+         (changeFilterVisibility)="onChangeFilterVisibility($event, 0)" (closeFilter)="onCloseFilter(0)">
+      </st-filter-selector>
 
-         <st-filter-selector class="filter-2 col-sm-4"
-                             [filterList]="filterList"
-                             [openFilter]="openFilter[1]"
-                             [selected]="selectedFilter[1]"
-                             (clickFilter)="onFilter($event, 1)"
-                             (changeFilterVisibility)="onChangeFilterVisibility($event, 1)"
-                             (closeFilter)="onCloseFilter(1)">
-         </st-filter-selector>
+      <st-filter-selector class="filter-2 col-sm-4" [filterList]="filterList" [openFilter]="openFilter[1]"
+         [selected]="selectedFilter[1]" (clickFilter)="onFilter($event, 1)"
+         (changeFilterVisibility)="onChangeFilterVisibility($event, 1)" (closeFilter)="onCloseFilter(1)">
+      </st-filter-selector>
 
-         <st-filter-selector class="filter-3 col-sm-4"
-                             [filterList]="filterList"
-                             [openFilter]="openFilter[2]"
-                             [selected]="selectedFilter[2]"
-                             [menuAlignedToRight]="true"
-                             (clickFilter)="onFilter($event, 2)"
-                             (changeFilterVisibility)="onChangeFilterVisibility($event, 2)"
-                             (closeFilter)="onCloseFilter(2)">
-         </st-filter-selector>
-      </div>
-   </section>
-</st-docs>
+      <st-filter-selector class="filter-3 col-sm-4" [filterList]="filterList" [openFilter]="openFilter[2]"
+         [selected]="selectedFilter[2]" [menuAlignedToRight]="true" (clickFilter)="onFilter($event, 2)"
+         (changeFilterVisibility)="onChangeFilterVisibility($event, 2)" (closeFilter)="onCloseFilter(2)">
+      </st-filter-selector>
+   </div>
+</section>

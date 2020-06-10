@@ -10,7 +10,7 @@
     SPDX-License-Identifier: Apache-2.0.
 
 -->
-<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
+<section class="container-liquid">
    <h1>With ng-content</h1>
    <st-breadcrumbs qaTag="breadcrumb">
       <st-breadcrumbs-item qaTag="Example 1">
@@ -41,11 +41,12 @@
    <br>
    <br>
    <h1>Title mode</h1>
-   <st-breadcrumbs [options]="options" (select)="outputEmitter($event)" mode="title" qaTag="breadcrumbs4" [elementsToShow]="4">
+   <st-breadcrumbs [options]="options" (select)="outputEmitter($event)" mode="title" qaTag="breadcrumbs4"
+      [elementsToShow]="4">
    </st-breadcrumbs>
    <br>
    <h1>Breadcrumb with a long text</h1>
-   <st-breadcrumbs [options]="options" (select)="outputEmitter($event)" mode="title" qaTag="breadcrumbs5" 
+   <st-breadcrumbs [options]="options" (select)="outputEmitter($event)" mode="title" qaTag="breadcrumbs5"
       [ngStyle]="{'width': '250px', 'display':'flex', 'border': '1px solid #cdcdcd','padding': '5px'}">
    </st-breadcrumbs>
 
@@ -56,4 +57,4 @@
    <button class="button button-primary" (click)="reset()">Reset</button>
 
    <st-demo-logger></st-demo-logger>
-</st-docs>
+</section>

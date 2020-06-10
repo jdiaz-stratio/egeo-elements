@@ -9,9 +9,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { StDemoGeneratorModule, StDocsModule, StRadioMenuModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StRadioMenuDemoComponent } from './st-radio-menu-demo';
 
@@ -19,11 +19,10 @@ import { StRadioMenuDemoComponent } from './st-radio-menu-demo';
 @NgModule({
    imports: [
       CommonModule,
-      StRadioMenuModule,
       FormsModule,
       StDemoGeneratorModule.withComponents({ components: [StRadioMenuDemoComponent] }),
-      StDocsModule
    ],
-   declarations: [StRadioMenuDemoComponent]
+   declarations: [StRadioMenuDemoComponent],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StRadioMenuDemoModule { }

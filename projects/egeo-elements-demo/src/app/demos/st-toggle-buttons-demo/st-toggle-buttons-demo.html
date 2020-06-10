@@ -10,8 +10,7 @@
     SPDX-License-Identifier: Apache-2.0.
 
 -->
-<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
-   <section class="container-fluid">
-      <st-toggle-buttons class="toggle-buttons" [tabs]="tabs" [description]="description" (select)="onSelectTab($event)" qaTag="toggle-buttons"></st-toggle-buttons>
-   </section>
-</st-docs>
+<section class="container-fluid">
+   <st-toggle-buttons class="toggle-buttons" [tabs]="tabs" [description]="description" (select)="onSelectTab($event)"
+      qaTag="toggle-buttons"></st-toggle-buttons>
+</section>

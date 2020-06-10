@@ -8,24 +8,22 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StDemoGeneratorModule, StDocsModule, StVerticalTabsModule, StInfoBoxModule } from '@stratio/egeo';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StVerticalTabsDemoComponent } from './st-vertical-tabs-demo';
 
 @NgModule({
    imports: [
       CommonModule,
-      StVerticalTabsModule,
-      StInfoBoxModule,
       StDemoGeneratorModule.withComponents({
          components: [StVerticalTabsDemoComponent]
       }),
-      StDocsModule
    ],
    declarations: [StVerticalTabsDemoComponent],
-   providers: []
+   providers: [],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StVerticalTabsDemoModule { }
 

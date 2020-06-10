@@ -9,18 +9,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { StDemoGeneratorModule, StDraggableCardModule, StDocsModule } from '@stratio/egeo';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StDraggableCardDemoComponent } from './st-draggable-card-demo.component';
 
 @NgModule({
    imports: [
       CommonModule,
-      StDraggableCardModule,
-      StDemoGeneratorModule.withComponents({ components: [StDraggableCardDemoComponent] }),
-      StDocsModule
+      StDemoGeneratorModule.withComponents({ components: [StDraggableCardDemoComponent] })
    ],
-   declarations: [StDraggableCardDemoComponent]
+   declarations: [StDraggableCardDemoComponent],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StDraggableCardDemoModule { }

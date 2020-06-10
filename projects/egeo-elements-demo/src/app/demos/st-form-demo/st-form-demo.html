@@ -10,24 +10,19 @@
     SPDX-License-Identifier: Apache-2.0.
 
 -->
-<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
-   <section class="container-liquid demo-layout">
+<section class="container-liquid demo-layout">
 
-      <div class="demo-container">
-         <st-vertical-icon-tabs class="vertical-tabs"
-                                [options]="options"
-                                (changeOption)="onChangeOption($event)"
-                                [activeOption]="activeOption">
-         </st-vertical-icon-tabs>
+   <div class="demo-container">
+      <st-vertical-icon-tabs class="vertical-tabs" [options]="options" (changeOption)="onChangeOption($event)"
+         [activeOption]="activeOption">
+      </st-vertical-icon-tabs>
 
-         <div class="tab-container st-custom-scrollbar">
-            <st-form-editor-demo [hidden]="activeOption !== options[0]"></st-form-editor-demo>
-            <st-theme-customization-demo [hidden]="activeOption !== options[1]"></st-theme-customization-demo>
-            <st-visual-section-improvements-demo
-               [hidden]="activeOption !== options[2]"></st-visual-section-improvements-demo>
-            <st-visual-field-improvements-demo
-               [hidden]="activeOption !== options[3]"></st-visual-field-improvements-demo>
-         </div>
+      <div class="tab-container st-custom-scrollbar">
+         <st-form-editor-demo [hidden]="activeOption !== options[0]"></st-form-editor-demo>
+         <st-theme-customization-demo [hidden]="activeOption !== options[1]"></st-theme-customization-demo>
+         <st-visual-section-improvements-demo [hidden]="activeOption !== options[2]">
+         </st-visual-section-improvements-demo>
+         <st-visual-field-improvements-demo [hidden]="activeOption !== options[3]"></st-visual-field-improvements-demo>
       </div>
-   </section>
-</st-docs>
+   </div>
+</section>

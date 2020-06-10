@@ -10,27 +10,29 @@
     SPDX-License-Identifier: Apache-2.0.
 
 -->
-<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
-   <section class="container-fluid col-md-12 radio-menu-demo">
-      <div class="col-sm-8 contains-radio-menu">
-         <h3>By default (without parent's theme)</h3>
-         <st-radio-menu [activeOption]="selectedOptionTheme2" class="radio-menu" [options]="options" qaTag="radio-menu-without-theme">
-         </st-radio-menu>
-      </div>
-      <div class="col-sm-8 theme-gray-1 contains-radio-menu">
-         <h3>Gray 1 theme</h3>
-         <st-radio-menu [activeOption]="selectedOptionTheme1" class="radio-menu" [options]="options" qaTag="radio-menu-theme-gray-1">
-         </st-radio-menu>
-      </div>
-      <div class="col-sm-8 theme-gray-2 contains-radio-menu">
-         <h3>Gray 2 theme</h3>
-         <st-radio-menu [activeOption]="selectedOptionTheme2" class="radio-menu" [options]="options" qaTag="radio-menu-theme-gray-1">
-         </st-radio-menu>
-      </div>
-      <div class="col-sm-8 contains-radio-menu">
-         <h3>Gray 2 with input 'theme'</h3>
-         <st-radio-menu [activeOption]="selectedOptionTheme2" class="radio-menu" theme="theme-gray-2" [options]="options" qaTag="radio-menu-theme-gray-1">
-         </st-radio-menu>
-      </div>
-   </section>
-</st-docs>
+<section class="container-fluid col-md-12 radio-menu-demo">
+   <div class="col-sm-8 contains-radio-menu">
+      <h3>By default (without parent's theme)</h3>
+      <st-radio-menu [activeOption]="selectedOptionTheme2" class="radio-menu" [options]="options"
+         qaTag="radio-menu-without-theme">
+      </st-radio-menu>
+   </div>
+   <div class="col-sm-8 theme-gray-1 contains-radio-menu">
+      <h3>Gray 1 theme</h3>
+      <st-radio-menu [activeOption]="selectedOptionTheme1" class="radio-menu" [options]="options"
+         qaTag="radio-menu-theme-gray-1">
+      </st-radio-menu>
+   </div>
+   <div class="col-sm-8 theme-gray-2 contains-radio-menu">
+      <h3>Gray 2 theme</h3>
+      <st-radio-menu [activeOption]="selectedOptionTheme2" class="radio-menu" [options]="options"
+         qaTag="radio-menu-theme-gray-1">
+      </st-radio-menu>
+   </div>
+   <div class="col-sm-8 contains-radio-menu">
+      <h3>Gray 2 with input 'theme'</h3>
+      <st-radio-menu [activeOption]="selectedOptionTheme2" class="radio-menu" theme="theme-gray-2" [options]="options"
+         qaTag="radio-menu-theme-gray-1">
+      </st-radio-menu>
+   </div>
+</section>

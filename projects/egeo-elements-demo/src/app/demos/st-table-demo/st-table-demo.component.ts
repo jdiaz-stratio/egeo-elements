@@ -11,7 +11,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Order, ORDER_TYPE, StTableHeader } from '@stratio/egeo';
 import { cloneDeep as _cloneDeep, filter as _filter, intersectionBy as _intersectionBy } from 'lodash';
-import { CssProperty } from '@app/shared/css-property-table/css-property-table.model';
+import { CssProperty } from '../../../app/shared/css-property-table/css-property-table.model';
 
 @Component({
    templateUrl: './st-table-demo.component.html',

@@ -10,17 +10,15 @@
     SPDX-License-Identifier: Apache-2.0.
 
 -->
-<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
-   <section class="container-liquid">
-      <h1>Tooltip activated on hover</h1>
-      <span st-tooltip id="example2" title="This is the tooltip activated on hover">
-         Text with tooltip
-      </span>
-      <br>
-      <br>
-      <h1>Tooltip activated on click</h1>
-      <span st-tooltip id="example1" title="This is the tooltip activated on click" [showOnClick]="true">
-         Text with tooltip <span class="icon-help2"></span>
-      </span>
-   </section>
-</st-docs>
+<section class="container-liquid">
+   <h1>Tooltip activated on hover</h1>
+   <span st-tooltip id="example2" title="This is the tooltip activated on hover">
+      Text with tooltip
+   </span>
+   <br>
+   <br>
+   <h1>Tooltip activated on click</h1>
+   <span st-tooltip id="example1" title="This is the tooltip activated on click" [showOnClick]="true">
+      Text with tooltip <span class="icon-help2"></span>
+   </span>
+</section>

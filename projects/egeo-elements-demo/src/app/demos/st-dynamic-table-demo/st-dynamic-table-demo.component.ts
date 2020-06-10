@@ -14,7 +14,7 @@ import { JSONSchema4 } from 'json-schema';
 import { Order, ORDER_TYPE, StDropDownMenuItem } from '@stratio/egeo';
 
 import { StDynamicTableUserInterface } from '@stratio/egeo/lib/st-dynamic-table/st-dynamic-table.model';
-import { CssProperty } from '@app/shared/css-property-table/css-property-table.model';
+import { CssProperty } from '../../../app/shared/css-property-table/css-property-table.model';
 
 @Component({
    templateUrl: './st-dynamic-table-demo.component.html',

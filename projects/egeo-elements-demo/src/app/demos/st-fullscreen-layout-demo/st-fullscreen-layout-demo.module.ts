@@ -8,12 +8,10 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-   StDemoGeneratorModule,
-   StDocsModule,
-   StFullscreenLayoutModule, StSwitchModule
+   StDemoGeneratorModule
 } from '@stratio/egeo';
 
 import { StFullscreenLayoutComponent } from './st-fullscreen-layout-demo';
@@ -22,14 +20,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
    imports: [
       CommonModule,
-      StFullscreenLayoutModule,
       StDemoGeneratorModule.withComponents({ components: [StFullscreenLayoutComponent] }),
-      StDocsModule,
-      StSwitchModule,
       FormsModule,
       ReactiveFormsModule
    ],
-   declarations: [StFullscreenLayoutComponent]
+   declarations: [StFullscreenLayoutComponent],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StFullscreenLayoutDemoModule { }
 

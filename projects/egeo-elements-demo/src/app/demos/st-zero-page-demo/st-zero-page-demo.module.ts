@@ -9,20 +9,19 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { StDemoGeneratorModule, StDocsModule, StZeroPageModule } from '@stratio/egeo';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { StDemoGeneratorModule } from '@stratio/egeo';
 
 import { StZeroPageDemoComponent } from './st-zero-page-demo.component';
-import { CssPropertyTableModule } from '@app/shared/css-property-table/css-property-table.module';
+import { CssPropertyTableModule } from '../../../app/shared/css-property-table/css-property-table.module';
 
 @NgModule({
    imports: [
       CommonModule,
-      StZeroPageModule,
       StDemoGeneratorModule.withComponents({ components: [StZeroPageDemoComponent] }),
-      StDocsModule,
       CssPropertyTableModule
    ],
-   declarations: [StZeroPageDemoComponent]
+   declarations: [StZeroPageDemoComponent],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StZeroPageDemoModule { }

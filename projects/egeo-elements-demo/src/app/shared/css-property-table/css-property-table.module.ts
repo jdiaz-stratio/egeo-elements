@@ -10,24 +10,23 @@
  */
 
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
- import { CssPropertyTableComponent } from './css-property-table.component';
-import { StTableModule } from '@stratio/egeo';
+import { CssPropertyTableComponent } from './css-property-table.component';
 
- @NgModule({
-    imports: [
-       CommonModule,
-       RouterModule,
-       StTableModule
-    ],
+@NgModule({
+   imports: [
+      CommonModule,
+      RouterModule
+   ],
    declarations: [
       CssPropertyTableComponent
    ],
-    exports: [
-       CssPropertyTableComponent
-    ]
+   exports: [
+      CssPropertyTableComponent
+   ],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
 export class CssPropertyTableModule { }

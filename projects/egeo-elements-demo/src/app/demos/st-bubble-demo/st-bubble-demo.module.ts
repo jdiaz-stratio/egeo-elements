@@ -8,10 +8,9 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StDemoGeneratorModule, StInputModule, StSwitchModule } from '@stratio/egeo';
-import { StBubbleModule, StDocsModule } from '@stratio/egeo';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { StBubbleDemoComponent } from './st-bubble-demo.component';
@@ -19,15 +18,14 @@ import { StBubbleDemoComponent } from './st-bubble-demo.component';
 @NgModule({
    imports: [
       CommonModule,
-      StBubbleModule,
       StDemoGeneratorModule.withComponents({ components: [StBubbleDemoComponent] }),
-      StDocsModule,
       StSwitchModule,
       FormsModule,
       ReactiveFormsModule,
       StInputModule
    ],
    declarations: [StBubbleDemoComponent],
-   providers: []
+   providers: [],
+   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class StBubbleDemoModule { }

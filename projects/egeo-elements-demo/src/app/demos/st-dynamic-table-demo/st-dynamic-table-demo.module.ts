@@ -9,8 +9,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { StDemoGeneratorModule, StDocsModule, StTableModule, StCheckboxModule, StToggleButtonsModule, StDropdownMenuModule} from '@stratio/egeo';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { StDemoGeneratorModule} from '@stratio/egeo';
 
 import { StDynamicTableDemoComponent } from './st-dynamic-table-demo.component';
 //import { StDynamicTableModule } from '@stratio/egeo/lib/st-dynamic-table/st-dynamic-table.module';
@@ -20,13 +20,10 @@ import { CssPropertyTableModule } from '../../../app/shared/css-property-table/c
    imports: [
       CommonModule,
   //    StDynamicTableModule,
-      StCheckboxModule,
       StDemoGeneratorModule.withComponents({ components: [StDynamicTableDemoComponent] }),
-      StDocsModule,
-      StToggleButtonsModule,
-      StDropdownMenuModule,
       CssPropertyTableModule
    ],
-   declarations: [StDynamicTableDemoComponent]
+   declarations: [StDynamicTableDemoComponent],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StDynamicTableDemoModule { }

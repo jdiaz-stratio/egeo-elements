@@ -8,14 +8,10 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-   StDemoGeneratorModule,
-   StDocsModule,
-   StModalModule,
-   StModalService,
-   StFullscreenLayoutModule
+   StDemoGeneratorModule, StModalService
 } from '@stratio/egeo';
 
 import { StModalDemoComponent } from './st-modal-demo.component';
@@ -27,17 +23,10 @@ import { StDemoLoggerModule } from '../shared/st-demo-logger/st-demo-logger.modu
 @NgModule({
    imports: [
       CommonModule,
-      StFullscreenLayoutModule,
       StDemoLoggerModule.withService(),
-      StModalModule.withComponents([
-         StModalDemoTestComponent,
-         StModalDemoTestButtonsComponent,
-         StModalDemoTestFullscreenLayoutComponent
-      ]),
       StDemoGeneratorModule.withComponents({
          components: [StModalDemoComponent]
       }),
-      StDocsModule
    ],
    declarations: [
       StModalDemoComponent,
@@ -45,6 +34,7 @@ import { StDemoLoggerModule } from '../shared/st-demo-logger/st-demo-logger.modu
       StModalDemoTestButtonsComponent,
       StModalDemoTestFullscreenLayoutComponent
    ],
-   providers: [StModalService]
+   providers: [StModalService],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StModalDemoModule { }

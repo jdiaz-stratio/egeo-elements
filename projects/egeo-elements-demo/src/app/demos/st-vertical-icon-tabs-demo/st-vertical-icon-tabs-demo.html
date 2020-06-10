@@ -10,19 +10,15 @@
     SPDX-License-Identifier: Apache-2.0.
 
 -->
-<st-docs [htmlFile]="configDoc.html" [tsFile]="configDoc.ts" [componentFile]="configDoc.component">
-   <section class="container-liquid">
-      <div class="row">
-         <div class="col-sm-12 vertical-tabs-container">
-            <st-vertical-icon-tabs class="vertical-icon-tabs"
-                                   [options]="options"
-                                   [activeOption]="active"
-                                   (changeOption)="onChangeOption($event)">
-            </st-vertical-icon-tabs>
-            <div class ="tab-container">
-               The current tab is {{active.text}}
-            </div>
+<section class="container-liquid">
+   <div class="row">
+      <div class="col-sm-12 vertical-tabs-container">
+         <st-vertical-icon-tabs class="vertical-icon-tabs" [options]="options" [activeOption]="active"
+            (changeOption)="onChangeOption($event)">
+         </st-vertical-icon-tabs>
+         <div class="tab-container">
+            The current tab is {{active.text}}
          </div>
       </div>
-   </section>
-</st-docs>
+   </div>
+</section>

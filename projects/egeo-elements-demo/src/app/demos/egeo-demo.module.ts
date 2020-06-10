@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { routing } from './demos.routes';
 import { EGEO_DEMO_MODULES } from './barrels';
@@ -19,6 +19,9 @@ import { EGEO_DEMO_MODULES } from './barrels';
       CommonModule,
       routing,
       ...(EGEO_DEMO_MODULES as any[])
-   ]
+   ],
+   schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class EgeoDemoModule { }
